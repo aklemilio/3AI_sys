@@ -42,6 +42,11 @@ def preparar_ficha(run: Ejecucion, paso: str, ranura: str, papel: str, entradas:
 def recibir_respuesta(run: Ejecucion, paso: str, ranura: str, texto: str) -> ResultadoRespuesta:
     """Limpia, valida y guarda la respuesta pegada. Si falla, prepara un reintento
     que pide solo el JSON (una vez); después marca la ranura como agotada."""
+    with run.cerrojo:
+        return _recibir(run, paso, ranura, texto)
+
+
+def _recibir(run: Ejecucion, paso: str, ranura: str, texto: str) -> ResultadoRespuesta:
     pend = run.estado["pendientes"][paso][ranura]
     pend["intentos"] += 1
     run.escribir(f"respuestas/{paso}/{ranura}_intento{pend['intentos']}.txt", texto)
