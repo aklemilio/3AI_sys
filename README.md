@@ -6,7 +6,12 @@ La especificación del MVP está en [SPEC.md](SPEC.md).
 
 ## Estado
 
-Hito 1 de 5: motor con estado en disco, esquemas JSON, modo manual, fusión, agregación de la criba y cartera por regla.
+- Hito 1 de 5: motor con estado en disco, esquemas JSON, modo manual, fusión, agregación de la criba y cartera por regla.
+- Hito 2 de 5: verificador determinista: recuento propio, comparación entre versiones y comprobación y registro de fuentes.
+
+### Método de recuento de palabras
+
+Se sustituyen por espacios los símbolos `|`, `*`, `#` y la comilla invertida, y se separa el texto por espacios. Se descartan las piezas formadas solo por guiones ASCII (viñetas y separadores de tabla). Las rayas tipográficas (`—`, `–`) sí cuentan como palabra. Con este método, `fixtures/caso-libanes-c4/v42.md` da 1590 palabras de cuerpo y 798 de anexo (A–F).
 
 ## Puesta en marcha (Windows)
 
@@ -21,8 +26,8 @@ $env:PYTHONDONTWRITEBYTECODE = 1
 
 ## Estructura
 
-- `tresia/calculo/`: cálculos deterministas (limpieza de JSON, esquemas, fusión, agregación y cartera).
-- `tresia/motor/`: estado de cada ejecución, fases con puertas del dueño, modo manual y pasos del flujo.
+- `tresia/calculo/`: cálculos deterministas (limpieza de JSON, esquemas, fusión, agregación, cartera, recuento, versiones y fuentes).
+- `tresia/motor/`: estado de cada ejecución, fases con puertas del dueño, modo manual, pasos del flujo y verificador determinista.
 - `tresia/papeles.py`: compone la ficha (prompt) a partir de cada `SKILL.md`.
 - `skills/`: papeles (prompts en inglés).
 - `schemas/`: esquemas JSON de la salida de cada papel.
