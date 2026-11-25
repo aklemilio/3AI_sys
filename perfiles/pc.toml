@@ -1,0 +1,49 @@
+# Perfil «pc» (SPEC §3). Este archivo va al repositorio: sin direcciones ni claves.
+# Los valores locales (dirección de Ollama, rutas propias, modelo de Gemini...) van en
+# perfiles/pc.local.toml, que tiene la misma forma, se fusiona encima y no se sube.
+
+# Rotación: los tres modelos A, B y C. La interfaz nunca muestra quién es quién.
+[modelos.A]
+proveedor = "claude"
+tipo = "cli"
+ejecutable = "claude"
+# El prompt va por stdin, nunca como argumento (en Windows los prompts largos fallan).
+argumentos = ["-p", "--output-format", "json"]
+salida = "claude_json"          # stdout es {"result": "..."}
+tiempo_maximo = 900
+
+[modelos.B]
+proveedor = "chatgpt"
+tipo = "cli"
+ejecutable = "codex"
+# «-» = leer el prompt de stdin; la respuesta final se escribe en {archivo_salida}.
+argumentos = ["exec", "--skip-git-repo-check", "--sandbox", "read-only", "--output-last-message", "{archivo_salida}", "-"]
+salida = "archivo"
+tiempo_maximo = 900
+
+[modelos.C]
+proveedor = "gemini"
+tipo = "gemini"
+modelo = "gemini-2.5-pro"       # comprobar el modelo vigente y fijarlo en pc.local.toml
+clave_env = "GEMINI_API_KEY"    # o almacén de credenciales de Windows (servicio «tresia», usuario «gemini»)
+url_base = "https://generativelanguage.googleapis.com/v1beta"
+tiempo_maximo = 600
+
+# Verificador fijo, fuera de la rotación.
+[verificador]
+proveedor = "ollama"
+tipo = "ollama"
+modelo = ""                     # lo indica el servidor (coordinacion/); se fija en pc.local.toml
+url_base = ""                   # dirección privada del servidor; solo en pc.local.toml
+num_ctx = 32768
+tiempo_maximo = 600
+habilitado = false              # true solo cuando el servidor y el dueño lo aprueben
+
+# Respaldo del verificador si el servidor no responde: un modelo que no esté en la rotación.
+[verificador_respaldo]
+proveedor = "gemini"
+tipo = "gemini"
+modelo = ""                     # distinto del de C; se fija en pc.local.toml
+clave_env = "GEMINI_API_KEY"
+url_base = "https://generativelanguage.googleapis.com/v1beta"
+tiempo_maximo = 600

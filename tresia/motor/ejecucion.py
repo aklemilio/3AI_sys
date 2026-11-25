@@ -10,7 +10,9 @@ from __future__ import annotations
 import json
 import os
 import re
+import threading
 import unicodedata
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -49,7 +51,7 @@ def _slug(texto: str) -> str:
 
 def _escribir_atomico(ruta: Path, contenido: str) -> None:
     ruta.parent.mkdir(parents=True, exist_ok=True)
-    tmp = ruta.with_name(ruta.name + ".tmp")
+    tmp = ruta.with_name(f"{ruta.name}.{uuid.uuid4().hex[:8]}.tmp")
     tmp.write_text(contenido, encoding="utf-8", newline="\n")
     os.replace(tmp, ruta)
 
@@ -58,6 +60,8 @@ class Ejecucion:
     def __init__(self, carpeta: Path):
         self.carpeta = Path(carpeta)
         self.estado = json.loads((self.carpeta / "run.json").read_text(encoding="utf-8"))
+        # Las ranuras en paralelo (fase A, criba) comparten el estado: todo cambio va con cerrojo.
+        self.cerrojo = threading.RLock()
 
     # --- creación y persistencia -------------------------------------------------
     @classmethod
@@ -88,8 +92,9 @@ class Ejecucion:
         return cls(carpeta)
 
     def guardar(self) -> None:
-        self.estado["actualizada"] = _ahora()
-        _escribir_atomico(self.carpeta / "run.json", json.dumps(self.estado, ensure_ascii=False, indent=1))
+        with self.cerrojo:
+            self.estado["actualizada"] = _ahora()
+            _escribir_atomico(self.carpeta / "run.json", json.dumps(self.estado, ensure_ascii=False, indent=1))
 
     # --- artefactos -------------------------------------------------------------
     def escribir(self, relativa: str, datos) -> Path:
@@ -109,14 +114,15 @@ class Ejecucion:
         return (self.carpeta / relativa).exists()
 
     def actualizar_metricas(self, fase: str, metricas: dict) -> None:
-        todas = self.leer("metricas.json") if self.existe("metricas.json") else {}
-        todas[fase] = metricas
-        self.escribir("metricas.json", todas)
+        with self.cerrojo:
+            todas = self.leer("metricas.json") if self.existe("metricas.json") else {}
+            todas[fase] = metricas
+            self.escribir("metricas.json", todas)
 
     # --- decisiones del dueño ---------------------------------------------------
     def registrar_decision(self, fase: str, tipo: str, contenido: dict, origen: str = "dueno") -> dict:
         entrada = {"fecha": _ahora(), "fase": fase, "tipo": tipo, "origen": origen, **contenido}
-        with open(self.carpeta / "decisiones.jsonl", "a", encoding="utf-8", newline="\n") as f:
+        with self.cerrojo, open(self.carpeta / "decisiones.jsonl", "a", encoding="utf-8", newline="\n") as f:
             f.write(json.dumps(entrada, ensure_ascii=False) + "\n")
         return entrada
 

@@ -8,6 +8,11 @@ La especificación del MVP está en [SPEC.md](SPEC.md).
 
 - Hito 1 de 5: motor con estado en disco, esquemas JSON, modo manual, fusión, agregación de la criba y cartera por regla.
 - Hito 2 de 5: verificador determinista: recuento propio, comparación entre versiones y comprobación y registro de fuentes.
+- Hito 3 de 5 (en curso): adaptadores de Claude y Codex (CLI), Gemini (API de pago) y Ollama (verificador), rotación en cuadrado latino y verificador con respaldo. Probados sin llamadas reales; falta la prueba con cada modelo.
+
+### Modelos
+
+El perfil `perfiles/pc.toml` define los modelos A, B y C, el verificador y su respaldo. Los valores locales (dirección del servidor, modelos concretos, rutas) van en `perfiles/pc.local.toml`, que no se sube al repositorio. La clave de Gemini se lee de la variable de entorno `GEMINI_API_KEY` o del almacén de credenciales de Windows; nunca se guarda en disco.
 
 ### Método de recuento de palabras
 
