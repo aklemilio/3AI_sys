@@ -8,7 +8,8 @@ proveedor = "claude"
 tipo = "cli"
 ejecutable = "claude"
 # El prompt va por stdin, nunca como argumento (en Windows los prompts largos fallan).
-argumentos = ["-p", "--output-format", "json"]
+# --tools "" desactiva las herramientas: el modelo solo responde, no ejecuta nada.
+argumentos = ["-p", "--output-format", "json", "--tools", ""]
 salida = "claude_json"          # stdout es {"result": "..."}
 tiempo_maximo = 900
 
