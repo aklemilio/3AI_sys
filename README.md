@@ -8,7 +8,7 @@ La especificación del MVP está en [SPEC.md](SPEC.md).
 
 - Hito 1 de 5: motor con estado en disco, esquemas JSON, modo manual, fusión, agregación de la criba y cartera por regla.
 - Hito 2 de 5: verificador determinista: recuento propio, comparación entre versiones y comprobación y registro de fuentes.
-- Hito 3 de 5 (en curso): adaptadores de Claude y Codex (CLI), Gemini (API de pago) y Ollama (verificador), rotación en cuadrado latino y verificador con respaldo. Claude, Codex y Gemini probados con una llamada real; el verificador en el servidor espera su validación.
+- Hito 3 de 5 (en curso): adaptadores de Claude y Codex (CLI), Gemini (API de pago) y Ollama (verificador), rotación en cuadrado latino y verificador con respaldo. Claude, Codex, Gemini y el verificador del servidor probados con una llamada real.
 
 ### Modelos
 
@@ -24,7 +24,7 @@ El entorno virtual vive fuera de la carpeta del proyecto:
 
 ```powershell
 py -3.12 -m venv "$env:LOCALAPPDATA\tresia\venv"
-& "$env:LOCALAPPDATA\tresia\venv\Scripts\python.exe" -m pip install jsonschema pytest
+& "$env:LOCALAPPDATA\tresia\venv\Scripts\python.exe" -m pip install jsonschema truststore pytest
 $env:PYTHONDONTWRITEBYTECODE = 1
 & "$env:LOCALAPPDATA\tresia\venv\Scripts\python.exe" -m pytest -q -p no:cacheprovider
 ```

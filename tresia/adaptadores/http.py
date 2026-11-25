@@ -4,10 +4,28 @@ from __future__ import annotations
 
 import json
 import os
+import ssl
 import urllib.error
 import urllib.request
+from functools import lru_cache
 
 from tresia.adaptadores.base import Adaptador, AdaptadorError
+
+
+@lru_cache(maxsize=1)
+def contexto_tls() -> ssl.SSLContext:
+    """Verificación de certificados con el almacén del sistema (en Windows, la misma
+    que usa el navegador). Con el OpenSSL de Python, algunas cadenas válidas de
+    Let's Encrypt fallan como «certificate has expired». Nunca se desactiva la verificación."""
+    try:
+        import truststore
+        return truststore.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+    except ImportError:
+        return ssl.create_default_context()
+
+
+def abrir(peticion, tiempo: float):
+    return urllib.request.urlopen(peticion, timeout=tiempo, context=contexto_tls())
 
 
 def _post_json(url: str, cuerpo: dict, cabeceras: dict, tiempo: float) -> dict:
@@ -15,7 +33,7 @@ def _post_json(url: str, cuerpo: dict, cabeceras: dict, tiempo: float) -> dict:
     peticion = urllib.request.Request(url, data=datos, method="POST",
                                       headers={"Content-Type": "application/json", **cabeceras})
     try:
-        with urllib.request.urlopen(peticion, timeout=tiempo) as r:
+        with abrir(peticion, tiempo) as r:
             return json.loads(r.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
         detalle = e.read().decode("utf-8", errors="replace")[:500]
@@ -104,7 +122,7 @@ class AdaptadorOllama(Adaptador):
         if not self.url_base or not self.modelo:
             return False, "Faltan la dirección o el modelo de Ollama en perfiles/pc.local.toml."
         try:
-            with urllib.request.urlopen(f"{self.url_base}/api/tags", timeout=5) as r:
+            with abrir(f"{self.url_base}/api/tags", 10) as r:
                 modelos = [m.get("name", "") for m in json.loads(r.read().decode("utf-8")).get("models", [])]
         except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError) as e:
             return False, f"El servidor del verificador no responde: {getattr(e, 'reason', e)}"

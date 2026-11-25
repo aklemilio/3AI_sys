@@ -5,6 +5,7 @@ description = "Herramienta local para ampliar y validar ideas con tres modelos d
 requires-python = ">=3.11"
 dependencies = [
     "jsonschema>=4.20",
+    "truststore>=0.10",   # verifica TLS con el almacén del sistema (Windows)
 ]
 
 [project.optional-dependencies]
