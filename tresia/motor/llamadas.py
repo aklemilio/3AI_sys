@@ -47,16 +47,28 @@ def _anotar_aviso(run: Ejecucion, texto: str) -> None:
 
 
 def ejecutar_ranura(run: Ejecucion, paso: str, ranura: str, adaptador: Adaptador, ficha: str,
-                    etiqueta_modelo: str) -> ResultadoRanura:
-    """Envía la ficha ya preparada y procesa la respuesta (con un reintento)."""
-    with run.cerrojo:
-        run.estado["identidades"][f"{paso}:{ranura}"] = etiqueta_modelo   # nunca se muestra al dueño
-        run.guardar()
+                    etiqueta_modelo: str, alternativas: list[tuple[Adaptador, str]] | None = None) -> ResultadoRanura:
+    """Envía la ficha ya preparada y procesa la respuesta (con un reintento).
+    ``alternativas``: modelos de respaldo si el principal falla (solo el verificador)."""
+    alternativas = list(alternativas or [])
+
+    def fijar_identidad(etiqueta):
+        with run.cerrojo:
+            run.estado["identidades"][f"{paso}:{ranura}"] = etiqueta   # nunca se muestra al dueño
+            run.guardar()
+
+    fijar_identidad(etiqueta_modelo)
     prompt = ficha
     while True:
         try:
             r = adaptador.llamar(prompt)
         except AdaptadorError as e:
+            if alternativas:
+                adaptador, etiqueta_modelo = alternativas.pop(0)
+                _anotar_aviso(run, f"{paso} {ranura}: el modelo falló ({e}). Se usa el modelo de respaldo, fuera de la rotación.")
+                fijar_identidad(etiqueta_modelo)
+                prompt = ficha
+                continue
             _anotar_aviso(run, f"{paso} {ranura}: el modelo no respondió ({e}). La ficha queda para el modo manual.")
             return ResultadoRanura(ranura, ok=False, errores=[str(e)], pasa_a_manual=True)
         res = manual.recibir_respuesta(run, paso, ranura, r.texto)
@@ -88,36 +100,53 @@ def tarea_verificador(run: Ejecucion, perfil: dict, tarea: str, entradas: dict, 
     y la envía al verificador disponible. Sin verificador, la ficha queda para el modo manual."""
     paso = f"verificador_{tarea}"
     ficha = manual.preparar_ficha(run, paso, "V", "verifier", entradas, destino, tarea=tarea)
-    adaptador, etiqueta = elegir_verificador(run, perfil)
-    if adaptador is None:
-        return ResultadoRanura("V", ok=False, errores=[etiqueta], pasa_a_manual=True)
-    return ejecutar_ranura(run, paso, "V", adaptador, ficha, etiqueta)
+    candidatos = candidatos_verificador(run, perfil, ficha)
+    if not candidatos:
+        return ResultadoRanura("V", ok=False, errores=["Sin verificador disponible."], pasa_a_manual=True)
+    (adaptador, etiqueta), *resto = candidatos
+    return ejecutar_ranura(run, paso, "V", adaptador, ficha, etiqueta, alternativas=resto)
 
 
 # --- verificador fijo con respaldo ------------------------------------------------------
-def elegir_verificador(run: Ejecucion | None, perfil: dict) -> tuple[Adaptador | None, str]:
-    """Devuelve (adaptador, etiqueta). Si el verificador del servidor no está disponible,
-    usa el respaldo, que no puede estar en la rotación, y deja un aviso visible.
-    Si tampoco hay respaldo devuelve (None, motivo): el verificador pasa a modo manual."""
+def candidatos_verificador(run: Ejecucion | None, perfil: dict, prompt: str | None = None) -> list[tuple[Adaptador, str]]:
+    """Verificadores utilizables, en orden: el del servidor (si está disponible y el
+    prompt cabe en su contexto) y el respaldo (si no está en la rotación). Cada
+    descarte deja un aviso visible. Lista vacía = el verificador pasa a modo manual."""
+    candidatos, motivos = [], []
     principal = adaptadores.crear(perfil["verificador"])
     ok, motivo = principal.disponible()
+    if ok and prompt is not None and hasattr(principal, "cabe"):
+        ok, motivo = principal.cabe(prompt)
     if ok:
-        return principal, perfiles.identidad(perfil["verificador"])
+        candidatos.append((principal, perfiles.identidad(perfil["verificador"])))
+    else:
+        motivos.append(f"verificador del servidor: {motivo}")
 
     respaldo_def = perfil.get("verificador_respaldo")
     rotacion_ids = {perfiles.identidad(d) for d in perfil.get("modelos", {}).values()}
     if not respaldo_def:
-        aviso = f"Verificador no disponible ({motivo}) y sin respaldo configurado: el verificador pasa a modo manual."
+        motivos.append("no hay respaldo configurado")
     elif perfiles.identidad(respaldo_def) in rotacion_ids:
-        aviso = f"Verificador no disponible ({motivo}). El respaldo configurado está en la rotación y no se puede usar: modo manual."
+        motivos.append("el respaldo configurado está en la rotación y no se puede usar")
     else:
         respaldo = adaptadores.crear(respaldo_def)
         ok_r, motivo_r = respaldo.disponible()
         if ok_r:
-            if run:
-                _anotar_aviso(run, f"Verificador del servidor no disponible ({motivo}). Se usa el modelo de respaldo, fuera de la rotación.")
-            return respaldo, perfiles.identidad(respaldo_def)
-        aviso = f"Verificador no disponible ({motivo}) ni respaldo ({motivo_r}): el verificador pasa a modo manual."
-    if run:
-        _anotar_aviso(run, aviso)
-    return None, aviso
+            candidatos.append((respaldo, perfiles.identidad(respaldo_def)))
+        else:
+            motivos.append(f"respaldo: {motivo_r}")
+
+    if run and motivos:
+        if not candidatos:
+            _anotar_aviso(run, "Sin verificador automático (" + "; ".join(motivos) + "). El verificador pasa a modo manual.")
+        elif not ok:
+            _anotar_aviso(run, "Se usa el modelo de respaldo, fuera de la rotación (" + "; ".join(motivos) + ").")
+    return candidatos
+
+
+def elegir_verificador(run: Ejecucion | None, perfil: dict, prompt: str | None = None) -> tuple[Adaptador | None, str]:
+    """Primer verificador utilizable, o (None, motivo) si ninguno: modo manual."""
+    candidatos = candidatos_verificador(run, perfil, prompt)
+    if candidatos:
+        return candidatos[0]
+    return None, "Sin verificador disponible: el verificador pasa a modo manual (ver avisos; la rotación no puede hacer de verificador)."

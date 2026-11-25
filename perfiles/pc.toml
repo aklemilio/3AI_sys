@@ -36,7 +36,11 @@ proveedor = "ollama"
 tipo = "ollama"
 modelo = ""                     # lo indica el servidor (coordinacion/); se fija en pc.local.toml
 url_base = ""                   # dirección privada del servidor; solo en pc.local.toml
-num_ctx = 32768
+# El servidor fija el contexto en 8192 tokens y recorta en silencio lo que no cabe
+# (coordinacion/2026-11-25_servidor_respuesta-ollama.md). No se envía num_ctx ni keep_alive.
+contexto = 8192
+num_predict = 2000
+max_tokens_prompt = 6000
 tiempo_maximo = 600
 habilitado = false              # true solo cuando el servidor y el dueño lo aprueben
 

@@ -94,7 +94,11 @@ class _Manejador(BaseHTTPRequestHandler):
                 return self._responder({"error": {"message": "API key not valid"}}, 400)
             return self._responder({"candidates": [{"content": {"parts": [{"text": json.dumps(VALIDO)}]}}]})
         if self.path == "/api/chat":
-            return self._responder({"message": {"role": "assistant", "content": json.dumps(VALIDO)}})
+            texto = cuerpo["messages"][0]["content"]
+            # «RECORTAR» simula que Ollama truncó la entrada al contexto fijo de 8192.
+            evaluados = 8192 if "RECORTAR" in texto else len(texto) // 4 + 1
+            return self._responder({"message": {"role": "assistant", "content": json.dumps(VALIDO)},
+                                    "prompt_eval_count": evaluados, "done_reason": "stop"})
 
 
 @pytest.fixture(scope="module")
@@ -124,13 +128,32 @@ def test_gemini_sin_clave_o_clave_mala(servidor, monkeypatch):
         g.llamar("x")
 
 
+def _ollama(servidor, **extra):
+    return adaptadores.crear({"tipo": "ollama", "proveedor": "ollama", "modelo": "qwen-prueba",
+                              "url_base": servidor, "habilitado": True, **extra})
+
+
 def test_ollama(servidor):
-    o = adaptadores.crear({"tipo": "ollama", "proveedor": "ollama", "modelo": "qwen-prueba",
-                           "url_base": servidor, "habilitado": True, "num_ctx": 4096})
+    o = _ollama(servidor, num_predict=1500)
     assert o.disponible() == (True, "")
     assert json.loads(o.llamar("hola").texto) == VALIDO
     cuerpo = _Manejador.recibido[-1]["body"]
-    assert cuerpo["format"] == "json" and cuerpo["stream"] is False and cuerpo["options"]["num_ctx"] == 4096
+    assert cuerpo["format"] == "json" and cuerpo["stream"] is False
+    # El servidor fija el contexto: no se manda num_ctx ni keep_alive.
+    assert cuerpo["options"] == {"num_predict": 1500} and "keep_alive" not in cuerpo
+
+
+def test_ollama_no_envia_lo_que_no_cabe_y_detecta_recorte(servidor):
+    o = _ollama(servidor)
+    assert o.max_prompt == 8192 - 2000 - 200
+    largo = "palabra " * 4000        # ≈10 700 tokens estimados
+    assert not o.cabe(largo)[0]
+    n = len(_Manejador.recibido)
+    with pytest.raises(AdaptadorError, match="no cabe"):
+        o.llamar(largo)
+    assert len(_Manejador.recibido) == n          # ni siquiera se envió
+    with pytest.raises(AdaptadorError, match="recortó"):
+        o.llamar("RECORTAR " + "x" * 100)
 
 
 # --- verificador con respaldo ---------------------------------------------------------------
@@ -156,7 +179,29 @@ def test_verificador_principal_respaldo_y_manual(tmp_path, servidor, monkeypatch
     assert "respaldo" in run.estado["avisos"][-1]["texto"]
 
     a, motivo = elegir_verificador(run, _perfil(servidor, habilitado=False, respaldo_modelo="gemini-rotacion"))
-    assert a is None and "rotación" in motivo
+    assert a is None and "modo manual" in motivo
+    assert "rotación" in run.estado["avisos"][-1]["texto"]
+
+
+def test_verificador_pasa_al_respaldo_si_el_servidor_recorta_o_no_cabe(tmp_path, servidor, monkeypatch):
+    from tresia.motor.llamadas import tarea_verificador
+    monkeypatch.setenv("TRESIA_CLAVE_PRUEBA", "clave-de-prueba")
+    perfil = _perfil(servidor, habilitado=True)
+
+    # 1. El servidor recorta en silencio: se detecta, se descarta y responde el respaldo.
+    run = Ejecucion.crear(tmp_path, "Recorte")
+    r = tarea_verificador(run, perfil, "premises", {"text": "RECORTAR"}, "premisas.json")
+    assert r.ok, r.errores
+    assert run.estado["identidades"]["verificador_premises:V"] == "gemini:gemini-respaldo"
+    assert any("recortó" in a["texto"] for a in run.estado["avisos"])
+
+    # 2. La ficha no cabe en 8192: ni se intenta en el servidor.
+    run2 = Ejecucion.crear(tmp_path, "Grande")
+    n = len([x for x in _Manejador.recibido if x["path"] == "/api/chat"])
+    r2 = tarea_verificador(run2, perfil, "premises", {"text": "palabra " * 4000}, "premisas.json")
+    assert r2.ok and run2.estado["identidades"]["verificador_premises:V"] == "gemini:gemini-respaldo"
+    assert len([x for x in _Manejador.recibido if x["path"] == "/api/chat"]) == n
+    assert any("no cabe" in a["texto"] for a in run2.estado["avisos"])
 
 
 def test_perfil_pc_no_contiene_direcciones_ni_claves():

@@ -70,13 +70,33 @@ class AdaptadorGemini(Adaptador):
         return texto, json.dumps(datos, ensure_ascii=False)
 
 
+def estimar_tokens(texto: str) -> int:
+    """Estimación prudente sin tokenizador: unos 3 caracteres por token. Sobrestima
+    el inglés (≈4) para no pasarse del contexto; el árabe queda cerca de lo real."""
+    return len(texto) // 3 + 1
+
+
 class AdaptadorOllama(Adaptador):
-    """Ollama por HTTP (``/api/chat``, sin streaming, salida JSON)."""
+    """Ollama por HTTP (``/api/chat``, sin streaming, salida JSON).
+
+    El servidor fija el contexto (8192 tokens) y Ollama recorta en silencio lo que
+    no cabe. Por eso: se presupuesta antes de enviar, no se manda ``num_ctx`` ni
+    ``keep_alive``, y un recorte detectado después cuenta como fallo."""
 
     def __init__(self, definicion: dict):
         super().__init__(definicion)
         self.modelo = definicion.get("modelo", "")
         self.url_base = definicion.get("url_base", "").rstrip("/")
+        self.contexto = int(definicion.get("contexto", 8192))
+        self.num_predict = int(definicion.get("num_predict", 2000))
+        self.max_prompt = int(definicion.get("max_tokens_prompt", self.contexto - self.num_predict - 200))
+
+    def cabe(self, prompt: str) -> tuple[bool, str]:
+        estimados = estimar_tokens(prompt)
+        if estimados > self.max_prompt:
+            return False, (f"El prompt (≈{estimados} tokens) no cabe en el contexto del verificador del servidor "
+                           f"(máximo {self.max_prompt}). Hay que trocear la tarea o usar el respaldo.")
+        return True, ""
 
     def disponible(self) -> tuple[bool, str]:
         if not self.definicion.get("habilitado", False):
@@ -93,13 +113,22 @@ class AdaptadorOllama(Adaptador):
         return True, ""
 
     def _llamar(self, prompt: str) -> tuple[str, str]:
+        ok, motivo = self.cabe(prompt)
+        if not ok:
+            raise AdaptadorError(motivo)
         cuerpo = {"model": self.modelo, "stream": False, "format": "json",
                   "messages": [{"role": "user", "content": prompt}],
-                  "options": {"num_ctx": int(self.definicion.get("num_ctx", 32768))}}
-        if "keep_alive" in self.definicion:
-            cuerpo["keep_alive"] = self.definicion["keep_alive"]
+                  "options": {"num_predict": self.num_predict}}
         datos = _post_json(f"{self.url_base}/api/chat", cuerpo, {}, self.tiempo_maximo)
         texto = (datos.get("message") or {}).get("content", "")
         if not texto:
             raise AdaptadorError(f"Ollama no devolvió texto: {str(datos)[:300]}")
+        # Detección de recorte: entrada truncada por el contexto o salida cortada por num_predict.
+        evaluados = datos.get("prompt_eval_count")
+        if isinstance(evaluados, int):
+            if evaluados >= self.contexto - 16 or evaluados < estimar_tokens(prompt) * 0.5:
+                raise AdaptadorError(
+                    f"Ollama recortó el prompt (evaluó {evaluados} tokens de ≈{estimar_tokens(prompt)}). Se descarta la respuesta.")
+        if datos.get("done_reason") == "length":
+            raise AdaptadorError("La respuesta de Ollama se cortó por longitud. Se descarta.")
         return texto, json.dumps(datos, ensure_ascii=False)
