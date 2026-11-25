@@ -25,7 +25,7 @@ tiempo_maximo = 900
 [modelos.C]
 proveedor = "gemini"
 tipo = "gemini"
-modelo = "gemini-2.5-pro"       # comprobar el modelo vigente y fijarlo en pc.local.toml
+modelo = "gemini-4-hydrogen"
 clave_env = "GEMINI_API_KEY"    # o almacén de credenciales de Windows (servicio «tresia», usuario «gemini»)
 url_base = "https://generativelanguage.googleapis.com/v1beta"
 tiempo_maximo = 600
@@ -44,7 +44,7 @@ habilitado = false              # true solo cuando el servidor y el dueño lo ap
 [verificador_respaldo]
 proveedor = "gemini"
 tipo = "gemini"
-modelo = ""                     # distinto del de C; se fija en pc.local.toml
+modelo = "gemini-4-carbon"      # distinto del de C
 clave_env = "GEMINI_API_KEY"
 url_base = "https://generativelanguage.googleapis.com/v1beta"
 tiempo_maximo = 600
