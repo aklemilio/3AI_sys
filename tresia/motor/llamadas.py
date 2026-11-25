@@ -10,8 +10,10 @@
 
 from __future__ import annotations
 
+import random
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
+from typing import Callable
 
 from tresia import adaptadores, perfiles
 from tresia.adaptadores import Adaptador, AdaptadorError
@@ -30,6 +32,19 @@ def rotacion(ciclo: int) -> dict:
     constructor, atacante, evaluadores = ROTACION[(ciclo - 1) % 3 + 1]
     assert constructor not in evaluadores
     return {"constructor": constructor, "atacante": atacante, "evaluadores": list(evaluadores)}
+
+
+def asignacion_ciega(run: Ejecucion, fase: str, ranuras: list[str]) -> dict[str, str]:
+    """Reparte A, B y C entre las ranuras de una fase en paralelo (E1–E3, S1–S3) al
+    azar y lo guarda aparte: ni la interfaz ni los otros papeles saben quién es quién."""
+    with run.cerrojo:
+        asignaciones = run.estado.setdefault("asignacion", {})
+        if fase not in asignaciones:
+            letras = ["A", "B", "C"]
+            random.Random(f"{run.estado['creada']}:{fase}").shuffle(letras)
+            asignaciones[fase] = dict(zip(ranuras, letras))
+            run.guardar()
+        return asignaciones[fase]
 
 
 @dataclass
@@ -93,6 +108,40 @@ def ejecutar_en_paralelo(run: Ejecucion, paso: str, asignacion: dict[str, tuple[
         futuros = {r: pool.submit(ejecutar_ranura, run, paso, r, a, fichas[r], etiqueta)
                    for r, (a, etiqueta) in asignacion.items()}
         return [futuros[r].result() for r in asignacion]
+
+
+@dataclass
+class Recursos:
+    """Modelos disponibles para una ejecución. Sin recursos, todo va por modo manual."""
+    modelos: dict[str, Adaptador]                                     # «A», «B», «C»
+    verificadores: Callable[[Ejecucion, str], list[tuple[Adaptador, str]]]
+
+    @classmethod
+    def desde_perfil(cls, perfil: dict) -> "Recursos":
+        return cls(modelos={k: adaptadores.crear(d) for k, d in perfil["modelos"].items()},
+                   verificadores=lambda run, ficha: candidatos_verificador(run, perfil, ficha))
+
+
+def ejecutar_paso(run: Ejecucion, paso: str, recursos: Recursos) -> list[ResultadoRanura]:
+    """Envía todas las fichas pendientes de un paso a su modelo asignado: las de la
+    rotación en paralelo y las del verificador de una en una (el servidor atiende de
+    una en una). Las ranuras sin modelo asignado se quedan para el modo manual."""
+    pend = run.estado["pendientes"].get(paso, {})
+    esperando = [r for r, p in pend.items() if p["estado"] == "esperando" and p.get("asignado")]
+    rotacion_ = {r: (recursos.modelos[pend[r]["asignado"]], pend[r]["asignado"])
+                 for r in esperando if pend[r]["asignado"] in recursos.modelos}
+    fichas = {r: run.leer(f"prompts/{paso}/{r}.md") for r in esperando}
+    resultados = ejecutar_en_paralelo(run, paso, rotacion_, fichas) if rotacion_ else []
+    for r in esperando:
+        if pend[r]["asignado"] != "verificador":
+            continue
+        candidatos = recursos.verificadores(run, fichas[r])
+        if not candidatos:
+            resultados.append(ResultadoRanura(r, ok=False, errores=["Sin verificador disponible."], pasa_a_manual=True))
+            continue
+        (adaptador, etiqueta), *resto = candidatos
+        resultados.append(ejecutar_ranura(run, paso, r, adaptador, fichas[r], etiqueta, alternativas=resto))
+    return resultados
 
 
 def tarea_verificador(run: Ejecucion, perfil: dict, tarea: str, entradas: dict, destino: str) -> ResultadoRanura:

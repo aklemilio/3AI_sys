@@ -69,7 +69,10 @@ def preparar_criba(run: Ejecucion) -> dict[str, str]:
         "criteria": criterios,
         "options": opciones_para_criba(run.leer("grupos.json"), _exploradores(run)),
     }
-    return {s: manual.preparar_ficha(run, "criba", s, "screener", entradas, f"criba/{s}.json") for s in CRIBADORES}
+    from tresia.motor.llamadas import asignacion_ciega
+    asignacion = asignacion_ciega(run, "criba", CRIBADORES)
+    return {s: manual.preparar_ficha(run, "criba", s, "screener", entradas, f"criba/{s}.json",
+                                     asignado=asignacion[s]) for s in CRIBADORES}
 
 
 # --- agregación ----------------------------------------------------------------

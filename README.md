@@ -10,6 +10,26 @@ La especificación del MVP está en [SPEC.md](SPEC.md).
 - Hito 2 de 5: verificador determinista: recuento propio, comparación entre versiones y comprobación y registro de fuentes.
 - Hito 3 de 5 (en curso): adaptadores de Claude y Codex (CLI), Gemini (API de pago) y Ollama (verificador), rotación en cuadrado latino y verificador con respaldo. Claude, Codex, Gemini y el verificador del servidor probados con una llamada real.
 
+- Orquestación del flujo completo (`tresia/motor/flujo.py`): ingesta, encuadre, línea base, fase A, verificación A, fusión, criba, agregación, cartera, ciclo de la fase B e informe, en modo automático o manual.
+
+### Uso desde Python (hasta que llegue la interfaz)
+
+```python
+from tresia import perfiles
+from tresia.motor import Ejecucion, encuadre, fase_b, pasos
+from tresia.motor.flujo import avanzar
+from tresia.motor.llamadas import Recursos
+
+run = Ejecucion.crear("ejecuciones", "Mi caso")
+recursos = Recursos.desde_perfil(perfiles.cargar("pc"))   # o None para modo manual
+encuadre.ingestar(run, "Propuesta", "objeto", ruta="propuesta.md")
+encuadre.cerrar_ingesta(run)
+encuadre.responder_encuadre(run, {"objetivo": "..."})
+run.aprobar()                                             # ⛔ ficha
+encuadre.registrar_linea_base(run, ["opción obvia 1", "opción obvia 2"])
+estado = avanzar(run, recursos)                           # se detiene en cada ⛔
+```
+
 ### Modelos
 
 El perfil `perfiles/pc.toml` define los modelos A, B y C, el verificador y su respaldo. Los valores locales (dirección del servidor, modelos concretos, rutas) van en `perfiles/pc.local.toml`, que no se sube al repositorio. La clave de Gemini se lee de la variable de entorno `GEMINI_API_KEY` o del almacén de credenciales de Windows; nunca se guarda en disco.
