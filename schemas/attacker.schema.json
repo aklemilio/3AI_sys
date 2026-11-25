@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "attacker",
+  "title": "Salida del papel atacante (skills/attacker/SKILL.md)",
+  "type": "object",
+  "required": ["findings", "verdict"],
+  "properties": {
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "severity", "problem", "fix"],
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string", "minLength": 1},
+          "severity": {"enum": ["critical", "high", "medium", "low"]},
+          "section": {"type": "string"},
+          "face": {"type": "string"},
+          "problem": {"type": "string", "minLength": 1},
+          "fix": {"type": "string", "minLength": 1},
+          "support": {"type": "array", "items": {"$ref": "#/$defs/support"}}
+        }
+      }
+    },
+    "additions": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {"type": "object", "required": ["name"], "properties": {"name": {"type": "string"}, "description": {"type": "string"}, "why": {"type": "string"}}}
+    },
+    "verdict": {"enum": ["ready", "ready with conditions", "not ready"]},
+    "verdict_reason": {"type": "string"}
+  },
+  "$defs": {
+    "support": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {"enum": ["source", "reasoning"]},
+        "claim": {"type": "string"},
+        "url": {"type": "string"},
+        "fragment": {"type": "string"},
+        "premises": {"type": "array", "items": {"type": "string"}}
+      },
+      "allOf": [
+        {"if": {"properties": {"type": {"const": "source"}}},
+         "then": {"required": ["url", "fragment"], "properties": {"url": {"minLength": 1}, "fragment": {"minLength": 1}}}}
+      ]
+    }
+  }
+}

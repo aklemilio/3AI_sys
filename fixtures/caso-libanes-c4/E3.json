@@ -1,0 +1,768 @@
+{
+  "no_intervention_scenario": {
+    "summary": "Over the next 5 to 10 years without deliberate intervention, physical tape decay, broadcaster insolvency, urban-centric media homogenization, and unconsented commercial voice scraping will hollow out regional and generational Lebanese spoken varieties while privatizing whatever digitized speech remains.",
+    "what_is_lost": [
+      "Magnetic U-matic, Betacam, and reel-to-reel archives at public and private Lebanese broadcasters suffer irreversible binder hydrolysis and vinegar syndrome before rights disputes are resolved.",
+      "Distinct rural, mountain, Bekaa, northern, and southern micro-lexicons, prosodic contours, and occupational idioms collapse into a flattened Levantine-Beiruti media register.",
+      "Unscripted elder speech, oral poetry (zajal), and non-literate storytelling traditions vanish as older speakers pass away without intergenerational transmission mechanisms.",
+      "Publicly posted Lebanese voice clips on social platforms are scraped into proprietary commercial datasets, stripping local communities of attribution, governance, and economic return."
+    ],
+    "what_value_remains": [
+      "Intact everyday vernacular vitality in informal family networks, local markets, religious gatherings, and diaspora households where spoken Lebanese remains the primary medium of intimacy and humor.",
+      "Rich private family cassette, VHS, and smartphone voice-note collections held across Lebanon and the global diaspora.",
+      "Existing broadcaster master vaults, including Télé Liban's foundational audiovisual holdings, which retain high cultural value if rescued before physical failure.",
+      "Living oral performers, folk poets, craftspeople, and elders who still carry specialized registers and collective memory."
+    ],
+    "support": [
+      {
+        "type": "source",
+        "claim": "Télé Liban holds foundational audiovisual archives dating back to 1959 that represent major national social and cultural history.",
+        "url": "https://today.lorientlejour.com/article/1491476/tele-liban-nominated-for-inclusion-in-unescos-memory-of-the-world-register.html",
+        "fragment": "Founded in 1959 as the first public television station in the Arab world, Télé Liban preserves major audiovisual archives"
+      },
+      {
+        "type": "reasoning",
+        "claim": "Unmaintained magnetic media in hot, humid, or power-unstable storage environments degrades chemically within years, making legal clearance moot if physical carriers fail first.",
+        "premises": [
+          "Analog videotape and audiotape bases degrade through moisture absorption and chemical breakdown.",
+          "Chronic power outages and underfunded climate control in Lebanon accelerate storage instability.",
+          "Rights clearance for legacy broadcasts often takes years due to fragmented contracts."
+        ]
+      },
+      {
+        "type": "position",
+        "claim": "Spoken heritage has intrinsic civic and identity value to Lebanese communities regardless of its utility for commercial speech technologies."
+      }
+    ]
+  },
+  "faces_found": [
+    {
+      "face": "Lebanese statutory law as written",
+      "what_it_requires": "Compliance with Literary and Artistic Property Protection Law No. 75/1999 and Electronic Transactions and Personal Data Law No. 81/2018, which lack explicit text-and-data-mining exceptions, orphan-work safe harbors, or tailored cultural heritage archival exemptions."
+    },
+    {
+      "face": "EU data protection (GDPR) imposed by foreign funders",
+      "what_it_requires": "Lawful basis, explicit informed consent or strict public-interest archival safeguards, data minimization, cross-border transfer rules, and right-to-erasure workflows for identifiable voice recordings."
+    },
+    {
+      "face": "Real market practice of commercial web harvesting",
+      "what_it_requires": "Technical, contractual, and access-tier defenses against automated scraping of public audio/video repositories by commercial technology firms harvesting voice data without consent or compensation."
+    },
+    {
+      "face": "Copyright and broadcaster ownership of archives",
+      "what_it_requires": "Navigating overlapping neighboring rights of broadcasters, scriptwriters, composers, performers, and interviewees across state-owned and private bankrupt or restructured stations."
+    },
+    {
+      "face": "Physical carrier obsolescence and infrastructure precarity",
+      "what_it_requires": "Working playback decks, spare parts, stable electricity, and climate-controlled cold storage before analog tapes become unreadable."
+    },
+    {
+      "face": "Diglossia and urban linguistic prestige bias",
+      "what_it_requires": "Counteracting institutional habits that treat Modern Standard Arabic or elite Beiruti speech as worthy of preservation while dismissing rural, Bedouin, Armenian-Lebanese, or working-class accents as 'uneducated'."
+    },
+    {
+      "face": "Oral community norms and non-literate consent",
+      "what_it_requires": "Audio-recorded verbal consent protocols, family/village stewardship agreements, and honor-based attribution rather than inaccessible written legal forms."
+    }
+  ],
+  "options": [
+    {
+      "id": "O1",
+      "name": "Broadcaster Dark-Archive Escrow and Orphan-Work Safe Harbor",
+      "description": "Establish an independent national custodial trust that physically digitizes deteriorating radio and television tapes from public and private stations under sealed escrow before commercial rights are fully cleared. Broadcasters retain commercial exploitation rights while the trust gains statutory or contractual permission for preservation copying and non-commercial research access.",
+      "technique": "T1",
+      "chain_stage": "preserve",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": [
+        "State and private radio/TV broadcasters",
+        "National archival trust",
+        "University library preservation labs",
+        "Ministry of Culture"
+      ],
+      "who_benefits": [
+        "Future generations",
+        "Researchers and educators",
+        "Cash-strapped broadcasters whose tapes are decaying"
+      ],
+      "who_could_be_left_out": [
+        "Non-literate citizens if access portals require academic credentials",
+        "Informal local community voices never recorded by mainstream stations"
+      ],
+      "faces_affected": [
+        "Copyright and broadcaster ownership of archives",
+        "Lebanese statutory law as written",
+        "Physical carrier obsolescence and infrastructure precarity"
+      ],
+      "what_would_make_it_fail": "Broadcasters refusing physical handover due to fear of losing control over monetizable political or entertainment footage.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "Lebanon's intellectual property and personal data rules are governed by separate statutes that require structured legal accommodation for digital media.",
+          "url": "https://maharatfoundation.org/media/2654/dr-ali-rammal-eng.pdf",
+          "fragment": "Literary and Artistic Property Protection Law No. 75 dated 4/3/1999. Electronic Transactions and Personal Data Law No. 81 dated 1/10/2018."
+        },
+        {
+          "type": "reasoning",
+          "claim": "Separating physical preservation from commercial licensing prevents tape decay while rights disputes remain unresolved.",
+          "premises": [
+            "Digitization for preservation does not inherently require immediate public broadcast.",
+            "Escrow agreements reassure rights holders that commercial release remains gated."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O2",
+      "name": "Municipal Library Cassette and VHS Rescue Kiosks",
+      "description": "Equip municipal cultural centers, public libraries, and school hubs across rural districts with rugged, offline tape-to-digital transfer stations staffed by trained youth. Residents bring family weddings, village festivals, and elder interviews on cassette or VHS, receiving a free digital copy while optionally donating a copy under spoken-consent tiers.",
+      "technique": "T2",
+      "chain_stage": "record_or_rescue",
+      "scale": "region",
+      "depends_on_ai": false,
+      "actors": [
+        "Municipalities",
+        "Rural youth technicians",
+        "Elders and families",
+        "Local NGOs"
+      ],
+      "who_benefits": [
+        "Rural and regional communities",
+        "Low-income families without digitization equipment",
+        "Older people holding home media"
+      ],
+      "who_could_be_left_out": [
+        "Diaspora households abroad without local drop-off access",
+        "Families distrustful of municipal authorities"
+      ],
+      "faces_affected": [
+        "Physical carrier obsolescence and infrastructure precarity",
+        "Oral community norms and non-literate consent",
+        "EU data protection (GDPR) imposed by foreign funders"
+      ],
+      "what_would_make_it_fail": "Unreliable electricity at municipal centers or families fearing private domestic footage will leak online.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Decentralized regional transfer stations capture vernacular speech excluded from Beirut-based broadcast archives.",
+          "premises": [
+            "Commercial broadcasters disproportionately recorded urban and elite speech.",
+            "Home cassettes hold authentic local dialects and everyday conversation.",
+            "Free local transfer removes economic barriers for low-income households."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O3",
+      "name": "Kaitiakitanga-Style Sovereign Lebanese Voice Data License",
+      "description": "Adapt the Māori Kaitiakitanga guardianship license model into a bespoke Lebanese custodial license governing any digitized broadcast or community speech corpus. The license prohibits commercial harvesting, resale, or model training without explicit community governance approval and benefit-sharing, while permitting free educational and cultural use.",
+      "technique": "T4",
+      "chain_stage": "access",
+      "scale": "global",
+      "depends_on_ai": false,
+      "actors": [
+        "Legal scholars",
+        "Community heritage stewards",
+        "Broadcaster unions",
+        "Digital rights organizations"
+      ],
+      "who_benefits": [
+        "All Lebanese speech communities",
+        "Diaspora educators",
+        "Local creators protected from uncompensated scraping"
+      ],
+      "who_could_be_left_out": [
+        "Users outside formal institutions if enforcement relies solely on courtroom litigation"
+      ],
+      "faces_affected": [
+        "Real market practice of commercial web harvesting",
+        "Copyright and broadcaster ownership of archives",
+        "Lebanese statutory law as written"
+      ],
+      "what_would_make_it_fail": "Large commercial scrapers ignoring contractual terms unless paired with gated streaming and watermarking.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "Indigenous speech stewards have developed guardianship licenses where data is cared for under community sovereignty rather than surrendered to open scraping.",
+          "url": "https://kiwidynamics.co.nz/maori-ai/frameworks/kaitiakitanga-license/",
+          "fragment": "A licence developed by Te Hiku Media under which data is not owned but cared"
+        },
+        {
+          "type": "position",
+          "claim": "Cultural voice archives should be governed as a guarded commons rather than surrendered to extractive open-web licensing."
+        }
+      ]
+    },
+    {
+      "id": "O4",
+      "name": "Acoustic-First Voice Archive for Non-Literate Users",
+      "description": "Design the entire discovery, consent, cataloging, and playback experience around spoken audio prompts, voice navigation, and iconographic maps rather than written Arabic or Latin text. Elders and non-literate speakers browse recordings by tapping village landmarks, occupations, or seasonal themes and record spoken tags in their own dialect.",
+      "technique": "T6",
+      "chain_stage": "describe",
+      "scale": "nation",
+      "depends_on_ai": true,
+      "actors": [
+        "Interaction designers",
+        "Speech-interface engineers",
+        "Non-literate elders",
+        "Rural community facilitators"
+      ],
+      "who_benefits": [
+        "People who do not read or write",
+        "Older people with visual or literacy barriers",
+        "Dialect speakers whose vocabulary lacks standardized spelling"
+      ],
+      "who_could_be_left_out": [
+        "Users on ultra-basic 2G feature phones without smartphone or kiosk access",
+        "Deaf and hard-of-hearing users unless paired with visual sign/text layers"
+      ],
+      "faces_affected": [
+        "Oral community norms and non-literate consent",
+        "Diglossia and urban linguistic prestige bias"
+      ],
+      "what_would_make_it_fail": "Off-the-shelf speech recognition failing on rural Lebanese phonology, frustrating non-literate users.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Text-dependent metadata systems structurally exclude non-literate speakers from describing and retrieving their own oral heritage.",
+          "premises": [
+            "Lebanese Arabic has no single standardized orthography.",
+            "Requiring typed metadata privileges educated urban catalogers over native rural speakers."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O5",
+      "name": "Diaspora-to-Village Voice-Note Oral History Circles",
+      "description": "Run structured, low-bandwidth asynchronous audio exchange circles over encrypted messaging apps connecting diaspora grandchildren with grandparents in Lebanese villages. Weekly spoken prompts trigger story recordings about local proverbs, recipes, and place names, which are archived with spoken consent in family and village collections.",
+      "technique": "T2",
+      "chain_stage": "transmit",
+      "scale": "diaspora",
+      "depends_on_ai": false,
+      "actors": [
+        "Diaspora youth and parents",
+        "Older relatives in Lebanon",
+        "Hometown diaspora associations"
+      ],
+      "who_benefits": [
+        "Diaspora youth losing fluency",
+        "Older people experiencing isolation",
+        "Household-level lineages"
+      ],
+      "who_could_be_left_out": [
+        "Families without diaspora ties or reliable mobile data",
+        "Public researchers if families keep circles strictly private"
+      ],
+      "faces_affected": [
+        "EU data protection (GDPR) imposed by foreign funders",
+        "Oral community norms and non-literate consent"
+      ],
+      "what_would_make_it_fail": "Platform lock-in on proprietary messaging apps where exported audio loses context or gets deleted when phones break.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Everyday messaging voice notes already serve as Lebanon's largest living spoken-language medium across borders.",
+          "premises": [
+            "Voice notes require zero literacy and work on low-cost smartphones.",
+            "Intergenerational family curiosity creates intrinsic motivation without external subsidies."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O6",
+      "name": "Hyper-Local Dialect Community Radio Network",
+      "description": "Inspired by Ireland's Raidió na Gaeltachta, establish low-power regional FM and internet radio blocks dedicated exclusively to unscripted local speech, storytelling, call-in debates, and folk music in regional Lebanese dialects without switching to Modern Standard Arabic or Beiruti media norms.",
+      "technique": "T4",
+      "chain_stage": "keep_alive",
+      "scale": "region",
+      "depends_on_ai": false,
+      "actors": [
+        "Community radio producers",
+        "Local storytellers and call-in listeners",
+        "Regional cultural clubs",
+        "Diaspora web listeners"
+      ],
+      "who_benefits": [
+        "Rural and regional communities",
+        "Older people and non-literate listeners",
+        "Low-income households using inexpensive FM radios"
+      ],
+      "who_could_be_left_out": [
+        "Urban audiences unfamiliar with dense rural idioms unless contextualized"
+      ],
+      "faces_affected": [
+        "Diglossia and urban linguistic prestige bias",
+        "Lebanese statutory law as written"
+      ],
+      "what_would_make_it_fail": "Broadcast licensing bottlenecks under Lebanese audiovisual media laws or advertiser pressure to standardize speech.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "Dedicated vernacular broadcasting sustains living spoken registers by validating regional speech on air.",
+          "url": "https://irishradiolive.com/raidio-na-gaeltachta",
+          "fragment": "Raidió na Gaeltachta is Ireland's Irish language radio service, broadcasting exclusively in Irish."
+        },
+        {
+          "type": "reasoning",
+          "claim": "FM radio reaches non-literate, low-income, and elderly residents without requiring internet connectivity.",
+          "premises": [
+            "FM receivers are low-cost and battery-operable during power cuts.",
+            "Hearing one's own village accent on broadcast radio reverses linguistic stigma."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O7",
+      "name": "Premise-Inversion Audit of Live Vernacular Vitality",
+      "description": "Before launching costly rescue drives, commission sociolinguistic field mapping across markets, TikTok/YouTube creators, gaming lobbies, and rural schools to test where spoken Lebanese is actually thriving or evolving rather than dying. Redirect preservation funds strictly toward documented endangered registers (e.g., disappearing artisanal trades, elderly village speech) instead of already-vibrant urban slang.",
+      "technique": "T3",
+      "chain_stage": "find",
+      "scale": "nation",
+      "depends_on_ai": true,
+      "actors": [
+        "Sociolinguists",
+        "Youth content creators",
+        "Field interviewers",
+        "Cultural funding bodies"
+      ],
+      "who_benefits": [
+        "Truly endangered micro-dialects that would otherwise be drowned out",
+        "Funders avoiding wasted spend on self-sustaining urban speech"
+      ],
+      "who_could_be_left_out": [
+        "Hidden domestic registers not visible in public spaces or social media"
+      ],
+      "faces_affected": [
+        "Diglossia and urban linguistic prestige bias",
+        "Real market practice of commercial web harvesting"
+      ],
+      "what_would_make_it_fail": "Over-relying on online social media metrics, which falsely suggest vitality while masking offline rural language shift.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Assuming uniform loss across all registers misallocates scarce preservation resources.",
+          "premises": [
+            "Urban Lebanese is heavily represented on digital entertainment platforms.",
+            "Specialized rural, agricultural, and minority communal registers lack commercial media presence."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O8",
+      "name": "Live Zajal and Folk-Poetry Apprenticeship Stipends",
+      "description": "Fund paid master-apprentice pairings between elder zajal poets, hakawati storytellers, and lament singers and young performers in regional towns, culminating in live public performances. Transmission happens embodied and face-to-face without requiring digital platforms or AI.",
+      "technique": "T5",
+      "chain_stage": "transmit",
+      "scale": "neighbourhood",
+      "depends_on_ai": false,
+      "actors": [
+        "Master zajal poets and storytellers",
+        "Young apprentices",
+        "Village festivals and coffeehouses",
+        "Cultural patrons"
+      ],
+      "who_benefits": [
+        "Older oral artists gaining income and recognition",
+        "Youth in low-income regions learning live rhetorical craft",
+        "Local audiences"
+      ],
+      "who_could_be_left_out": [
+        "Diaspora communities unable to attend live regional gatherings"
+      ],
+      "faces_affected": [
+        "Diglossia and urban linguistic prestige bias",
+        "Oral community norms and non-literate consent"
+      ],
+      "what_would_make_it_fail": "Short-term 6-month grant cycles ending before apprentices master improvisational meter and vocabulary.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Improvisational oral genres survive through active performance ecosystems rather than passive archival storage.",
+          "premises": [
+            "Zajal relies on real-time audience call-and-response and tonal wit.",
+            "Archiving recordings without living practitioners turns a living art into a museum artifact."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O9",
+      "name": "Broadcaster Archive Audio-Fingerprint and Watermark Shield",
+      "description": "Embed imperceptible acoustic watermarks and deploy stream-only low-bitrate players with rate-limiting when broadcasters or heritage portals publish digitized Lebanese radio/TV clips online. This allows public listening by citizens and diaspora while deterring bulk automated harvesting by commercial speech-model scrapers.",
+      "technique": "T6",
+      "chain_stage": "access",
+      "scale": "global",
+      "depends_on_ai": true,
+      "actors": [
+        "Broadcaster digital teams",
+        "Audio security engineers",
+        "Archive platform operators"
+      ],
+      "who_benefits": [
+        "Broadcasters worried about losing IP value",
+        "Community speakers protected from unauthorized voice cloning",
+        "Public listeners"
+      ],
+      "who_could_be_left_out": [
+        "Offline rural users and educators needing downloadable classroom files"
+      ],
+      "faces_affected": [
+        "Real market practice of commercial web harvesting",
+        "Copyright and broadcaster ownership of archives"
+      ],
+      "what_would_make_it_fail": "Overly restrictive DRM breaking playback on older smartphones or slow rural internet connections.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Broadcasters withhold archives from public access largely because open web audio is immediately scraped by commercial actors.",
+          "premises": [
+            "Unprotected audio URLs can be downloaded at scale in hours.",
+            "Technical friction and provenance watermarks reduce broadcaster reluctance to open archives."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O10",
+      "name": "Occupational Soundscapes and Craft Lexicon Field Recording",
+      "description": "Deploy mobile recording teams to document disappearing workplace speech—stone masons, silk weavers, olive pressers, fishermen, and traditional bakers—capturing tool names, calls, bargaining idioms, and workplace humor on site.",
+      "technique": "T1",
+      "chain_stage": "find",
+      "scale": "region",
+      "depends_on_ai": false,
+      "actors": [
+        "Artisans and guild workers",
+        "Ethnographers and sound recordists",
+        "Vocational schools"
+      ],
+      "who_benefits": [
+        "Working-class and non-literate craftspeople",
+        "Future generations learning material culture",
+        "Linguists studying technical vernaculars"
+      ],
+      "who_could_be_left_out": [
+        "Domestic and unpaid care-work speech inside households"
+      ],
+      "faces_affected": [
+        "Diglossia and urban linguistic prestige bias",
+        "Oral community norms and non-literate consent"
+      ],
+      "what_would_make_it_fail": "Recording staged interviews instead of natural multi-speaker work interactions.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Technical and artisanal vocabulary disappears fastest when traditional industries mechanize or close.",
+          "premises": [
+            "Broadcast media rarely covers manual trades in authentic detail.",
+            "Lexical items tied to physical tools vanish once the tools leave daily use."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O11",
+      "name": "GDPR-Compliant Federated Local Data Residency Pods",
+      "description": "Keep raw identifiable voice recordings and spoken consent records stored on encrypted servers physically or legally governed in Lebanon under community trusteeship, while exposing only anonymized, consent-verified metadata or aggregated linguistic features to EU-funded international partners.",
+      "technique": "T6",
+      "chain_stage": "preserve",
+      "scale": "global",
+      "depends_on_ai": false,
+      "actors": [
+        "Local university data centers",
+        "Foreign cultural funders",
+        "Privacy compliance officers",
+        "Community stewards"
+      ],
+      "who_benefits": [
+        "Speakers whose biometric voice data stays under local control",
+        "Local projects needing foreign grants without surrendering raw data"
+      ],
+      "who_could_be_left_out": [
+        "Grassroots groups lacking technical staff to maintain federated infrastructure"
+      ],
+      "faces_affected": [
+        "EU data protection (GDPR) imposed by foreign funders",
+        "Lebanese statutory law as written",
+        "Real market practice of commercial web harvesting"
+      ],
+      "what_would_make_it_fail": "Power and connectivity outages in Lebanon making locally hosted pods unreachable without resilient solar-backed mirror nodes.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Separating raw voice custody from external research access resolves conflicts between foreign funder privacy rules and local data sovereignty.",
+          "premises": [
+            "GDPR imposes strict requirements on cross-border transfers of identifiable biometric voice data.",
+            "Federated access allows verification and scholarship without exporting raw files."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O12",
+      "name": "Dialect-Aware Automatic Alignment of Legacy Broadcasts",
+      "description": "Use speech-to-text and speaker-diarization models fine-tuned on regional Lebanese phonology solely as an internal indexing assistant to generate searchable time-coded transcripts and phonetic tags for thousands of hours of uncataloged radio/TV tapes, reviewed by human dialect speakers.",
+      "technique": "T1",
+      "chain_stage": "describe",
+      "scale": "nation",
+      "depends_on_ai": true,
+      "actors": [
+        "Archive catalogers",
+        "Computational linguists",
+        "Regional native-speaker reviewers",
+        "Broadcaster archive units"
+      ],
+      "who_benefits": [
+        "Researchers, journalists, and educators searching vast unindexed tapes",
+        "Broadcasters unlocking buried cultural programming"
+      ],
+      "who_could_be_left_out": [
+        "Speakers of minority dialects if models hallucinate standard spellings and erase regional pronunciation"
+      ],
+      "faces_affected": [
+        "Copyright and broadcaster ownership of archives",
+        "Diglossia and urban linguistic prestige bias"
+      ],
+      "what_would_make_it_fail": "Treating noisy automated transcripts as authoritative text and discarding original audio nuances.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Manual transcription of decades of broadcast tapes is prohibitively slow without automated first-pass indexing.",
+          "premises": [
+            "Broadcasters hold tens of thousands of uncataloged audio-visual hours.",
+            "Human-in-the-loop review corrects dialectal transcription errors while accelerating discovery."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O13",
+      "name": "Household Kitchen-Table Proverb and Recipe Decks",
+      "description": "Publish illustrated, phonetically intuitive card decks and audio-QR booklets of hyper-local proverbs, lullabies, curses, and seasonal food idioms collected within extended families, designed for dinner-table games across generations in Lebanon and the diaspora.",
+      "technique": "T2",
+      "chain_stage": "keep_alive",
+      "scale": "household",
+      "depends_on_ai": false,
+      "actors": [
+        "Parents and grandparents",
+        "Illustrators and folklorists",
+        "Independent local presses",
+        "Diaspora bookstores"
+      ],
+      "who_benefits": [
+        "Children in Lebanon and diaspora households",
+        "Older family members positioned as household authorities"
+      ],
+      "who_could_be_left_out": [
+        "Non-literate adults if cards rely heavily on reading rather than audio playback"
+      ],
+      "faces_affected": [
+        "Diglossia and urban linguistic prestige bias",
+        "Oral community norms and non-literate consent"
+      ],
+      "what_would_make_it_fail": "Sanitizing earthy, humorous, or politically sharp folk expressions into bland tourist souvenirs.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Playful domestic artifacts trigger spontaneous spoken use inside families far more reliably than formal curricula.",
+          "premises": [
+            "Proverbs and food idioms naturally surface during shared meals.",
+            "Physical decks work without electricity or internet access."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O14",
+      "name": "Micro-Payment Voice Royalties for Broadcaster and Elder Contributors",
+      "description": "Create a collective licensing clearinghouse that charges commercial media producers, filmmakers, and vetted language-technology licensees a usage fee for authenticated Lebanese archival and community speech, routing micro-royalties back to surviving performers, rural contributors, and broadcaster preservation funds.",
+      "technique": "T6",
+      "chain_stage": "record_or_rescue",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": [
+        "Collective rights management society",
+        "Broadcasters",
+        "Voice contributors and elders",
+        "Film and media producers"
+      ],
+      "who_benefits": [
+        "Low-income contributors and elders receiving direct income",
+        "Broadcasters gaining a self-financing preservation revenue stream"
+      ],
+      "who_could_be_left_out": [
+        "Contributors without bank accounts or formal ID if payment rails require formal banking"
+      ],
+      "faces_affected": [
+        "Copyright and broadcaster ownership of archives",
+        "Lebanese statutory law as written",
+        "Real market practice of commercial web harvesting"
+      ],
+      "what_would_make_it_fail": "High administrative overhead consuming royalty pools or lack of mobile-cash payout mechanisms in rural areas.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Economic return aligns the incentives of cash-strapped broadcasters and low-income speakers with active preservation.",
+          "premises": [
+            "Uncompensated extraction breeds distrust among speakers and archive owners.",
+            "Collective licensing is a proven mechanism for pooling fragmented neighboring rights."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O15",
+      "name": "School Oral-History Curriculum Without Written Exams",
+      "description": "Integrate a mandatory middle-school civics and heritage module across public and private schools where students interview an older neighbor or relative in their home dialect about local history, agriculture, or migration, presenting an audio portrait to the class without correcting their dialect into Standard Arabic.",
+      "technique": "T5",
+      "chain_stage": "transmit",
+      "scale": "neighbourhood",
+      "depends_on_ai": false,
+      "actors": [
+        "Public and private school teachers",
+        "Students",
+        "Older neighbors and relatives",
+        "Center for Educational Research and Development"
+      ],
+      "who_benefits": [
+        "School-age youth",
+        "Older people and non-literate community elders",
+        "Low-income public school communities"
+      ],
+      "who_could_be_left_out": [
+        "Out-of-school working children and diaspora youth outside Lebanese curricula"
+      ],
+      "faces_affected": [
+        "Diglossia and urban linguistic prestige bias",
+        "Oral community norms and non-literate consent"
+      ],
+      "what_would_make_it_fail": "Teachers grading dialect speech against Modern Standard Arabic grammar rules, reinforcing linguistic shame.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "School validation legitimizes home dialects in front of adolescents at the exact age when peer pressure drives accent leveling.",
+          "premises": [
+            "Schools historically stigmatize regional vernaculars in favor of Modern Standard Arabic or foreign languages.",
+            "Non-exam oral projects include students and elders regardless of reading proficiency."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O16",
+      "name": "Solar-Powered Offline Village Audio Boxes",
+      "description": "Deploy rugged, solar-charged offline media servers with physical buttons and loudspeakers in village squares, clinics, and agricultural cooperatives, preloaded with regional folk tales, archival radio dramas, and oral histories accessible via local Wi-Fi or shared listening without internet.",
+      "technique": "T5",
+      "chain_stage": "access",
+      "scale": "neighbourhood",
+      "depends_on_ai": false,
+      "actors": [
+        "Village cooperatives",
+        "Hardware makers",
+        "Local archivists",
+        "Older residents"
+      ],
+      "who_benefits": [
+        "Low-income residents without mobile data plans",
+        "People who do not read or write",
+        "Rural communities facing power and telecom outages"
+      ],
+      "who_could_be_left_out": [
+        "Diaspora communities outside physical range of the village box"
+      ],
+      "faces_affected": [
+        "Physical carrier obsolescence and infrastructure precarity",
+        "Real market practice of commercial web harvesting"
+      ],
+      "what_would_make_it_fail": "Lack of local maintenance or content becoming stale without periodic physical USB updates.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Air-gapped community audio boxes guarantee universal local access while physically preventing remote web scraping.",
+          "premises": [
+            "Rural internet connectivity in Lebanon can be costly or intermittent.",
+            "Air-gapped local servers cannot be crawled by global web harvesters."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O17",
+      "name": "Interactive Acoustic Dialect Atlas and Phonetic Comparison Map",
+      "description": "Build a public web and mobile acoustic map where users tap villages across Lebanon to hear parallel recordings of identical everyday sentences, folk terms, and vowel shifts spoken by different generations, visualizing how pronunciation and vocabulary shift across valleys and eras.",
+      "technique": "T2",
+      "chain_stage": "describe",
+      "scale": "global",
+      "depends_on_ai": true,
+      "actors": [
+        "Dialectologists",
+        "Web cartographers",
+        "Volunteer regional speakers",
+        "Diaspora learners"
+      ],
+      "who_benefits": [
+        "Diaspora communities reconnecting with ancestral villages",
+        "Students, linguists, and curious citizens",
+        "Regional speakers seeing their village represented"
+      ],
+      "who_could_be_left_out": [
+        "Non-literate users if map labels rely only on written text",
+        "Villages with small populations omitted due to sparse sampling"
+      ],
+      "faces_affected": [
+        "Diglossia and urban linguistic prestige bias",
+        "Real market practice of commercial web harvesting"
+      ],
+      "what_would_make_it_fail": "Essentializing each village into a single static stereotype rather than showing generational and social variation.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Geographic audio comparison makes subtle phonological diversity tangible and celebratory for non-specialists.",
+          "premises": [
+            "Hearing side-by-side village pronunciations highlights heritage richness faster than written phonetic tables."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O18",
+      "name": "Acoustic Restoration of Damaged Magnetic Broadcast Tapes",
+      "description": "Apply specialized audio-restoration signal processing to remove wow-and-flutter, tape hiss, hum, and print-through from degraded radio dramas, political speeches, and folk broadcasts, preserving both the raw archival master and a clean listening master.",
+      "technique": "T7",
+      "chain_stage": "preserve",
+      "scale": "nation",
+      "depends_on_ai": true,
+      "actors": [
+        "Audio restoration engineers",
+        "Broadcaster archive technicians",
+        "Sound preservation labs"
+      ],
+      "who_benefits": [
+        "Older listeners with hearing loss needing clear speech intelligibility",
+        "Future generations accessing otherwise unintelligible recordings"
+      ],
+      "who_could_be_left_out": [
+        "Phonetic researchers if aggressive noise reduction alters fricatives and glottal stops and raw masters are not kept"
+      ],
+      "faces_affected": [
+        "Physical carrier obsolescence and infrastructure precarity",
+        "Copyright and broadcaster ownership of archives"
+      ],
+      "what_would_make_it_fail": "Over-processing audio until subtle dialectal consonants are distorted or discarding unedited raw transfers.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Degraded legacy recordings remain unusable for public transmission unless intelligibility is restored while retaining unedited masters.",
+          "premises": [
+            "Decades-old broadcast tapes often suffer speed drift and heavy noise.",
+            "Dual-file archiving (raw master plus restored listening copy) protects both linguistic fidelity and public usability."
+          ]
+        }
+      ]
+    }
+  ]
+}

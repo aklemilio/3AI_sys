@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "builder",
+  "title": "Bloque JSON del constructor (skills/builder/SKILL.md); el entregable va aparte en Markdown",
+  "type": "object",
+  "required": ["changes"],
+  "properties": {
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["change", "addresses"],
+        "properties": {
+          "section": {"type": "string"},
+          "change": {"type": "string", "minLength": 1},
+          "addresses": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "merges": {"type": "array", "items": {"type": "object", "required": ["programme", "options"]}},
+    "deferred": {"type": "array", "items": {"type": "object", "required": ["option", "reason"]}},
+    "builder_decisions_without_instruction": {"type": "array", "items": {"type": "string"}},
+    "open_questions_for_owner": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "verifier-merge",
+  "title": "Tarea merge del verificador (skills/verifier/SKILL.md)",
+  "type": "object",
+  "required": ["groups"],
+  "properties": {
+    "groups": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "members", "matches_baseline"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "name": {"type": "string", "minLength": 1},
+          "members": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^E[0-9]+:O[0-9]+$"}},
+          "matches_baseline": {"type": "boolean"}
+        }
+      }
+    }
+  }
+}

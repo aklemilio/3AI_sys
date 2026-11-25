@@ -1,0 +1,1561 @@
+{
+  "no_intervention_scenario": {
+    "summary": "Between 2026 and 2036, without a dedicated preservation initiative, spoken Lebanese could continue evolving and thriving in everyday conversation while particular historical recordings, regional expressions, oral traditions and intergenerational practices become less accessible. The disappearance of a cultural practice, the disappearance of evidence of that practice, and the natural evolution of language are three different phenomena. This is a conditional scenario, not an established forecast.",
+    "what_is_lost": [
+      "Potentially irreplaceable radio and television recordings through deterioration, deletion, institutional closure or equipment obsolescence.",
+      "Context surrounding surviving recordings, including the circumstances, meanings and cultural functions of particular expressions.",
+      "Opportunities to document oral knowledge before its current holders are no longer available.",
+      "Certain regional, occupational, agricultural, humorous and domestic registers that may receive limited public representation.",
+      "Opportunities for children and diaspora communities to encounter multiple generations and varieties of spoken Lebanese.",
+      "Community control over cultural material that might survive principally through commercial platforms."
+    ],
+    "what_value_remains": [
+      "Lebanese as a living and evolving means of communication.",
+      "Family memories and privately retained recordings.",
+      "Existing broadcaster, university, institutional and community collections.",
+      "Contemporary music, comedy, theatre, podcasts and social media.",
+      "Diaspora varieties and newly emerging expressions.",
+      "The capacity of future generations to create, reinterpret and transmit cultural practices."
+    ],
+    "support": [
+      {
+        "type": "reasoning",
+        "claim": "A language can remain widely spoken while losing particular registers, historical evidence or cultural functions.",
+        "premises": [
+          "The vitality of a language is not equivalent to the survival of every variety or practice associated with it.",
+          "Different linguistic registers serve different social environments.",
+          "Changes in those environments can affect registers independently."
+        ]
+      },
+      {
+        "type": "reasoning",
+        "claim": "Non-intervention does not necessarily imply linguistic disappearance.",
+        "premises": [
+          "Informal cultural transmission can occur without organized preservation programmes.",
+          "Language communities can generate new cultural forms.",
+          "The actual direction and magnitude of change in Lebanese require empirical investigation."
+        ]
+      },
+      {
+        "type": "position",
+        "claim": "Preservation should retain cultural diversity and freedom to evolve rather than enforce an allegedly authentic or pure Lebanese."
+      }
+    ]
+  },
+  "faces_found": [
+    {
+      "face": "Lebanese personal data law",
+      "what_it_requires": "Examine Law No. 81/2018, including lawful processing, applicable declarations or authorizations, data-subject rights, security obligations and relevant exceptions. Determine applicability separately for collection, preservation, publication and international transfer.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "Lebanese legislation contains specific provisions governing personal data processing.",
+          "url": "https://lebaneselegislation.com/en/law/278573/",
+          "fragment": "The personal data processing controller"
+        }
+      ]
+    },
+    {
+      "face": "GDPR and foreign funding conditions",
+      "what_it_requires": "Distinguish direct GDPR applicability from contractual obligations imposed by foreign funders. Examine lawful bases, purpose limitation, data minimization, retention, international transfers, security and safeguards for historical archiving. Do not assume that public-interest archiving automatically overrides other obligations.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "GDPR Article 89 expressly addresses public-interest archiving and requires safeguards.",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1526560528451&uri=CELEX%3A32016R0679",
+          "fragment": "shall be subject to appropriate safeguards"
+        }
+      ]
+    },
+    {
+      "face": "Copyright and broadcaster ownership",
+      "what_it_requires": "Distinguish ownership of physical recordings from copyright, broadcasting rights, performers' rights, music rights and contractual restrictions. Determine whether permissions cover digitization, preservation, research, public playback, educational reuse and redistribution separately.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "Lebanese copyright legislation expressly addresses copyright and related rights.",
+          "url": "https://www.wipo.int/wipolex/en/legislation/details/2786",
+          "fragment": "Copyright and Related Rights (Neighboring Rights)"
+        },
+        {
+          "type": "reasoning",
+          "claim": "Possession of a recording should not be treated as proof of authority to authorize every subsequent use.",
+          "premises": [
+            "A recording may incorporate contributions from multiple rights holders.",
+            "Ownership of a physical carrier and ownership of intellectual property are distinct questions."
+          ]
+        }
+      ]
+    },
+    {
+      "face": "Commercial data harvesting and platform behaviour",
+      "what_it_requires": "Distinguish publicly accessible listening from permission for bulk extraction, commercial exploitation, machine learning and voice cloning. Evaluate access controls and contractual protections without assuming that they can prevent all unauthorized copying.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Public accessibility can create extraction opportunities independently of whether extraction is authorized.",
+          "premises": [
+            "Internet-accessible recordings can potentially be captured or copied.",
+            "Legal restrictions and technical accessibility are separate mechanisms.",
+            "Commercial actors may have incentives to acquire reusable audiovisual material."
+          ]
+        }
+      ]
+    },
+    {
+      "face": "Voice identity and biometric processing",
+      "what_it_requires": "Recognize that identifiable voices may constitute personal data. Distinguish ordinary recordings from biometric processing undertaken to uniquely identify individuals. Consider impersonation risks and restrictions on secondary uses.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "GDPR specifically addresses biometric data used for unique identification.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2016/679/",
+          "fragment": "biometric data for the purpose of uniquely identifying a natural person"
+        }
+      ]
+    },
+    {
+      "face": "Community authority and cultural ethics",
+      "what_it_requires": "Enable communities to determine what can be recorded, shared, restricted, contextualized or left undocumented. Consider collective cultural expectations in addition to individual legal permissions.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "UNESCO's safeguarding framework recognizes community participation.",
+          "url": "https://www.unesco.org/en/legal-affairs/convention-safeguarding-intangible-cultural-heritage",
+          "fragment": "with the participation of communities, groups and relevant non-governmental organizations"
+        },
+        {
+          "type": "position",
+          "claim": "Legal permission alone should not settle every ethical question about cultural material."
+        }
+      ]
+    },
+    {
+      "face": "Physical and digital continuity",
+      "what_it_requires": "Plan for equipment obsolescence, storage failures, electricity interruptions, institutional instability, displacement, migration between formats and succession of custodians.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Preservation requires continuing custody rather than a one-time recording exercise.",
+          "premises": [
+            "Physical and digital storage media can fail.",
+            "Access depends on functioning playback systems.",
+            "Institutions responsible for collections may change or disappear."
+          ]
+        }
+      ]
+    },
+    {
+      "face": "Economic sustainability and institutional incentives",
+      "what_it_requires": "Account for broadcaster revenues, preservation costs, contributor compensation, recurring operating expenditure and dependence on temporary grants.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "An institution may possess culturally valuable material without having the resources or incentives to preserve it.",
+          "premises": [
+            "Preservation involves expenditure and staff time.",
+            "Cultural value does not necessarily generate financial returns for the custodian."
+          ]
+        }
+      ]
+    },
+    {
+      "face": "Accessibility and distributive justice",
+      "what_it_requires": "Provide meaningful participation and access regardless of literacy, income, disability, age, geography, connectivity or familiarity with digital services.",
+      "support": [
+        {
+          "type": "position",
+          "claim": "Access to spoken cultural heritage should not depend exclusively on reading ability, smartphone ownership or purchasing power."
+        }
+      ]
+    },
+    {
+      "face": "Political sensitivity and participant safety",
+      "what_it_requires": "Consider whether historical or contemporary material could expose speakers or communities to stigma, retaliation, unwanted identification or decontextualized political interpretation. Allow restricted custody and delayed release.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Making previously obscure material discoverable can change its consequences for the people represented.",
+          "premises": [
+            "Publication changes the size and composition of an audience.",
+            "Historical statements may be interpreted outside their original circumstances.",
+            "Voice and contextual information may permit identification."
+          ]
+        }
+      ]
+    },
+    {
+      "face": "Linguistic representation and cultural legitimacy",
+      "what_it_requires": "Avoid treating one regional, urban, class-based, generational or orthographic variety as the sole legitimate form of Lebanese. Include multilingual practices and code-switching without automatically classifying them as deterioration.",
+      "support": [
+        {
+          "type": "position",
+          "claim": "Living linguistic diversity is itself a preservation value."
+        }
+      ]
+    },
+    {
+      "face": "Intergenerational stewardship",
+      "what_it_requires": "Provide succession arrangements, durable documentation, future rights review and mechanisms allowing subsequent generations to interpret and govern inherited collections.",
+      "support": [
+        {
+          "type": "position",
+          "claim": "Future generations should inherit usable cultural resources and meaningful choices about their management."
+        }
+      ]
+    }
+  ],
+
+  "options": [
+    {
+      "id": "O1",
+      "name": "National Map of Broadcast Archives",
+      "description": "Create an inventory of audiovisual collections held by public and private television stations, national and regional radio stations, discontinued broadcasters and independent production companies. Document collection-level information about formats, periods, programme types, preservation conditions, ownership and accessibility without publishing recordings or personal data. Connect this inventory to existing preservation initiatives rather than assuming that preservation work must start from zero.",
+      "technique": "T1",
+      "chain_stage": "find",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": [
+        "Télé Liban",
+        "Radio Liban",
+        "Private television broadcasters",
+        "Commercial and regional radio stations",
+        "Independent production companies",
+        "Ministry of Information",
+        "Fondation Liban Cinéma",
+        "University archives"
+      ],
+      "who_benefits": [
+        "Archivists",
+        "Broadcasters",
+        "Researchers",
+        "Regional communities",
+        "Future generations"
+      ],
+      "who_could_be_left_out": [
+        "Informal broadcasters",
+        "Defunct stations without identifiable institutional successors",
+        "Communities historically absent from broadcasting"
+      ],
+      "faces_affected": [
+        "Copyright and broadcaster ownership",
+        "Economic sustainability and institutional incentives",
+        "Physical and digital continuity"
+      ],
+      "what_would_make_it_fail": "Broadcasters decline participation, inventories omit important collections, or information becomes outdated without an assigned custodian.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "An existing UNESCO-supported initiative already addresses Télé Liban's archival preservation.",
+          "url": "https://www.unesco.org/en/articles/milestone-lebanon-tele-libans-archives-submitted-unesco-memory-world-programme",
+          "fragment": "the digitization of the archives, the provision of specialized equipment"
+        },
+        {
+          "type": "reasoning",
+          "claim": "A collection-level inventory can identify preservation opportunities before individual recordings are digitized.",
+          "premises": [
+            "Recording locations and conditions must be known before rescue can be organized.",
+            "Collection-level descriptions can be produced without publicly disclosing recording contents."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O2",
+      "name": "Community Attics and Forgotten Recordings",
+      "description": "Organize local discovery campaigns for privately held cassettes, home videos, recorded radio programmes, wedding recordings, storytelling sessions and family correspondence in audio form. Use municipal announcements, community radio and in-person visits so participation does not require internet access or literacy. Record only collection-level information initially and seek separate permissions before copying or accessing contents.",
+      "technique": "T1",
+      "chain_stage": "find",
+      "scale": "neighbourhood",
+      "depends_on_ai": false,
+      "actors": [
+        "Households",
+        "Municipalities",
+        "Retired broadcasting personnel",
+        "Local associations",
+        "Photography and recording studios",
+        "Community radio stations"
+      ],
+      "who_benefits": [
+        "Older people",
+        "Non-literate contributors",
+        "Families",
+        "Communities underrepresented in institutional archives"
+      ],
+      "who_could_be_left_out": [
+        "Socially isolated households",
+        "Displaced families",
+        "People reluctant to disclose private holdings"
+      ],
+      "faces_affected": [
+        "Lebanese personal data law",
+        "Copyright and broadcaster ownership",
+        "Community authority and cultural ethics",
+        "Accessibility and distributive justice"
+      ],
+      "what_would_make_it_fail": "People associate participation with confiscation, surveillance or unwanted publication, or the campaign discovers recordings without providing a credible rescue pathway.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Household collections could contain cultural evidence absent from institutional archives.",
+          "premises": [
+            "Institutional broadcasting and private recording serve different purposes.",
+            "Families may record occasions that broadcasters do not cover.",
+            "Some privately recorded broadcasts may no longer survive in their original institutional collections."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O3",
+      "name": "Measure Change Before Declaring Loss",
+      "description": "Investigate whether Lebanese speech is actually becoming less diverse, or whether diversity is moving into new settings and forms. Compare comparable historical and contemporary material across regions, generations and communication contexts using aggregate findings. Examine newly emerging expressions, code-switching and diaspora innovation alongside possible declines.",
+      "technique": "T3",
+      "chain_stage": "find",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": [
+        "Sociolinguists",
+        "Anthropologists",
+        "Regional universities",
+        "Community associations",
+        "Broadcasters",
+        "Youth cultural organizations"
+      ],
+      "who_benefits": [
+        "Contemporary speakers",
+        "Regional communities",
+        "Young people",
+        "Cultural policymakers"
+      ],
+      "who_could_be_left_out": [
+        "People outside institutional research networks",
+        "Non-literate speakers",
+        "Communities with little surviving historical evidence"
+      ],
+      "faces_affected": [
+        "Linguistic representation and cultural legitimacy",
+        "Lebanese personal data law",
+        "GDPR and foreign funding conditions",
+        "Community authority and cultural ethics"
+      ],
+      "what_would_make_it_fail": "Incomparable historical samples, inappropriate indicators or researcher assumptions mistake ordinary linguistic evolution for cultural disappearance.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Apparent loss in one environment does not establish overall cultural loss.",
+          "premises": [
+            "Language practices can move between social environments.",
+            "Historical archives represent selected rather than exhaustive samples of speech.",
+            "New cultural expressions can emerge while older ones decline."
+          ]
+        },
+        {
+          "type": "source",
+          "claim": "UNESCO's safeguarding framework accommodates the ongoing evolution of cultural heritage.",
+          "url": "https://ich.unesco.org/en/12",
+          "fragment": "continuous evolution and interpretation of intangible cultural heritage"
+        }
+      ]
+    },
+    {
+      "id": "O4",
+      "name": "Mobile Recording and Rescue Workshops",
+      "description": "Establish travelling regional workshops capable of recording oral traditions and safely transferring legacy audiovisual materials. Offer free sessions in villages, agricultural communities and underserved urban areas, using spoken explanations of participation and permissions. Return usable copies to contributors and retain additional copies only under agreed custody terms.",
+      "technique": "T2",
+      "chain_stage": "record_or_rescue",
+      "scale": "region",
+      "depends_on_ai": false,
+      "actors": [
+        "Regional cultural centres",
+        "Audio technicians",
+        "Municipalities",
+        "Public libraries",
+        "Community associations",
+        "Local broadcasters"
+      ],
+      "who_benefits": [
+        "Rural communities",
+        "Low-income households",
+        "Older people",
+        "Non-literate contributors",
+        "Speakers unable to travel"
+      ],
+      "who_could_be_left_out": [
+        "Communities inaccessible to travelling teams",
+        "Homebound people not offered visits",
+        "People whose cultural practices are not suitable for recording"
+      ],
+      "faces_affected": [
+        "Lebanese personal data law",
+        "GDPR and foreign funding conditions",
+        "Copyright and broadcaster ownership",
+        "Accessibility and distributive justice",
+        "Community authority and cultural ethics"
+      ],
+      "what_would_make_it_fail": "Workshops lack qualified technicians, informed permissions, local trust, appropriate equipment or arrangements for long-term custody.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Travelling services offer a different participation pathway from centralized recording facilities.",
+          "premises": [
+            "Travel imposes time and financial costs.",
+            "Not every potential contributor possesses recording equipment or technical knowledge.",
+            "Bringing services closer to contributors can remove some participation barriers."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O5",
+      "name": "Record Work, Ritual and Everyday Life",
+      "description": "Document spoken practices in their cultural settings rather than collecting isolated vocabulary or scripted sentences alone. Potential subjects include farming terminology, craft instruction, marketplace interaction, oral poetry, games, humour, lullabies and traditional forms of mediation. Let participating communities determine appropriate contexts, restrictions and whether documentation should occur at all.",
+      "technique": "T6",
+      "chain_stage": "record_or_rescue",
+      "scale": "region",
+      "depends_on_ai": false,
+      "actors": [
+        "Craft associations",
+        "Agricultural cooperatives",
+        "Oral poets",
+        "Cultural associations",
+        "Ethnographers",
+        "Community educators"
+      ],
+      "who_benefits": [
+        "Rural communities",
+        "Practitioners of traditional occupations",
+        "Older people",
+        "Apprentices",
+        "Future generations"
+      ],
+      "who_could_be_left_out": [
+        "People working in informal or private settings",
+        "Communities uncomfortable with documentation",
+        "Practitioners unable to obtain compensation for their time"
+      ],
+      "faces_affected": [
+        "Community authority and cultural ethics",
+        "Lebanese personal data law",
+        "Political sensitivity and participant safety",
+        "Linguistic representation and cultural legitimacy"
+      ],
+      "what_would_make_it_fail": "Recording changes the practice substantially, outsiders misinterpret its meaning, or communities regard documentation as extraction rather than preservation.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "A collection of spoken words may not preserve the knowledge necessary to use them appropriately.",
+          "premises": [
+            "Meaning can depend on relationships, timing, location and activity.",
+            "Some cultural knowledge is expressed through interaction between speech and physical action.",
+            "Contextual recordings can document information omitted by isolated word lists."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O6",
+      "name": "Broadcaster Preservation Escrow",
+      "description": "Offer radio and television broadcasters contractual arrangements under which preservation copies are deposited with an independent custodian while ownership and publication rights remain separately governed. Establish permitted preservation operations, security arrangements, conditions for releasing material, succession procedures and responses to broadcaster closure. This route allows archival rescue without making public release a condition of participation.",
+      "technique": "T5",
+      "chain_stage": "preserve",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": [
+        "Public and private broadcasters",
+        "Independent archival institutions",
+        "Copyright lawyers",
+        "Performers' representatives",
+        "Ministry of Culture",
+        "Heritage funders"
+      ],
+      "who_benefits": [
+        "Broadcasters",
+        "Rights holders",
+        "Archivists",
+        "Future generations"
+      ],
+      "who_could_be_left_out": [
+        "Independent creators without contractual representation",
+        "Audiences unable to access embargoed collections",
+        "Collections with unresolved ownership"
+      ],
+      "faces_affected": [
+        "Copyright and broadcaster ownership",
+        "Lebanese personal data law",
+        "GDPR and foreign funding conditions",
+        "Economic sustainability and institutional incentives",
+        "Intergenerational stewardship"
+      ],
+      "what_would_make_it_fail": "Deposit agreements do not authorize necessary copying and migration, succession clauses are ineffective, underlying rights remain unresolved, or the custodian cannot maintain the material.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Preservation and publication can be negotiated as separate activities.",
+          "premises": [
+            "Creating a controlled preservation copy does not inherently require public distribution.",
+            "Contracts can specify permitted uses subject to applicable law and existing rights.",
+            "A broadcaster may accept preservation while withholding permission for wider access."
+          ]
+        },
+        {
+          "type": "source",
+          "claim": "Lebanese copyright legislation provides rights specifically to broadcasting organizations.",
+          "url": "https://www.wipo.int/wipolex/fr/legislation/details/2786",
+          "fragment": "shall have the right to authorize or prohibit"
+        }
+      ]
+    },
+    {
+      "id": "O7",
+      "name": "Distributed Heritage Vaults",
+      "description": "Maintain authorized preservation copies across independent institutions in different Lebanese regions and, where lawful, selected diaspora or international repositories. Use preservation-grade formats, integrity checks, documented migration procedures and clearly assigned custodial responsibilities. Keep restricted collections protected independently of any public access platform.",
+      "technique": "T2",
+      "chain_stage": "preserve",
+      "scale": "global",
+      "depends_on_ai": false,
+      "actors": [
+        "Lebanese universities",
+        "Libraries",
+        "Audiovisual archives",
+        "Diaspora institutions",
+        "International preservation organizations",
+        "Digital preservation specialists"
+      ],
+      "who_benefits": [
+        "Future generations",
+        "Communities vulnerable to displacement",
+        "Broadcasters",
+        "Local archival institutions"
+      ],
+      "who_could_be_left_out": [
+        "Collections whose rights prohibit copying",
+        "Communities opposed to overseas custody",
+        "Independent contributors unable to meet deposit requirements"
+      ],
+      "faces_affected": [
+        "Physical and digital continuity",
+        "Copyright and broadcaster ownership",
+        "GDPR and foreign funding conditions",
+        "Lebanese personal data law",
+        "Intergenerational stewardship",
+        "Community authority and cultural ethics"
+      ],
+      "what_would_make_it_fail": "Copies share the same failure dependencies, custodians stop maintaining them, international transfers lack authorization, or encryption and access credentials become unrecoverable.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Independent copies can reduce dependence on the continued operation of a single institution.",
+          "premises": [
+            "A single storage location creates concentrated exposure to local failures.",
+            "Separate copies can survive different failure events.",
+            "Redundancy is useful only when copies remain intact, recoverable and legally usable."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O8",
+      "name": "Community-Owned Regional Sound Archives",
+      "description": "Establish independent regional repositories governed by participating communities, with shared preservation services but local authority over access and interpretation. Permit public, community-only, restricted and temporarily closed collections. Draw on the FirstVoices model without assuming that Indigenous governance arrangements elsewhere transfer directly to Lebanon.",
+      "technique": "T4",
+      "chain_stage": "preserve",
+      "scale": "region",
+      "depends_on_ai": false,
+      "actors": [
+        "Municipal cultural institutions",
+        "Regional associations",
+        "Community representatives",
+        "Local universities",
+        "Archivists"
+      ],
+      "who_benefits": [
+        "Regional communities",
+        "Speakers of locally distinctive varieties",
+        "Older contributors",
+        "Communities concerned about cultural appropriation"
+      ],
+      "who_could_be_left_out": [
+        "People without representation in local governance",
+        "Minorities within regional communities",
+        "Diaspora members whose community membership is disputed"
+      ],
+      "faces_affected": [
+        "Community authority and cultural ethics",
+        "Lebanese personal data law",
+        "GDPR and foreign funding conditions",
+        "Commercial data harvesting and platform behaviour",
+        "Intergenerational stewardship"
+      ],
+      "what_would_make_it_fail": "Local gatekeepers monopolize authority, repositories lack continuing resources, or restrictions are established without representative governance and review.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "FirstVoices provides a documented precedent for community retention of ownership over contributed language materials.",
+          "url": "https://firstvoices.atlassian.net/wiki/spaces/FIR1/pages/1704799",
+          "fragment": "Ownership of all language content on FirstVoices, including audio and video recordings, is maintained by the contributing community."
+        },
+        {
+          "type": "reasoning",
+          "claim": "Regional governance offers a different institutional arrangement from centralized national ownership.",
+          "premises": [
+            "Communities may differ in their expectations about access and representation.",
+            "Local custodians may possess contextual knowledge unavailable to central institutions.",
+            "Shared technical infrastructure need not imply shared ownership."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O9",
+      "name": "Listening-Based Community Cataloguing",
+      "description": "Invite community members to listen to authorized recordings and describe their expressions, accents, cultural practices and meanings through spoken annotations. Preserve original audio alongside alternative interpretations instead of imposing a single authoritative description. Professional archivists can convert agreed annotations into searchable, non-identifying catalogue information.",
+      "technique": "T1",
+      "chain_stage": "describe",
+      "scale": "neighbourhood",
+      "depends_on_ai": false,
+      "actors": [
+        "Older speakers",
+        "Community historians",
+        "Regional language specialists",
+        "Archivists",
+        "Cultural associations",
+        "Young volunteers"
+      ],
+      "who_benefits": [
+        "Non-literate participants",
+        "Older people",
+        "Researchers",
+        "Regional communities",
+        "Future listeners"
+      ],
+      "who_could_be_left_out": [
+        "People with hearing impairments without accommodations",
+        "People unable to attend sessions",
+        "Speakers whose interpretations conflict with locally dominant accounts"
+      ],
+      "faces_affected": [
+        "Community authority and cultural ethics",
+        "Linguistic representation and cultural legitimacy",
+        "Accessibility and distributive justice",
+        "Copyright and broadcaster ownership",
+        "Lebanese personal data law"
+      ],
+      "what_would_make_it_fail": "Annotations become detached from their recordings, disagreements are suppressed, contributors lack permissions, or descriptions inadvertently disclose identifying information.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Literacy should not be a prerequisite for contributing descriptive knowledge about spoken heritage.",
+          "premises": [
+            "Expertise in spoken culture can exist independently of writing ability.",
+            "Descriptions can themselves be recorded orally.",
+            "Archival staff can connect oral annotations to structured catalogue records."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O10",
+      "name": "AI-Assisted Archival Discovery",
+      "description": "Apply locally controlled speech recognition, segmentation and acoustic similarity tools to authorized recordings to generate provisional search indexes and identify potentially overlooked material. Preserve original recordings and require human verification of suggested words, categories and regional descriptions. Restrict processing to archival discovery rather than developing a general-purpose Lebanese-speaking AI.",
+      "technique": "T5",
+      "chain_stage": "describe",
+      "scale": "nation",
+      "depends_on_ai": true,
+      "actors": [
+        "Broadcaster archives",
+        "Computational linguists",
+        "Lebanese language specialists",
+        "Data protection specialists",
+        "University computing laboratories"
+      ],
+      "who_benefits": [
+        "Archivists managing large collections",
+        "Researchers",
+        "Educators",
+        "Listeners searching historical material"
+      ],
+      "who_could_be_left_out": [
+        "Speakers whose accents are poorly recognized",
+        "Communities whose recordings contain unusual vocabulary",
+        "Collections lacking processing authorization"
+      ],
+      "faces_affected": [
+        "Copyright and broadcaster ownership",
+        "Lebanese personal data law",
+        "GDPR and foreign funding conditions",
+        "Commercial data harvesting and platform behaviour",
+        "Voice identity and biometric processing",
+        "Linguistic representation and cultural legitimacy"
+      ],
+      "what_would_make_it_fail": "Recognition errors systematically obscure particular varieties, provisional labels become treated as authoritative, or external service providers retain recordings beyond authorized purposes.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Automated indexing could support discovery without becoming the primary preservation objective.",
+          "premises": [
+            "Unindexed audiovisual material can require extensive sequential listening.",
+            "Machine-generated candidate indexes can direct human attention to particular segments.",
+            "The cultural record remains the original recording rather than the generated index.",
+            "Actual recognition performance on historical Lebanese material remains to be established."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O11",
+      "name": "Broadcaster Rights and Licensing Clearinghouse",
+      "description": "Create a service that helps participating radio and television archives establish rights status and negotiate reuse permissions for specific recordings. Offer separate licensing pathways for educational use, public listening, documentary production, commercial rebroadcast and other secondary uses. Keep unresolved-rights materials unavailable for unauthorized reuse while exploring lawful preservation arrangements.",
+      "technique": "T6",
+      "chain_stage": "access",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": [
+        "Broadcasters",
+        "Copyright lawyers",
+        "Production companies",
+        "Performers' associations",
+        "Music rights representatives",
+        "Educational institutions",
+        "Cultural foundations"
+      ],
+      "who_benefits": [
+        "Rights holders",
+        "Broadcasters",
+        "Documentary producers",
+        "Educators",
+        "Cultural organizations",
+        "Public audiences"
+      ],
+      "who_could_be_left_out": [
+        "Low-income users unable to afford licensing",
+        "Creators without representation",
+        "Collections with missing contractual records"
+      ],
+      "faces_affected": [
+        "Copyright and broadcaster ownership",
+        "Economic sustainability and institutional incentives",
+        "Lebanese personal data law",
+        "GDPR and foreign funding conditions",
+        "Commercial data harvesting and platform behaviour"
+      ],
+      "what_would_make_it_fail": "The service claims authority it does not possess, rights chains remain unresolved, licensing fees exclude intended audiences, or broadcasters and other rights holders decline participation.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Some inaccessible archives may present a permissions-coordination problem rather than a purely technical problem.",
+          "premises": [
+            "Digitized recordings can remain unavailable because reuse is not authorized.",
+            "Negotiating repeatedly with multiple rights holders can impose transaction costs.",
+            "Shared licensing services could reduce repeated administrative work where mandates are valid."
+          ]
+        },
+        {
+          "type": "source",
+          "claim": "A Lebanese television archive preservation initiative explicitly identifies potential economic value for the broadcaster.",
+          "url": "https://fondationlibancinema.org/tv-archives/",
+          "fragment": "create a potential source of income for Télé Liban"
+        }
+      ]
+    },
+    {
+      "id": "O12",
+      "name": "Listening Rooms Without Internet",
+      "description": "Provide free listening stations in libraries, municipal buildings, community centres and mobile cultural facilities. Organize selections by recognizable spoken themes and provide facilitators who can guide visitors without requiring reading, registration or a personal device. Use only recordings cleared for the relevant form of public or supervised listening.",
+      "technique": "T5",
+      "chain_stage": "access",
+      "scale": "neighbourhood",
+      "depends_on_ai": false,
+      "actors": [
+        "Public libraries",
+        "Municipalities",
+        "Community centres",
+        "Cultural foundations",
+        "Broadcaster archives",
+        "Accessibility specialists"
+      ],
+      "who_benefits": [
+        "Non-literate people",
+        "Low-income households",
+        "Older people",
+        "People without smartphones",
+        "Communities with limited connectivity"
+      ],
+      "who_could_be_left_out": [
+        "Homebound people",
+        "Residents without nearby public facilities",
+        "People with hearing impairments if complementary formats are unavailable"
+      ],
+      "faces_affected": [
+        "Accessibility and distributive justice",
+        "Copyright and broadcaster ownership",
+        "Commercial data harvesting and platform behaviour",
+        "Economic sustainability and institutional incentives"
+      ],
+      "what_would_make_it_fail": "Facilities are inaccessible, operating hours exclude intended audiences, equipment is not maintained, or rights restrictions prevent meaningful listening selections.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Physical listening facilities can provide access without requiring unrestricted online publication.",
+          "premises": [
+            "Listening does not inherently require reading.",
+            "Shared equipment removes the requirement for individual device ownership.",
+            "Authorized playback can occur in a defined physical environment."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O13",
+      "name": "Community-Governed Online Listening Library",
+      "description": "Develop an audio-first public interface through which listeners can explore material using spoken menus, geographic browsing and thematic collections. Offer differentiated access permissions, with public excerpts, supervised research access and community-restricted collections. Treat commercial extraction restrictions as risk-reduction measures rather than guarantees against copying.",
+      "technique": "T4",
+      "chain_stage": "access",
+      "scale": "global",
+      "depends_on_ai": false,
+      "actors": [
+        "Community archives",
+        "Broadcasters",
+        "Web developers",
+        "Rights holders",
+        "Data protection specialists",
+        "Diaspora associations"
+      ],
+      "who_benefits": [
+        "Diaspora communities",
+        "Remote learners",
+        "Non-literate internet users",
+        "Researchers",
+        "Families separated geographically"
+      ],
+      "who_could_be_left_out": [
+        "People without reliable internet",
+        "People unable to use digital authentication",
+        "Communities uncomfortable with online exposure"
+      ],
+      "faces_affected": [
+        "Commercial data harvesting and platform behaviour",
+        "Copyright and broadcaster ownership",
+        "GDPR and foreign funding conditions",
+        "Lebanese personal data law",
+        "Voice identity and biometric processing",
+        "Accessibility and distributive justice",
+        "Community authority and cultural ethics"
+      ],
+      "what_would_make_it_fail": "Access controls are ineffective, the interface requires literacy despite its design goals, permissions are inconsistently enforced, or community governance becomes symbolic.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "FirstVoices demonstrates that an online language platform can offer differentiated visibility.",
+          "url": "https://www.firstvoices.com/about",
+          "fragment": "content that can be accessed only through a secure login"
+        },
+        {
+          "type": "reasoning",
+          "claim": "A tiered-access library could support cultural access without making every collection openly downloadable.",
+          "premises": [
+            "Different recordings may carry different permissions and sensitivities.",
+            "Access can be mediated through authentication and institutional approval.",
+            "Authorized listening and unrestricted redistribution are distinct activities.",
+            "Technical restrictions cannot eliminate every form of copying."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O14",
+      "name": "Rights-Cleared Heritage Commons",
+      "description": "Create a separate collection of cultural material whose contributors and other relevant rights holders deliberately authorize broad redistribution and reuse. Include commissioned performances, non-identifying cultural explanations and works whose rights status has been established. Explicitly distinguish material available for human cultural reuse from material additionally authorized for machine learning or other commercial purposes.",
+      "technique": "T4",
+      "chain_stage": "access",
+      "scale": "global",
+      "depends_on_ai": false,
+      "actors": [
+        "Independent cultural creators",
+        "Broadcasters",
+        "Educational institutions",
+        "Open knowledge organizations",
+        "Rights specialists",
+        "Community associations"
+      ],
+      "who_benefits": [
+        "Educators",
+        "Diaspora communities",
+        "Low-budget cultural producers",
+        "Community broadcasters",
+        "Independent researchers"
+      ],
+      "who_could_be_left_out": [
+        "Contributors unwilling to permit broad redistribution",
+        "Performers concerned about commercial exploitation",
+        "Communities requiring tighter cultural restrictions"
+      ],
+      "faces_affected": [
+        "Copyright and broadcaster ownership",
+        "Commercial data harvesting and platform behaviour",
+        "Voice identity and biometric processing",
+        "Community authority and cultural ethics",
+        "Lebanese personal data law"
+      ],
+      "what_would_make_it_fail": "Permissions are incomplete, contributors misunderstand the practical irreversibility of broad redistribution, or copyright licenses are mistaken for sufficient authorization under privacy law.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "Mozilla Common Voice provides a contrasting precedent based on broad permission for reuse of contributed speech data.",
+          "url": "https://commonvoice.mozilla.org/en/terms?form=FUNUAFTPPYR",
+          "fragment": "Creative Commons CC0 public domain dedication"
+        },
+        {
+          "type": "reasoning",
+          "claim": "Broad reuse and restricted community custody can exist as separate collection models.",
+          "premises": [
+            "Contributors may have different expectations about circulation.",
+            "Some cultural material is created specifically for dissemination.",
+            "An archive does not need identical access rules for every collection."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O15",
+      "name": "Radio as a Living Heritage Channel",
+      "description": "Commission recurring radio programmes featuring rights-cleared historical extracts, regional speech, oral storytelling, conversational games and explanations of cultural expressions. Combine archival recordings with new performances so audiences hear continuity and change rather than only historical material. Invite voluntary oral contributions through moderated channels.",
+      "technique": "T5",
+      "chain_stage": "keep_alive",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": [
+        "Radio Liban",
+        "Regional radio stations",
+        "Commercial radio broadcasters",
+        "Storytellers",
+        "Cultural producers",
+        "Educational organizations"
+      ],
+      "who_benefits": [
+        "Older listeners",
+        "Non-literate audiences",
+        "Low-income households",
+        "Rural listeners within broadcasting coverage",
+        "People who do not actively visit archives"
+      ],
+      "who_could_be_left_out": [
+        "People outside reception coverage",
+        "Listeners with hearing impairments",
+        "Communities excluded by editorial selection"
+      ],
+      "faces_affected": [
+        "Copyright and broadcaster ownership",
+        "Accessibility and distributive justice",
+        "Linguistic representation and cultural legitimacy",
+        "Economic sustainability and institutional incentives",
+        "Lebanese personal data law"
+      ],
+      "what_would_make_it_fail": "Programming is irregular, audiences perceive it as artificial nostalgia, broadcasters cannot clear reuse rights, or regional representation remains narrow.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Radio offers a cultural preservation route that does not depend on reading or personal internet connectivity.",
+          "premises": [
+            "Radio delivers spoken audio directly to listeners within reception coverage.",
+            "Radio programmes can combine historical material with contemporary interaction.",
+            "Recurring exposure creates opportunities for cultural expressions to circulate beyond archival settings."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O16",
+      "name": "Pay for Living Cultural Practice",
+      "description": "Create grants and paid commissions for storytellers, oral poets, theatre groups, comedians, craftspeople and other practitioners who actively use diverse Lebanese speech. Support performances and ordinary community activities without requiring participants to produce recordings or datasets. Give cultural practitioners discretion to reinterpret inherited forms rather than reproduce them unchanged.",
+      "technique": "T6",
+      "chain_stage": "keep_alive",
+      "scale": "region",
+      "depends_on_ai": false,
+      "actors": [
+        "Cultural foundations",
+        "Municipalities",
+        "Theatre companies",
+        "Craft associations",
+        "Festivals",
+        "Local cultural practitioners"
+      ],
+      "who_benefits": [
+        "Low-income cultural practitioners",
+        "Older knowledge holders",
+        "Regional audiences",
+        "Young artists",
+        "Local cultural economies"
+      ],
+      "who_could_be_left_out": [
+        "Practitioners outside established cultural networks",
+        "People unable to complete written grant applications",
+        "Traditions unsuitable for public performance"
+      ],
+      "faces_affected": [
+        "Economic sustainability and institutional incentives",
+        "Community authority and cultural ethics",
+        "Accessibility and distributive justice",
+        "Linguistic representation and cultural legitimacy"
+      ],
+      "what_would_make_it_fail": "Funding rewards stereotyped representations, application procedures exclude informal practitioners, or paid performances become disconnected from the communities that sustain them.",
+      "support": [
+        {
+          "type": "position",
+          "claim": "People carrying cultural knowledge may deserve compensation even when they do not create archival assets."
+        },
+        {
+          "type": "reasoning",
+          "claim": "Preservation can involve maintaining opportunities to practise rather than accumulating recorded evidence.",
+          "premises": [
+            "Living cultural practices require practitioners and opportunities for use.",
+            "Practitioners face competing demands on their time and resources.",
+            "Financial support could create additional opportunities for practice."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O17",
+      "name": "Preserve Spaces Where Lebanese Lives",
+      "description": "Support neighbourhood gathering places, markets, community kitchens, local theatre, cooperative activities and informal social spaces where spoken culture occurs naturally. Make preservation funding available for maintaining these environments even when no recording is produced. Let participating communities identify the spaces and activities they consider culturally meaningful.",
+      "technique": "T6",
+      "chain_stage": "keep_alive",
+      "scale": "neighbourhood",
+      "depends_on_ai": false,
+      "actors": [
+        "Municipalities",
+        "Neighbourhood associations",
+        "Cooperatives",
+        "Community centres",
+        "Local businesses",
+        "Cultural foundations"
+      ],
+      "who_benefits": [
+        "Non-literate people",
+        "Older residents",
+        "Low-income communities",
+        "Young people",
+        "People disconnected from formal cultural institutions"
+      ],
+      "who_could_be_left_out": [
+        "Homebound people",
+        "People excluded from particular gathering spaces",
+        "Communities facing displacement or housing insecurity"
+      ],
+      "faces_affected": [
+        "Community authority and cultural ethics",
+        "Accessibility and distributive justice",
+        "Economic sustainability and institutional incentives",
+        "Linguistic representation and cultural legitimacy"
+      ],
+      "what_would_make_it_fail": "Supported spaces do not attract regular participation, become socially exclusionary, or serve visitors rather than the communities whose practices they are intended to sustain.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "UNESCO recognizes that safeguarding can include the spaces necessary for cultural expression.",
+          "url": "https://ich.unesco.org/en/convention",
+          "fragment": "spaces intended for the performance or expression thereof"
+        },
+        {
+          "type": "reasoning",
+          "claim": "Supporting an environment for everyday use may sustain cultural practices without recording them.",
+          "premises": [
+            "Conversation arises through social relationships and shared activities.",
+            "Some relationships and activities depend on accessible physical spaces.",
+            "Maintaining those spaces can preserve opportunities for spoken interaction."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O18",
+      "name": "Intergenerational Family Story Circles",
+      "description": "Support recurring household storytelling, shared meals, oral games, songs and conversations between generations. Offer optional spoken prompts through radio or community educators without requiring families to record, upload or submit evidence of participation. Allow each household to choose its own linguistic practices and traditions.",
+      "technique": "T2",
+      "chain_stage": "transmit",
+      "scale": "household",
+      "depends_on_ai": false,
+      "actors": [
+        "Parents",
+        "Grandparents",
+        "Children",
+        "Extended families",
+        "Community educators",
+        "Family support associations"
+      ],
+      "who_benefits": [
+        "Children",
+        "Older family members",
+        "Non-literate households",
+        "Families unable to afford formal cultural activities",
+        "Future generations"
+      ],
+      "who_could_be_left_out": [
+        "Children without available older relatives",
+        "Socially isolated older people",
+        "Families experiencing separation or conflict",
+        "Households with limited shared time"
+      ],
+      "faces_affected": [
+        "Community authority and cultural ethics",
+        "Accessibility and distributive justice",
+        "Intergenerational stewardship",
+        "Linguistic representation and cultural legitimacy"
+      ],
+      "what_would_make_it_fail": "Participation feels compulsory, households lack time or willing participants, or family structures are assumed to be uniform.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Intergenerational transmission can take place without any recording infrastructure.",
+          "premises": [
+            "Spoken knowledge can be communicated directly between people.",
+            "Stories, songs and conversation provide opportunities for repetition and reinterpretation.",
+            "Participants do not need to create permanent records for transmission to occur."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O19",
+      "name": "Lebanese Language and Culture Nests",
+      "description": "Create voluntary early-childhood and after-school environments where children encounter diverse Lebanese expressions through play, storytelling, movement and everyday conversation. Involve older speakers and community educators while maintaining respect for multilingual education and other languages used at home. Adapt the language-nest concept to transmitting cultural richness rather than assuming Lebanese requires language revival in the same sense as Māori.",
+      "technique": "T4",
+      "chain_stage": "transmit",
+      "scale": "neighbourhood",
+      "depends_on_ai": false,
+      "actors": [
+        "Early-childhood educators",
+        "Schools",
+        "Older community members",
+        "Parents",
+        "Municipalities",
+        "Children's cultural organizations"
+      ],
+      "who_benefits": [
+        "Young children",
+        "Children from non-literate households",
+        "Older cultural practitioners",
+        "Families seeking oral cultural education"
+      ],
+      "who_could_be_left_out": [
+        "Children unable to attend organized activities",
+        "Children in remote areas",
+        "Low-income families if participation is not subsidized",
+        "Children with communication disabilities without accommodations"
+      ],
+      "faces_affected": [
+        "Accessibility and distributive justice",
+        "Community authority and cultural ethics",
+        "Linguistic representation and cultural legitimacy",
+        "Intergenerational stewardship"
+      ],
+      "what_would_make_it_fail": "The programme turns into compulsory language instruction, promotes linguistic purity, lacks trained educators or excludes children because of income and location.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "Te Kōhanga Reo provides an existing language-nest institutional analogy.",
+          "url": "https://www.kohanga.ac.nz/",
+          "fragment": "Te Kōhanga Reo means 'the language nest'."
+        },
+        {
+          "type": "source",
+          "claim": "UNESCO recognizes educational transmission as part of cultural safeguarding.",
+          "url": "https://ich.unesco.org/en/about-01159",
+          "fragment": "through formal and non-formal education"
+        },
+        {
+          "type": "reasoning",
+          "claim": "The language-nest mechanism could be adapted to preserving particular cultural registers even where a language remains actively spoken.",
+          "premises": [
+            "Children encounter different registers in different environments.",
+            "An organized activity can provide exposure to expressions absent from other settings.",
+            "The Lebanese application need not reproduce the historical circumstances or objectives of the Māori initiative."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O20",
+      "name": "Diaspora as a Parallel Cultural Reservoir",
+      "description": "Treat diaspora communities as contributors to Lebanese spoken heritage rather than only recipients of material produced in Lebanon. Establish intergenerational exchanges, travelling cultural programmes and community-led documentation of diaspora expressions. Allow diaspora varieties to enter collections on their own terms instead of correcting them against a homeland standard.",
+      "technique": "T3",
+      "chain_stage": "transmit",
+      "scale": "diaspora",
+      "depends_on_ai": false,
+      "actors": [
+        "Diaspora associations",
+        "Lebanese cultural centres abroad",
+        "Community schools",
+        "Diaspora broadcasters",
+        "Families",
+        "Universities"
+      ],
+      "who_benefits": [
+        "Second-generation and later-generation diaspora communities",
+        "Families separated geographically",
+        "Heritage learners",
+        "Lebanese communities interested in migration-related cultural history"
+      ],
+      "who_could_be_left_out": [
+        "Diaspora members outside organized associations",
+        "Recent migrants with limited resources",
+        "People uncomfortable with institutional definitions of Lebanese identity"
+      ],
+      "faces_affected": [
+        "Linguistic representation and cultural legitimacy",
+        "GDPR and foreign funding conditions",
+        "Lebanese personal data law",
+        "Community authority and cultural ethics",
+        "Intergenerational stewardship"
+      ],
+      "what_would_make_it_fail": "Diaspora varieties are treated as defective, programmes favour affluent expatriate networks, or cross-border recording and transfer obligations remain unresolved.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Migration could generate additional reservoirs of spoken cultural heritage rather than exclusively causing cultural loss.",
+          "premises": [
+            "Migrants may retain linguistic practices from earlier periods.",
+            "Migration introduces new linguistic and cultural interactions.",
+            "Different communities may preserve or transform different elements of a shared heritage.",
+            "The extent to which this occurs in particular Lebanese diaspora communities remains an empirical question."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O21",
+      "name": "Minimum Intervention and Periodic Observation",
+      "description": "Leave selected cultural practices free of organized recording, formal teaching and promotional intervention while periodically examining aggregate indicators of their continued use. Establish community-controlled opportunities to request assistance if conditions change. Preserve existing non-identifying evidence of cultural activity without obligating communities to become archival subjects.",
+      "technique": "T7",
+      "chain_stage": "keep_alive",
+      "scale": "region",
+      "depends_on_ai": false,
+      "actors": [
+        "Community associations",
+        "Cultural researchers",
+        "Municipal institutions",
+        "Independent cultural observatories"
+      ],
+      "who_benefits": [
+        "Communities whose practices remain active without external assistance",
+        "People uncomfortable with documentation",
+        "Practitioners seeking cultural autonomy",
+        "Future researchers studying natural cultural evolution"
+      ],
+      "who_could_be_left_out": [
+        "Communities experiencing rapid but unobserved decline",
+        "People whose concerns are not represented by community leadership",
+        "Practices dependent on very few remaining holders"
+      ],
+      "faces_affected": [
+        "Community authority and cultural ethics",
+        "Linguistic representation and cultural legitimacy",
+        "Political sensitivity and participant safety",
+        "Intergenerational stewardship"
+      ],
+      "what_would_make_it_fail": "Observation misses irreversible losses, communities cannot communicate changing needs, or the absence of measured decline is mistaken for evidence of continued vitality.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "UNESCO explicitly recognizes circumstances in which safeguarding interventions may be undesirable.",
+          "url": "https://ich.unesco.org/en/12",
+          "fragment": "public intervention to safeguard a community’s heritage may be undesirable"
+        },
+        {
+          "type": "reasoning",
+          "claim": "Non-intervention can itself be an intentional cultural policy rather than an accidental absence of policy.",
+          "premises": [
+            "External intervention may alter incentives, meanings and relationships.",
+            "Some communities may continue transmitting practices independently.",
+            "A mechanism for reassessment can preserve the possibility of future action."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O22",
+      "name": "Oral Heritage Apprenticeships",
+      "description": "Fund apprenticeships in which younger participants learn directly from practitioners through shared activities such as craftsmanship, oral poetry, performance, cooking and agricultural work. Compensate both teaching and learning time where appropriate. Define transmission through the ability to participate in a practice, not through written examinations or the number of recordings produced.",
+      "technique": "T5",
+      "chain_stage": "transmit",
+      "scale": "region",
+      "depends_on_ai": false,
+      "actors": [
+        "Vocational institutions",
+        "Craft cooperatives",
+        "Agricultural associations",
+        "Cultural practitioners",
+        "Youth organizations",
+        "Local employers"
+      ],
+      "who_benefits": [
+        "Young people outside academic education",
+        "Non-literate learners",
+        "Low-income participants",
+        "Older practitioners",
+        "Rural communities"
+      ],
+      "who_could_be_left_out": [
+        "People unable to undertake physically demanding activities",
+        "Practitioners without recognized institutional affiliations",
+        "Participants excluded by traditional occupational boundaries"
+      ],
+      "faces_affected": [
+        "Economic sustainability and institutional incentives",
+        "Accessibility and distributive justice",
+        "Community authority and cultural ethics",
+        "Intergenerational stewardship"
+      ],
+      "what_would_make_it_fail": "Apprenticeships become unpaid labour, learned practices lack opportunities for subsequent use, or participation reproduces existing social exclusions.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Participatory apprenticeship can transmit relationships between speech, action and cultural judgment.",
+          "premises": [
+            "Some expressions acquire their full meaning through practical activity.",
+            "Repeated participation allows learners to encounter language in context.",
+            "Knowledge transmission can be assessed through demonstrated practice rather than literacy."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O23",
+      "name": "Conversational Search of Authentic Recordings",
+      "description": "Build an optional AI-assisted interface through which users ask spoken questions and retrieve authorized original recordings, such as examples of traditional expressions or discussions of regional customs. Return source recordings and clearly identified catalogue information rather than synthetic performances or cloned voices. Design the service specifically for people who cannot use conventional text search.",
+      "technique": "T5",
+      "chain_stage": "access",
+      "scale": "nation",
+      "depends_on_ai": true,
+      "actors": [
+        "Archival institutions",
+        "Accessibility organizations",
+        "Software developers",
+        "Lebanese language specialists",
+        "Broadcasters",
+        "Community archives"
+      ],
+      "who_benefits": [
+        "Non-literate people",
+        "Older users unfamiliar with text interfaces",
+        "Heritage learners",
+        "Researchers unfamiliar with archival terminology"
+      ],
+      "who_could_be_left_out": [
+        "Speakers whose queries are poorly recognized",
+        "People without access to suitable devices",
+        "People with speech impairments without alternative interfaces",
+        "Users unable to navigate authentication requirements"
+      ],
+      "faces_affected": [
+        "Accessibility and distributive justice",
+        "Lebanese personal data law",
+        "GDPR and foreign funding conditions",
+        "Voice identity and biometric processing",
+        "Copyright and broadcaster ownership",
+        "Commercial data harvesting and platform behaviour"
+      ],
+      "what_would_make_it_fail": "Speech recognition excludes particular user groups, retrieval misrepresents the recordings, restricted material is disclosed, or spoken queries are retained for unauthorized purposes.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Spoken-query retrieval could make an archive usable by people who cannot formulate written searches.",
+          "premises": [
+            "Conventional catalogue searches commonly depend on text input.",
+            "Some people who cannot write can formulate spoken questions.",
+            "Speech recognition and retrieval could connect spoken questions to indexed audiovisual material.",
+            "The necessary recognition accuracy and accessibility have not been established for this proposed service."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O24",
+      "name": "Future Generations Heritage Deposits",
+      "description": "Invite communities and institutions to create deliberately selected deposits intended for access or reassessment over the next several decades. Include contextual explanations of contemporary speech, cultural changes and the reasons for selecting particular materials, without publishing identifying contributor information. Establish legally reviewed succession, access-review and withdrawal arrangements rather than promising permanent confidentiality or automatic future publication.",
+      "technique": "T2",
+      "chain_stage": "preserve",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": [
+        "National archival institutions",
+        "Regional archives",
+        "Schools",
+        "Community associations",
+        "Libraries",
+        "Broadcasters",
+        "Heritage trusts"
+      ],
+      "who_benefits": [
+        "Future generations",
+        "Communities interested in long-term cultural continuity",
+        "Future cultural practitioners",
+        "Historical researchers"
+      ],
+      "who_could_be_left_out": [
+        "Communities unable to participate in selection",
+        "People whose heritage is considered too ordinary for inclusion",
+        "Future communities whose priorities differ from those of present custodians"
+      ],
+      "faces_affected": [
+        "Intergenerational stewardship",
+        "Physical and digital continuity",
+        "Lebanese personal data law",
+        "GDPR and foreign funding conditions",
+        "Copyright and broadcaster ownership",
+        "Community authority and cultural ethics"
+      ],
+      "what_would_make_it_fail": "Future custodians cannot interpret the deposits, access conditions become legally or technically impossible to administer, or the institution responsible for succession ceases to operate.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Material considered ordinary today may possess cultural or historical value for future generations.",
+          "premises": [
+            "Everyday cultural practices change over time.",
+            "Contemporary participants may take familiar expressions and practices for granted.",
+            "Future researchers and communities may ask questions that present-day curators cannot anticipate."
+          ]
+        },
+        {
+          "type": "position",
+          "claim": "Future generations should retain opportunities to interpret cultural materials beyond the priorities imposed by present-day institutions."
+        }
+      ]
+    },
+    {
+      "id": "O25",
+      "name": "Protect Contemporary Digital Cultural Ephemera",
+      "description": "Establish voluntary deposit arrangements for Lebanese podcasts, online comedy, independent video productions, spoken social media content and other contemporary cultural expressions. Accept authorized preservation copies directly from creators rather than indiscriminately harvesting publicly available content. Include contemporary multilingual and experimental material alongside older forms.",
+      "technique": "T7",
+      "chain_stage": "record_or_rescue",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": [
+        "Independent digital creators",
+        "Podcast producers",
+        "Online cultural publications",
+        "Community broadcasters",
+        "University archives",
+        "Youth cultural associations"
+      ],
+      "who_benefits": [
+        "Young cultural creators",
+        "Future generations",
+        "Diaspora audiences",
+        "Researchers studying contemporary cultural change",
+        "Communities poorly represented by conventional broadcasting"
+      ],
+      "who_could_be_left_out": [
+        "People without digital connectivity",
+        "Creators working anonymously",
+        "People appearing in recordings without having authorized archival deposit",
+        "Communities whose cultural activity remains predominantly offline"
+      ],
+      "faces_affected": [
+        "Copyright and broadcaster ownership",
+        "Commercial data harvesting and platform behaviour",
+        "Lebanese personal data law",
+        "GDPR and foreign funding conditions",
+        "Voice identity and biometric processing",
+        "Physical and digital continuity",
+        "Linguistic representation and cultural legitimacy"
+      ],
+      "what_would_make_it_fail": "Creators cannot authorize all incorporated material, platform popularity determines archival selection, or the preservation process exposes participants who expected limited circulation.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Contemporary digital production could become the vulnerable archival heritage of the next decade.",
+          "premises": [
+            "Online content depends on the continued availability of platforms and accounts.",
+            "Public accessibility does not establish durable archival custody.",
+            "Future cultural researchers may value ordinary contemporary speech.",
+            "Voluntary authorized deposits can provide an alternative to dependence on commercial platforms."
+          ]
+        }
+      ]
+    }
+  ],
+  "coverage_check": {
+    "total_options": 25,
+    "options_not_dependent_on_ai": 23,
+    "options_dependent_on_ai": 2,
+    "percentage_not_dependent_on_ai": 92,
+    "options_requiring_no_digital_technology_in_their_core_cultural_activity": [
+      "O16",
+      "O17",
+      "O18",
+      "O19",
+      "O21",
+      "O22"
+    ],
+    "technique_coverage": {
+      "T1": ["O1", "O2", "O9"],
+      "T2": ["O4", "O7", "O18", "O24"],
+      "T3": ["O3", "O20"],
+      "T4": ["O8", "O13", "O14", "O19"],
+      "T5": ["O6", "O10", "O12", "O15", "O22", "O23"],
+      "T6": ["O5", "O11", "O16", "O17"],
+      "T7": ["O21", "O25"]
+    },
+    "chain_stage_coverage": {
+      "find": ["O1", "O2", "O3"],
+      "record_or_rescue": ["O4", "O5", "O25"],
+      "preserve": ["O6", "O7", "O8", "O24"],
+      "describe": ["O9", "O10"],
+      "access": ["O11", "O12", "O13", "O14", "O23"],
+      "keep_alive": ["O15", "O16", "O17", "O21"],
+      "transmit": ["O18", "O19", "O20", "O22"]
+    },
+    "scale_coverage": {
+      "household": ["O18"],
+      "neighbourhood": ["O2", "O9", "O12", "O17", "O19"],
+      "region": ["O4", "O5", "O8", "O16", "O21", "O22"],
+      "nation": ["O1", "O3", "O6", "O10", "O11", "O15", "O23", "O24", "O25"],
+      "diaspora": ["O20"],
+      "global": ["O7", "O13", "O14"]
+    },
+    "broadcaster_archive_options": {
+      "discovery": ["O1", "O2"],
+      "rescue_and_custody": ["O4", "O6", "O7"],
+      "description": ["O9", "O10"],
+      "rights_and_licensing": ["O6", "O11", "O13", "O14"],
+      "public_access": ["O12", "O13", "O23"],
+      "return_to_cultural_use": ["O15"],
+      "long_term_stewardship": ["O24"]
+    },
+    "inclusion_coverage": {
+      "non_literate_people": ["O2", "O4", "O9", "O12", "O15", "O17", "O18", "O19", "O22", "O23"],
+      "low_income_groups": ["O4", "O12", "O14", "O15", "O16", "O17", "O18", "O22"],
+      "rural_and_regional_communities": ["O1", "O3", "O4", "O5", "O8", "O9", "O15", "O16", "O22"],
+      "older_people": ["O2", "O4", "O5", "O9", "O12", "O15", "O16", "O17", "O18"],
+      "diaspora": ["O13", "O14", "O20", "O25"],
+      "future_generations": ["O1", "O5", "O6", "O7", "O8", "O9", "O18", "O19", "O24", "O25"]
+    }
+  },
+  "scope_and_limitations": {
+    "support_method": "Source entries establish documented facts or precedents through short attributable fragments. Reasoning entries identify premises supporting conditional possibilities. Position entries declare normative choices. Proposed activities, prospective beneficiaries and failure conditions are hypotheses rather than demonstrated outcomes.",
+    "decisions_made_without_explicit_guidance": [
+      "Spoken Lebanese heritage is interpreted broadly to include linguistic registers, oral expression, situated cultural knowledge, contemporary cultural production and diaspora varieties.",
+      "Each option receives one primary technique, chain stage and scale for classification, although many options operate across several categories.",
+      "AI dependency means that the particular proposed mechanism requires AI, not that cultural preservation itself requires AI.",
+      "The no-intervention scenario means no additional dedicated preservation initiative; it does not assume existing programmes cease operating.",
+      "Additional support fields for the problem faces, a coverage check and a limitations section have been included to make the exploration auditable."
+    ],
+    "unresolved_questions_for_later_validation": [
+      "Whether spoken Lebanese is experiencing measurable flattening, which registers are affected, and how change differs between communities.",
+      "Whether apparent disappearance reflects actual loss, underdocumentation, changes in media visibility or movement into different social environments.",
+      "The complete inventory and current physical condition of Lebanese radio and television archives.",
+      "The precise scope, progress and remaining gaps of existing Lebanese audiovisual preservation initiatives.",
+      "Current broadcaster contracts, ownership arrangements, performers' rights, music permissions and licensing practices.",
+      "The consolidated current interpretation and practical enforcement of Lebanese copyright and personal data legislation, including applicable archival exceptions.",
+      "The precise circumstances under which GDPR applies directly or through particular foreign funding agreements.",
+      "Documented evidence of specific commercial organizations harvesting Lebanese voice recordings, the scale of that activity and the effectiveness of available countermeasures.",
+      "Comparative evidence about the long-term successes and failures of analogous cultural preservation initiatives; the analogies presented establish possible institutional mechanisms, not demonstrated effectiveness in Lebanon.",
+      "Community preferences concerning access, attribution, consent, compensation, governance and future custody.",
+      "The cost, staffing requirements, technical performance, geographic reach and institutional willingness associated with each proposed option."
+    ],
+    "privacy_boundary": "No personal data or names of private individuals are included. References to households, speakers and practitioners describe categories of potential participants. The options do not presume that permission to record, process or disclose identifiable voices has been granted.",
+    "exploration_boundary": "No option has been ranked, recommended, eliminated or selected for implementation. The options deliberately include different and potentially incompatible ownership models, access arrangements, institutional scales and degrees of intervention. Failure conditions identify matters for subsequent validation rather than grounds for rejecting an option during this phase."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "verifier-claims",
+  "title": "Tarea claims del verificador (skills/verifier/SKILL.md)",
+  "type": "object",
+  "required": ["claims"],
+  "properties": {
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text", "type", "strength"],
+        "properties": {
+          "text": {"type": "string"},
+          "type": {"enum": ["source", "reasoning", "owner", "position"]},
+          "url": {"type": "string"},
+          "fragment": {"type": "string"},
+          "premises": {"type": "array", "items": {"type": "string"}},
+          "strength": {"enum": ["strong", "weak", "unsupported"]},
+          "note": {"type": "string"}
+        }
+      }
+    }
+  }
+}

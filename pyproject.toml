@@ -1,0 +1,15 @@
+[project]
+name = "tresia"
+version = "0.1.0"
+description = "Herramienta local para ampliar y validar ideas con tres modelos de proveedores distintos."
+requires-python = ">=3.11"
+dependencies = [
+    "jsonschema>=4.20",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

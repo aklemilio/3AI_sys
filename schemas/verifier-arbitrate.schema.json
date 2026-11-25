@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "verifier-arbitrate",
+  "title": "Tarea arbitrate del verificador: tarjetas de decisión (skills/verifier/SKILL.md)",
+  "type": "object",
+  "required": ["cards"],
+  "properties": {
+    "cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["finding", "question", "options", "default"],
+        "properties": {
+          "finding": {"type": "string"},
+          "question": {"type": "string", "minLength": 1},
+          "context": {"type": "string"},
+          "options": {
+            "type": "array",
+            "minItems": 2,
+            "items": {"type": "object", "required": ["label", "consequence"], "properties": {"label": {"type": "string"}, "consequence": {"type": "string"}}}
+          },
+          "default": {"type": "string", "minLength": 1},
+          "recommendation": {"type": "string"}
+        }
+      }
+    }
+  }
+}

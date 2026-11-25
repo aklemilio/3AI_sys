@@ -1,0 +1,199 @@
+{
+  "finding_status": [
+    {
+      "id": "A1",
+      "status": "resolved",
+      "why": "Replaces statistical significance rules with randomized validation samples, non-binding reference targets, iterative corrections, and a serious-harm stop rule (§3, Annex B)."
+    },
+    {
+      "id": "A2",
+      "status": "resolved",
+      "why": "Blocks future project uses and deletes controlled copies within 30 days on withdrawal while warning that existing model weights are not erased (§2 P4, Annex D)."
+    },
+    {
+      "id": "A3",
+      "status": "resolved",
+      "why": "Explicitly discloses to ASR contributors that public audio can be used to imitate or clone their voice without promising voice-identity protection (§2 P8, §3 P-A, Annex D)."
+    },
+    {
+      "id": "A4",
+      "status": "resolved",
+      "why": "Establishes a non-identifying public withdrawal list with deprecated release checksums and requires downstream users to synchronize via terms (Annex D)."
+    },
+    {
+      "id": "A5",
+      "status": "resolved",
+      "why": "Provides optional sealed contact records held by the privacy officer for lost credential recovery while prohibiting voice-matching lookups (§5 C35, Annex D)."
+    },
+    {
+      "id": "A6",
+      "status": "resolved",
+      "why": "Contracts a cultural depositary prior to retention to receive heritage collections under existing consents upon project closure (§1, §6, Annex E)."
+    },
+    {
+      "id": "A7",
+      "status": "resolved",
+      "why": "Establishes Objective 2 under an independent institutional host and cultural depositary with its own budget line and month-18 funding plan (§1, §5 K02, §6)."
+    },
+    {
+      "id": "A8",
+      "status": "resolved",
+      "why": "Constitutes an interim community-majority council at M0 with defined quorum rules and caps non-veto disputes at 30 days before independent reviewer decision (§5 K02)."
+    },
+    {
+      "id": "A9",
+      "status": "partial",
+      "why": "Keeps mixed MSA/Lebanese programmes in scope with four evaluation criteria, but leaves thresholds and definitions unspecified and pending owner approval (§4 C-B)."
+    },
+    {
+      "id": "A10",
+      "status": "resolved",
+      "why": "Mandates single-pass capture of endangered carriers during audit and relies on human sampling for programme-level language auditing (§4 C-B)."
+    },
+    {
+      "id": "A11",
+      "status": "resolved",
+      "why": "Removes the conditional gate on private synthesis, allowing it to proceed by owner decision sized to K30 needs and third-party comparisons (§3 K07)."
+    },
+    {
+      "id": "A12",
+      "status": "resolved",
+      "why": "Separates secure storage verification at G-1 from private synthesis compute, location, access, and isolation verification at G-3 (§5, Annex A)."
+    },
+    {
+      "id": "A13",
+      "status": "resolved",
+      "why": "Requires filing Law 81/2018 declarations, including Article 96(12) foreign transfers, before collection and as a condition of Gate G-1 (§5, Annex A)."
+    },
+    {
+      "id": "A14",
+      "status": "resolved",
+      "why": "Excludes individuals with failed comprehension or doubtful capacity from public ASR while permitting companion-supported heritage participation (§5 C35, Annex E)."
+    },
+    {
+      "id": "A15",
+      "status": "resolved",
+      "why": "Digitizes household broadcast recordings solely to preserve originals and withholds replacement copies pending counsel's opinion on third-party copying (§4 C-C, §5)."
+    },
+    {
+      "id": "A16",
+      "status": "resolved",
+      "why": "Requires reviewing applicable diaspora privacy jurisdictions and retaining impact assessments and transfer safeguards prior to Gate G-1 (§5, Annex A)."
+    },
+    {
+      "id": "A17",
+      "status": "not_resolved",
+      "why": "Body remains ~1,674 words against the 1,600-word limit despite claiming duplicated reasoning was trimmed (§7)."
+    }
+  ],
+  "new_problems": [
+    {
+      "id": "N1",
+      "name": "Pre-G-1 recording trials conflict with Law 81/2018",
+      "severity": "high",
+      "section": "§5 Legal safeguards & Annex A (G-1)",
+      "problem": "Section 5 requires filed Law 81/2018 declarations 'before collection', whereas Annex A allows 'non-retained trials only' prior to G-1 declaration verification. Recording live human speech during pre-G-1 trials still constitutes personal data processing without prior declaration.",
+      "fix": "Amend Annex A (G-1) to specify that pre-G-1 trials may only use pre-existing public/synthetic audio, or require Law 81/2018 filing prior to any live speaker recording.",
+      "support": [
+        {
+          "type": "source",
+          "claim": "Law 81/2018 requires prior declaration covering personal data processing and foreign transfers.",
+          "url": "https://lebaneselegislation.com/en/law/278573/article/96/",
+          "fragment": "«عند الاقتضاء، نقل البيانات ذات الطابع الشخصي الى دولة اخرى في اي شكل كان»"
+        },
+        {
+          "type": "reasoning",
+          "claim": "Recording human voices for trials is personal data collection regardless of later deletion.",
+          "premises": [
+            "Section 5 mandates filed declarations before collection.",
+            "Annex A permits non-retained trials before G-1 verifies the filed declaration."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "N2",
+      "name": "Ethics approval scheduled concurrently with pilot execution",
+      "severity": "high",
+      "section": "§6 Delivery roadmap & Annex A (G-2)",
+      "problem": "Annex A requires research ethics committee approval 'before their implementation and G-2' for K30 randomization and P-A collection, but Section 6 schedules 'Ethics approval, pilot, G-2' together in M3–6 without explicitly gating the pilot start.",
+      "fix": "Move ethics committee approval into M0–3 in Section 6, explicitly preceding any K30 randomization or P-A pilot recruitment.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Ethics review cannot occur concurrently with the human-subjects pilot it is meant to authorize.",
+          "premises": [
+            "Annex A states ethics approval must occur before K30 randomization and P-A collection implementation.",
+            "Section 6 places ethics approval and the pilot in the same M3–6 window."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "N3",
+      "name": "Private synthesis withdrawal leaves active voice persona deployed",
+      "severity": "medium",
+      "section": "§3 P-A & Annex D",
+      "problem": "Private synthesis relies on 'few selected voices' (§3 P-A), yet Annex D states existing model weights need not be erased upon withdrawal without requiring retirement of that contributor's synthetic voice persona from K30 service.",
+      "fix": "Add to Annex D that if a private-synthesis voice contributor withdraws, their specific voice persona/adapter is retired from active K30 synthesis deployment within 30 days.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Continuing to generate speech in a withdrawn studio actor's voice violates the rule stopping future project uses.",
+          "premises": [
+            "Annex D blocks all future project uses upon withdrawal.",
+            "Private synthesis uses a small, identifiable set of studio voices rather than diffuse crowd averages."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "N4",
+      "name": "Unverified statutory bases for 50-year broadcast triage",
+      "severity": "medium",
+      "section": "§4 Programme C-B & Annex G (S9, S10)",
+      "problem": "Programme C-B treats 'broadcasts older than 50 years' as a primary rights-triage category while Section 5 notes 50 years alone does not establish unrestricted reuse, and Annex G confirms the statutory fragment (S10) was not verified.",
+      "fix": "Label the 50-year triage bucket provisional pending counsel verification of Lebanese copyright/neighboring-rights terms before any C-C rebroadcasting.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Operational triage buckets should not rely on unverified statutory durations.",
+          "premises": [
+            "Annex G (S10) marks the 50-year broadcaster term as unretrieved and pending counsel confirmation.",
+            "Section 5 already warns that 50 years does not clear underlying works or performers."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "N5",
+      "name": "Body text exceeds mandatory 1,600-word ceiling",
+      "severity": "low",
+      "section": "§§1–7 (Body length / A17)",
+      "problem": "The strategy body is approximately 1,674 words, violating the 1,600-word limit due to repeated withdrawal, closure, and gate rules across §§2, 5, and 6 that already appear in Annexes A–E.",
+      "fix": "Cut ~85 words of duplicated operational detail from §§5–6 by cross-referencing Annexes A, D, and E.",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Trimming redundant cross-references brings the document within the 1,600-word limit without losing substance.",
+          "premises": [
+            "Verifier count shows ~1,674 body words against a 1,600-word limit.",
+            "Withdrawal timelines and closure transfer steps are stated in full in both the main body and Annexes D–E."
+          ]
+        }
+      ]
+    }
+  ],
+  "pertinence_parameters": {
+    "assessment": "Useful as high-level triage dimensions for prioritizing mixed MSA/Lebanese programmes, but not yet actionable because they lack quantitative cutoffs, scoring weights, and segment-level handling rules.",
+    "missing": [
+      "Minimum Lebanese speech share threshold (e.g., percentage of programme runtime or spoken turns) required for inclusion",
+      "Operational rubric defining 'cultural value' (e.g., endangered regional dialect, oral poetry, occupational lexicon, or historical uniqueness)",
+      "Definition of 'separability' and policy on whether interspersed MSA segments are retained in context or excised during archival preservation",
+      "Carrier-condition triage matrix linking physical degradation urgency to capture priority",
+      "Owner approval deadline and default interim rule so C-B audits are not stalled waiting for sign-off"
+    ]
+  },
+  "verdict": "ready with conditions",
+  "verdict_reason": "Strategy v4.1 faithfully implements nearly all owner dispositions, cleanly separating cultural preservation from AI gates and replacing rigid statistical rules with iterative validation. Adopt once five targeted fixes are applied: trim ~85 body words to meet the 1,600-word cap, align pre-G-1 trial and ethics sequencing with Law 81/2018, retire withdrawn synthesis personas, and operationalize mixed-programme thresholds."
+}

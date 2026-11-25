@@ -1,0 +1,668 @@
+{
+  "assessments": [
+    {
+      "id": "C01",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 4,
+        "evidence": 5,
+        "safety": 5,
+        "inclusion": 3
+      },
+      "note": "Strong enabling infrastructure. Include discontinued broadcasters and informal regional collections; assign responsibility for periodic updates."
+    },
+    {
+      "id": "C02",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 3,
+        "evidence": 3,
+        "safety": 4,
+        "inclusion": 3
+      },
+      "note": "Age since broadcast alone cannot establish clearance. Require separate assessment of underlying works, performers, applicable rights periods and contractual restrictions."
+    },
+    {
+      "id": "C03",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 3,
+        "evidence": 5,
+        "safety": 4,
+        "inclusion": 4
+      },
+      "note": "Addresses irreversible physical deterioration. Prioritize unique regional recordings, endangered formats and retired technicians' knowledge of undocumented collections."
+    },
+    {
+      "id": "C04",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 4,
+        "evidence": 4,
+        "safety": 3,
+        "inclusion": 5
+      },
+      "note": "Recovers everyday speech absent from institutional archives. Separate digitisation services from archive consent, including permissions concerning other recorded individuals."
+    },
+    {
+      "id": "C05",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 3,
+        "evidence": 4,
+        "safety": 5,
+        "inclusion": 3
+      },
+      "note": "Separating preservation from publication substantially reduces participation barriers. Contractual escrow must not be mistaken for statutory immunity from third-party claims."
+    },
+    {
+      "id": "C06",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 3,
+        "evidence": 5,
+        "safety": 4,
+        "inclusion": 3
+      },
+      "note": "Geographically independent copies improve disaster resilience. Require recoverable encryption keys, lawful transfers, integrity checks and enforceable custodian exit arrangements."
+    },
+    {
+      "id": "C07",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 3,
+        "feasibility": 4,
+        "evidence": 4,
+        "safety": 4,
+        "inclusion": 3
+      },
+      "note": "Useful minimum safeguard under severe resource constraints. Sampling must prioritize endangered varieties and avoid presenting the seed collection as comprehensive."
+    },
+    {
+      "id": "C08",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 3,
+        "evidence": 4,
+        "safety": 4,
+        "inclusion": 4
+      },
+      "note": "Community stewardship is promising, but contractual restrictions cannot guarantee downstream compliance. Preserve individual speaker autonomy and avoid importing foreign governance structures wholesale."
+    },
+    {
+      "id": "C09",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 3,
+        "evidence": 4,
+        "safety": 4,
+        "inclusion": 5
+      },
+      "note": "Strong regional representation and contextual authority. Shared technical infrastructure and individual appeals against community gatekeeping are important safeguards."
+    },
+    {
+      "id": "C10",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 4,
+        "evidence": 5,
+        "safety": 4,
+        "inclusion": 5
+      },
+      "note": "Established distribution mechanism with low literacy barriers. Broadcasting reduces some harvesting opportunities but cannot prevent unauthorized recording."
+    },
+    {
+      "id": "C11",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 2,
+        "evidence": 4,
+        "safety": 3,
+        "inclusion": 5
+      },
+      "note": "Supports living regional speech. Existing licensed stations could host pilots; dialect-focused programming should not police natural code-switching or exclude multilingual speakers."
+    },
+    {
+      "id": "C12",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 3,
+        "evidence": 4,
+        "safety": 4,
+        "inclusion": 5
+      },
+      "note": "Excellent accessibility for basic-phone users. Affordable calls, spoken navigation, anonymous listening and separate consent for recorded contributions are essential."
+    },
+    {
+      "id": "C13",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 4,
+        "evidence": 4,
+        "safety": 5,
+        "inclusion": 5
+      },
+      "note": "Directly addresses device ownership, connectivity and literacy barriers. Mobile facilities and facilitated listening can reach people excluded from conventional libraries."
+    },
+    {
+      "id": "C14",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 3,
+        "evidence": 3,
+        "safety": 3,
+        "inclusion": 3
+      },
+      "note": "Treat harvesting controls as deterrence, not prevention. Streaming remains capturable, and core tiered access does not inherently require AI."
+    },
+    {
+      "id": "C15",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 3,
+        "evidence": 4,
+        "safety": 3,
+        "inclusion": 4
+      },
+      "note": "Enables cultural reuse. Genuine openness and enforceable machine-learning restrictions may require distinct licensing categories; explain irreversible redistribution before accepting identifiable contributions."
+    },
+    {
+      "id": "C16",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 4,
+        "evidence": 4,
+        "safety": 4,
+        "inclusion": 3
+      },
+      "note": "Useful diaspora participation mechanism. Accept spoken annotations and spelling variation to avoid excluding non-writers or normalizing away regional linguistic differences."
+    },
+    {
+      "id": "C17",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 3,
+        "feasibility": 2,
+        "evidence": 3,
+        "safety": 3,
+        "inclusion": 3
+      },
+      "note": "Improves discoverability rather than preservation itself. Evaluate errors across regions, ages and recording conditions; retain human correction and original audio."
+    },
+    {
+      "id": "C18",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 2,
+        "evidence": 3,
+        "safety": 3,
+        "inclusion": 5
+      },
+      "note": "Potentially transformative accessibility. Provide keypad or human-assisted fallback, minimize query retention and resolve the undefined O9 dependency before implementation."
+    },
+    {
+      "id": "C19",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 4,
+        "evidence": 4,
+        "safety": 4,
+        "inclusion": 4
+      },
+      "note": "Corrects unsupported assumptions about decline. Avoid delaying emergency rescue or treating unmeasured practices as secure. Core sociolinguistic assessment needs no AI."
+    },
+    {
+      "id": "C20",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 3,
+        "evidence": 5,
+        "safety": 3,
+        "inclusion": 4
+      },
+      "note": "Established linguistic documentation method. Include multiple generations, avoid precise attribution where risky, and permit restricted deposits. Basic sound atlases require no AI."
+    },
+    {
+      "id": "C21",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 4,
+        "evidence": 5,
+        "safety": 4,
+        "inclusion": 5
+      },
+      "note": "Preserves vocabulary, interaction and cultural meaning together. Compensate participants and allow them to exclude confidential, sacred or commercially sensitive practices."
+    },
+    {
+      "id": "C22",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 3,
+        "evidence": 5,
+        "safety": 3,
+        "inclusion": 4
+      },
+      "note": "Strong historical precedent for intergenerational documentation. Ensure child safeguarding, speaker consent and alternatives for pupils without accessible or willing elders."
+    },
+    {
+      "id": "C23",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 4,
+        "evidence": 4,
+        "safety": 5,
+        "inclusion": 4
+      },
+      "note": "Connects institutional learning with everyday use. Keep external activities voluntary and avoid assessing families' linguistic practices or requiring recording as evidence."
+    },
+    {
+      "id": "C24",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 3,
+        "evidence": 4,
+        "safety": 4,
+        "inclusion": 4
+      },
+      "note": "Supports early oral acquisition without literacy requirements. Adapt revival precedents to Lebanese vitality and provide affordable access through existing childcare settings."
+    },
+    {
+      "id": "C25",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 3,
+        "evidence": 5,
+        "safety": 5,
+        "inclusion": 5
+      },
+      "note": "Directly transfers endangered embodied knowledge while compensating bearers. Transparent selection, apprentice stipends and flexible participation improve equitable access."
+    },
+    {
+      "id": "C26",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 4,
+        "evidence": 4,
+        "safety": 4,
+        "inclusion": 5
+      },
+      "note": "Sustains living oral performance rather than passive storage. Support ordinary community participants alongside established performers and avoid imposing standardized repertoire."
+    },
+    {
+      "id": "C27",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 3,
+        "evidence": 4,
+        "safety": 4,
+        "inclusion": 5
+      },
+      "note": "Protects social conditions supporting spontaneous transmission. Ensure accessible venues and participation beyond established local, gender, political or sectarian networks."
+    },
+    {
+      "id": "C28",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 4,
+        "evidence": 4,
+        "safety": 3,
+        "inclusion": 5
+      },
+      "note": "Strengthens regular diaspora speech practice. Use caregiver-supervised contact, vetted volunteers and downloadable materials for households with unreliable connectivity."
+    },
+    {
+      "id": "C29",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 5,
+        "evidence": 4,
+        "safety": 5,
+        "inclusion": 5
+      },
+      "note": "Low-cost, privacy-preserving transmission that respects household autonomy. Offer inclusive alternatives for isolated elders and families without intergenerational contact."
+    },
+    {
+      "id": "C30",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 5,
+        "evidence": 4,
+        "safety": 4,
+        "inclusion": 4
+      },
+      "note": "Reduces institutional trust barriers. Include spoken backup guidance, consent for family sharing and affordable storage assistance for households lacking suitable devices."
+    },
+    {
+      "id": "C31",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 3,
+        "feasibility": 5,
+        "evidence": 3,
+        "safety": 5,
+        "inclusion": 4
+      },
+      "note": "Accessible entry point for family interaction. Include offline spoken versions and contextual explanations; avoid presenting selected expressions as a definitive regional canon."
+    },
+    {
+      "id": "C32",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 4,
+        "evidence": 4,
+        "safety": 4,
+        "inclusion": 4
+      },
+      "note": "Recognizes diaspora speech as independently valuable heritage. Include economically marginalized migrant communities rather than concentrating exclusively on established expatriate institutions."
+    },
+    {
+      "id": "C33",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 3,
+        "evidence": 4,
+        "safety": 4,
+        "inclusion": 5
+      },
+      "note": "Addresses neglected linguistic communities. Sign language requires visual preservation and Deaf-led governance; communities must define their own identities, terminology and documentation priorities."
+    },
+    {
+      "id": "C34",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 1,
+        "evidence": 5,
+        "safety": 4,
+        "inclusion": 4
+      },
+      "note": "Potentially systemic legal improvement. Legislative feasibility is low; preservation exceptions must remain distinct from unrestricted publication, commercial exploitation and personal-data permissions."
+    },
+    {
+      "id": "C35",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 4,
+        "evidence": 4,
+        "safety": 5,
+        "inclusion": 5
+      },
+      "note": "Shared oral-first protocol reduces exclusion. Use modular jurisdiction-specific provisions and distinguish consent withdrawal from obligations concerning previously lawful processing and redistribution."
+    },
+    {
+      "id": "C36",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 3,
+        "feasibility": 2,
+        "evidence": 3,
+        "safety": 4,
+        "inclusion": 3
+      },
+      "note": "Local governance offers benefits but does not itself guarantee security. Require resilient backups and assess whether supposedly anonymized metadata permits reidentification."
+    },
+    {
+      "id": "C37",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 2,
+        "feasibility": 5,
+        "evidence": 3,
+        "safety": 5,
+        "inclusion": 4
+      },
+      "note": "Legitimate community-autonomy approach for selected practices. Establish community-defined intervention triggers and acknowledge that aggregate observation may miss irreversible knowledge loss."
+    },
+    {
+      "id": "C38",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 3,
+        "evidence": 4,
+        "safety": 4,
+        "inclusion": 4
+      },
+      "note": "Explicitly serves future generations. Sustainable custody, periodic format migration and contextual documentation matter more than merely setting distant opening dates."
+    },
+    {
+      "id": "C39",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 5,
+        "feasibility": 4,
+        "evidence": 4,
+        "safety": 4,
+        "inclusion": 4
+      },
+      "note": "Prevents heritage preservation from becoming exclusively nostalgic. Include low-visibility creators and regional productions, with separate permissions for incorporated third-party material."
+    },
+    {
+      "id": "C40",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 3,
+        "evidence": 5,
+        "safety": 5,
+        "inclusion": 3
+      },
+      "note": "Improves intelligibility and usability. Preserve unprocessed masters, document every intervention and avoid synthetic reconstruction. Conventional signal processing does not inherently require AI."
+    },
+    {
+      "id": "C41",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {
+        "impact": 4,
+        "feasibility": 2,
+        "evidence": 3,
+        "safety": 3,
+        "inclusion": 4
+      },
+      "note": "Could redistribute commercial value to contributors. Revenue is uncertain, and collective licensing cannot substitute for individual consent or authorization from underlying rights holders."
+    }
+  ],
+  "new_options": [
+    {
+      "name": "Displaced Communities' Portable Oral Heritage Circles",
+      "description": "Support voluntary storytelling, songs, place-name recollections and everyday conversation among internally displaced and recently emigrated communities whose traditional gathering spaces have been disrupted. Pay community facilitators and provide portable, offline listening materials that can travel with participants. Do not require recording, proof of displacement or disclosure of sensitive locations. Allow participants to continue their cultural practices wherever they settle.",
+      "builds_on": ["C13", "C27", "C29", "C32"],
+      "depends_on_ai": false
+    },
+    {
+      "name": "Local Audiovisual Preservation Technician Fellowships",
+      "description": "Train and compensate technicians from regional communities in obsolete-format playback, equipment maintenance, archival digitisation, integrity checking and secure storage. Pair trainees with retired broadcaster technicians to preserve technical knowledge that might otherwise disappear alongside the recordings. Provide shared equipment through regional service hubs so smaller institutions and low-income households can access preservation services. Establish reusable technical documentation and succession arrangements independent of individual specialists.",
+      "builds_on": ["C03", "C04", "C06", "C25", "C40"],
+      "depends_on_ai": false
+    },
+    {
+      "name": "Emergency Community Heritage Continuity Fund",
+      "description": "Establish a standing microgrant mechanism that communities can activate when oral heritage faces sudden disruption through displacement, venue closure, institutional collapse or the impending loss of a tradition bearer. Eligible expenditure includes emergency tape transfers, temporary gathering spaces, compensated teaching and secure relocation of existing collections. Permit applications through spoken submissions rather than requiring written proposals. Use transparent allocation criteria and never make recording or public disclosure a condition of assistance.",
+      "builds_on": ["C03", "C05", "C25", "C27", "C37"],
+      "depends_on_ai": false
+    }
+  ],
+  "screening_metadata": {
+    "fatal_votes": 0,
+    "fatal_threshold_interpretation": "An option is fatal only when its essential mechanism is inherently unworkable or necessarily causes serious harm across reasonable implementations. None of the 41 options meets that threshold. Legal misconceptions, technical limitations, governance weaknesses and implementation risks identified here are correctable without abandoning the underlying options.",
+    "scoring_method": {
+      "impact": "Potential contribution to preservation or living transmission, including enabling infrastructure, assuming a competent implementation.",
+      "feasibility": "Provisional assessment of implementation difficulty under Lebanese institutional, financial, infrastructure and security constraints, allowing for appropriately scaled pilots.",
+      "evidence": "Strength of established methodological precedent or underlying causal reasoning, not necessarily demonstrated effectiveness in Lebanon.",
+      "safety": "Expected protection of speakers and communities under reasonable safeguards; higher scores indicate lower residual risk.",
+      "inclusion": "Ability to reach the specified priority populations without imposing unnecessary literacy, income, connectivity, geographic or institutional barriers."
+    },
+    "score_anchors": {
+      "1": "Very weak",
+      "2": "Limited",
+      "3": "Moderate",
+      "4": "Strong",
+      "5": "Very strong"
+    },
+    "limitations": [
+      "This is a reasoning-based screening rather than an externally verified literature review or current Lebanese institutional assessment. No external sources were independently checked, and no source quotations or URLs have been fabricated.",
+      "Present-day feasibility scores are provisional. Current legislation, telecommunications tariffs, funding availability, broadcaster participation, security conditions and institutional capacity require independent verification.",
+      "Evidence scores assess the plausibility and general precedent of mechanisms rather than verified Lebanon-specific outcomes.",
+      "Inclusion scores assess the full set of priority populations rather than literacy accessibility alone.",
+      "Preservation infrastructure receives impact credit for preventing irreversible loss even when immediate public access is limited.",
+      "AI dependence was not treated as an automatic disadvantage. C14, C19, C20 and C40 contain core mechanisms that can operate without AI despite their supplied classifications.",
+      "C18 references O9, which is not defined in the supplied option set. Its scores assume that suitable governed speech tools could eventually be available.",
+      "The requested output schema has been extended with this metadata solely to disclose scoring assumptions and verification limitations. All 41 assessments retain their original identifiers and ordering.",
+      "No options have been ranked, merged or deleted. No aggregate scores or winner recommendations have been produced."
+    ]
+  }
+}

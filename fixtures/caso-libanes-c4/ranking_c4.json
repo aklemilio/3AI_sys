@@ -1,0 +1,688 @@
+[
+ {
+  "id": "C21",
+  "name": "Grabar oficios, trabajo y vida cotidiana en contexto",
+  "tot": 23,
+  "med": {
+   "impact": 5,
+   "feasibility": 4,
+   "evidence": 5,
+   "safety": 4,
+   "inclusion": 5
+  },
+  "dis": [
+   "safety"
+  ],
+  "stage": "record_or_rescue",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C25",
+  "name": "Aprendizajes pagados con portadores de la tradición",
+  "tot": 22,
+  "med": {
+   "impact": 5,
+   "feasibility": 3,
+   "evidence": 4,
+   "safety": 5,
+   "inclusion": 5
+  },
+  "dis": [],
+  "stage": "transmit",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C26",
+  "name": "Pagar la práctica viva: zajal, relatos, teatro",
+  "tot": 22,
+  "med": {
+   "impact": 5,
+   "feasibility": 4,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 5
+  },
+  "dis": [
+   "evidence"
+  ],
+  "stage": "keep_alive",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C10",
+  "name": "Reemitir archivos por radio y televisión",
+  "tot": 22,
+  "med": {
+   "impact": 4,
+   "feasibility": 4,
+   "evidence": 5,
+   "safety": 4,
+   "inclusion": 5
+  },
+  "dis": [
+   "evidence"
+  ],
+  "stage": "access",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C13",
+  "name": "Puntos de escucha sin internet",
+  "tot": 22,
+  "med": {
+   "impact": 4,
+   "feasibility": 4,
+   "evidence": 4,
+   "safety": 5,
+   "inclusion": 5
+  },
+  "dis": [],
+  "stage": "access",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C29",
+  "name": "Círculos familiares intergeneracionales sin grabar",
+  "tot": 22,
+  "med": {
+   "impact": 4,
+   "feasibility": 4,
+   "evidence": 4,
+   "safety": 5,
+   "inclusion": 5
+  },
+  "dis": [
+   "feasibility",
+   "evidence"
+  ],
+  "stage": "transmit",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C35",
+  "name": "Protocolo único de consentimiento oral",
+  "tot": 22,
+  "med": {
+   "impact": 4,
+   "feasibility": 4,
+   "evidence": 4,
+   "safety": 5,
+   "inclusion": 5
+  },
+  "dis": [],
+  "stage": "preserve",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C04",
+  "name": "Rescate de cintas y vídeos domésticos",
+  "tot": 21,
+  "med": {
+   "impact": 5,
+   "feasibility": 4,
+   "evidence": 4,
+   "safety": 3,
+   "inclusion": 5
+  },
+  "dis": [],
+  "stage": "find",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C09",
+  "name": "Archivos sonoros regionales de gobierno comunitario",
+  "tot": 21,
+  "med": {
+   "impact": 5,
+   "feasibility": 3,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 5
+  },
+  "dis": [],
+  "stage": "preserve",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C27",
+  "name": "Proteger los espacios de encuentro",
+  "tot": 21,
+  "med": {
+   "impact": 5,
+   "feasibility": 3,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 5
+  },
+  "dis": [],
+  "stage": "keep_alive",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C33",
+  "name": "Incluir otras herencias habladas del Líbano",
+  "tot": 21,
+  "med": {
+   "impact": 5,
+   "feasibility": 3,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 5
+  },
+  "dis": [
+   "evidence"
+  ],
+  "stage": "find",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C03",
+  "name": "Rescate de cintas en emisoras privadas y regionales",
+  "tot": 21,
+  "med": {
+   "impact": 5,
+   "feasibility": 3,
+   "evidence": 5,
+   "safety": 4,
+   "inclusion": 4
+  },
+  "dis": [],
+  "stage": "record_or_rescue",
+  "new": false,
+  "ai": false
+ },
+ {
+  "id": "C23",
+  "name": "Actividades escolares ligadas al uso en casa",
+  "tot": 21,
+  "med": {
+   "impact": 4,
+   "feasibility": 4,
+   "evidence": 4,
+   "safety": 5,
+   "inclusion": 4
+  },
+  "dis": [],
+  "stage": "transmit",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C01",
+  "name": "Inventario nacional de archivos de emisoras",
+  "tot": 21,
+  "med": {
+   "impact": 4,
+   "feasibility": 4,
+   "evidence": 5,
+   "safety": 5,
+   "inclusion": 3
+  },
+  "dis": [],
+  "stage": "find",
+  "new": false,
+  "ai": false
+ },
+ {
+  "id": "C11",
+  "name": "Red de radios locales en dialecto",
+  "tot": 20,
+  "med": {
+   "impact": 5,
+   "feasibility": 2,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 5
+  },
+  "dis": [],
+  "stage": "keep_alive",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C22",
+  "name": "Escolares entrevistan a sus mayores",
+  "tot": 20,
+  "med": {
+   "impact": 5,
+   "feasibility": 3,
+   "evidence": 5,
+   "safety": 3,
+   "inclusion": 4
+  },
+  "dis": [],
+  "stage": "record_or_rescue",
+  "new": false,
+  "ai": false
+ },
+ {
+  "id": "C12",
+  "name": "Línea telefónica para escuchar archivos",
+  "tot": 20,
+  "med": {
+   "impact": 4,
+   "feasibility": 3,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 5
+  },
+  "dis": [],
+  "stage": "access",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C28",
+  "name": "Transmisión familiar con la diáspora",
+  "tot": 20,
+  "med": {
+   "impact": 4,
+   "feasibility": 4,
+   "evidence": 4,
+   "safety": 3,
+   "inclusion": 5
+  },
+  "dis": [
+   "inclusion"
+  ],
+  "stage": "transmit",
+  "new": false,
+  "ai": false
+ },
+ {
+  "id": "C32",
+  "name": "La diáspora como reservorio propio",
+  "tot": 20,
+  "med": {
+   "impact": 4,
+   "feasibility": 4,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 4
+  },
+  "dis": [],
+  "stage": "transmit",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C30",
+  "name": "Grabaciones familiares guardadas en casa",
+  "tot": 20,
+  "med": {
+   "impact": 3,
+   "feasibility": 5,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 4
+  },
+  "dis": [],
+  "stage": "record_or_rescue",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C40",
+  "name": "Restauración acústica de cintas dañadas",
+  "tot": 20,
+  "med": {
+   "impact": 3,
+   "feasibility": 4,
+   "evidence": 5,
+   "safety": 5,
+   "inclusion": 3
+  },
+  "dis": [
+   "impact"
+  ],
+  "stage": "preserve",
+  "new": true,
+  "ai": true
+ },
+ {
+  "id": "C15",
+  "name": "Colección abierta con derechos liberados",
+  "tot": 19,
+  "med": {
+   "impact": 4,
+   "feasibility": 4,
+   "evidence": 4,
+   "safety": 3,
+   "inclusion": 4
+  },
+  "dis": [],
+  "stage": "access",
+  "new": false,
+  "ai": false
+ },
+ {
+  "id": "C20",
+  "name": "Atlas sonoro de variantes regionales",
+  "tot": 19,
+  "med": {
+   "impact": 4,
+   "feasibility": 3,
+   "evidence": 5,
+   "safety": 3,
+   "inclusion": 4
+  },
+  "dis": [],
+  "stage": "record_or_rescue",
+  "new": false,
+  "ai": true
+ },
+ {
+  "id": "C24",
+  "name": "Nidos lingüísticos para la infancia",
+  "tot": 19,
+  "med": {
+   "impact": 4,
+   "feasibility": 3,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 4
+  },
+  "dis": [
+   "evidence"
+  ],
+  "stage": "transmit",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C38",
+  "name": "Depósitos para generaciones futuras",
+  "tot": 19,
+  "med": {
+   "impact": 4,
+   "feasibility": 3,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 4
+  },
+  "dis": [
+   "inclusion"
+  ],
+  "stage": "preserve",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C06",
+  "name": "Copias de seguridad distribuidas, también en la diáspora",
+  "tot": 19,
+  "med": {
+   "impact": 4,
+   "feasibility": 3,
+   "evidence": 5,
+   "safety": 4,
+   "inclusion": 3
+  },
+  "dis": [],
+  "stage": "preserve",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C31",
+  "name": "Barajas de refranes y recetas para la mesa familiar",
+  "tot": 19,
+  "med": {
+   "impact": 3,
+   "feasibility": 4,
+   "evidence": 3,
+   "safety": 5,
+   "inclusion": 4
+  },
+  "dis": [
+   "impact",
+   "evidence"
+  ],
+  "stage": "keep_alive",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C34",
+  "name": "Reforma legal: preservación y obras huérfanas",
+  "tot": 18,
+  "med": {
+   "impact": 5,
+   "feasibility": 1,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 4
+  },
+  "dis": [],
+  "stage": "preserve",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C05",
+  "name": "Depósito de custodia sin publicación (escrow)",
+  "tot": 18,
+  "med": {
+   "impact": 4,
+   "feasibility": 3,
+   "evidence": 4,
+   "safety": 5,
+   "inclusion": 2
+  },
+  "dis": [
+   "evidence"
+  ],
+  "stage": "preserve",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C08",
+  "name": "Licencia de custodia comunitaria",
+  "tot": 18,
+  "med": {
+   "impact": 3,
+   "feasibility": 3,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 4
+  },
+  "dis": [],
+  "stage": "preserve",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C07",
+  "name": "Archivo semilla mínimo",
+  "tot": 18,
+  "med": {
+   "impact": 3,
+   "feasibility": 4,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 3
+  },
+  "dis": [],
+  "stage": "preserve",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C16",
+  "name": "Catalogación colaborativa por escucha",
+  "tot": 18,
+  "med": {
+   "impact": 3,
+   "feasibility": 4,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 3
+  },
+  "dis": [],
+  "stage": "describe",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C19",
+  "name": "Medir dónde se pierde antes de actuar",
+  "tot": 18,
+  "med": {
+   "impact": 3,
+   "feasibility": 4,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 3
+  },
+  "dis": [
+   "inclusion"
+  ],
+  "stage": "find",
+  "new": true,
+  "ai": true
+ },
+ {
+  "id": "C39",
+  "name": "Preservar lo digital contemporáneo",
+  "tot": 18,
+  "med": {
+   "impact": 3,
+   "feasibility": 4,
+   "evidence": 4,
+   "safety": 4,
+   "inclusion": 3
+  },
+  "dis": [
+   "impact"
+  ],
+  "stage": "record_or_rescue",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C37",
+  "name": "Intervención mínima con observación periódica",
+  "tot": 18,
+  "med": {
+   "impact": 2,
+   "feasibility": 5,
+   "evidence": 3,
+   "safety": 5,
+   "inclusion": 3
+  },
+  "dis": [
+   "inclusion"
+  ],
+  "stage": "keep_alive",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C18",
+  "name": "Búsqueda e interfaz por voz para quien no lee",
+  "tot": 17,
+  "med": {
+   "impact": 4,
+   "feasibility": 2,
+   "evidence": 3,
+   "safety": 3,
+   "inclusion": 5
+  },
+  "dis": [],
+  "stage": "access",
+  "new": true,
+  "ai": true
+ },
+ {
+  "id": "C02",
+  "name": "Triaje y gestión de derechos de archivos",
+  "tot": 17,
+  "med": {
+   "impact": 4,
+   "feasibility": 3,
+   "evidence": 3,
+   "safety": 4,
+   "inclusion": 3
+  },
+  "dis": [],
+  "stage": "describe",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C41",
+  "name": "Regalías colectivas por uso de archivos y voces",
+  "tot": 16,
+  "med": {
+   "impact": 4,
+   "feasibility": 2,
+   "evidence": 3,
+   "safety": 3,
+   "inclusion": 4
+  },
+  "dis": [],
+  "stage": "record_or_rescue",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C17",
+  "name": "Indexación de archivos con reconocimiento de voz",
+  "tot": 15,
+  "med": {
+   "impact": 3,
+   "feasibility": 3,
+   "evidence": 3,
+   "safety": 3,
+   "inclusion": 3
+  },
+  "dis": [],
+  "stage": "describe",
+  "new": false,
+  "ai": true
+ },
+ {
+  "id": "C36",
+  "name": "Datos de voz alojados en el Líbano, acceso federado",
+  "tot": 15,
+  "med": {
+   "impact": 3,
+   "feasibility": 2,
+   "evidence": 3,
+   "safety": 4,
+   "inclusion": 3
+  },
+  "dis": [],
+  "stage": "preserve",
+  "new": true,
+  "ai": false
+ },
+ {
+  "id": "C14",
+  "name": "Acceso en línea por niveles contra la recolección",
+  "tot": 15,
+  "med": {
+   "impact": 3,
+   "feasibility": 3,
+   "evidence": 3,
+   "safety": 4,
+   "inclusion": 2
+  },
+  "dis": [],
+  "stage": "access",
+  "new": false,
+  "ai": true
+ }
+]

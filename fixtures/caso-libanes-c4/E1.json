@@ -1,0 +1,465 @@
+{
+  "no_intervention_scenario": {
+    "summary": "If nobody acts for 5–10 years, the everyday Lebanese dialect as a whole will almost certainly survive, because it is the default language of media, politics and online chat. What erodes is narrower and harder to replace: unstable magnetic tapes in under-funded broadcasters and private homes; regional and older registers that are giving way to a media-driven Beirut-centred koine; oral genres tied to village gatherings; the contextual knowledge (who, where, when) held by retiring archive staff and elders; and family transmission in a diaspora that keeps growing. Meanwhile, publicly posted Lebanese speech keeps being harvested by large companies on terms that communities do not control.",
+    "what_is_lost": [
+      "Undigitised tapes held by private, regional and defunct radio and TV stations, and recordings made at home",
+      "Regional phonology, vocabulary and older registers spoken by elderly rural speakers",
+      "Context metadata about archive items once knowledgeable staff and elders are gone",
+      "Intergenerational transmission in diaspora households",
+      "The community's bargaining position over how its voice data is used, once that data has been scraped"
+    ],
+    "what_value_remains": [
+      "A partly digitised and inventoried public broadcaster archive (Télé Liban, Radio Liban, the National News Agency)",
+      "Private sound archives such as AMAR's early-recording collections",
+      "Zajal's UNESCO inscription and its place on the national register of intangible heritage",
+      "Many living speakers, at home and abroad, plus a vast volume of informal online dialect (Arabizi, Arabic script, video)",
+      "Legal hooks already in force: Law 75/1999 limits broadcaster rights to 50 years from broadcast, and Law 81/2018 exempts personal and household processing"
+    ],
+    "support": [
+      {"type": "source", "claim": "Digitisation of the public broadcaster's archive has proceeded with little funding.", "url": "https://gulfnews.com/amp/gulfnews/entertainment/tv/lebanon-targets-unesco-register-for-pioneering-tv-archive-1.1703961392845", "fragment": "despite little financial support", "premises": []},
+      {"type": "source", "claim": "A rescue intervention has already preserved part of the public broadcaster's archive.", "url": "https://unjobs.org/channels/aeLfd8qimRWTNdxCbjbZrGTdhNo2/egaOZMKsnp0", "fragment": "the preservation of more than 4,500 historical tapes", "premises": []},
+      {"type": "source", "claim": "Emigration remains high, which weakens in-home transmission.", "url": "https://jcfa.org/implications-of-lebanons-changing-demography/", "fragment": "more than 220,000 people left Lebanon in 2025 alone", "premises": []},
+      {"type": "source", "claim": "The dialect is dominant in high-visibility media, so the language as a whole is not endangered.", "url": "https://en.wikipedia.org/wiki/Languages_of_Lebanon", "fragment": "most political talk shows are in Lebanese, not MSA", "premises": []},
+      {"type": "reasoning", "claim": "The loss is concentrated in variants, carriers and contexts, not in the dialect as a whole.", "url": "", "fragment": "", "premises": ["Magnetic media degrade over time without intervention", "Media exposure favours a standardised urban variety", "Elderly rural speakers are not being replaced by peers who speak the same variety"]}
+    ]
+  },
+  "faces_found": [
+    {"face": "Lebanese law as written: copyright (Law 75/1999)", "what_it_requires": "Broadcasters hold related rights for 50 years from broadcast and performers for 50 years from performance. Works inspired by folklore are protected. There is no general fair-use clause, only specific exceptions. Clearance is therefore needed for anything less than 50 years old."},
+    {"face": "Lebanese law as written: personal data (Law 81/2018)", "what_it_requires": "Personal data processing must have a legal basis. The law has no category for sensitive data, no independent authority, and exempts purely personal or household processing."},
+    {"face": "EU GDPR imposed by foreign funders", "what_it_requires": "Voice processed to identify a speaker is special-category data, prohibited by default unless an exception applies, such as explicit consent. Funders also expect minimisation, storage limits, documented legal bases and data-subject rights, which is stricter than Lebanese law."},
+    {"face": "Market practice: large-scale web harvesting", "what_it_requires": "In practice, nothing protects publicly posted speech from being used to train models. Only access control, licence terms and hosting choices actually limit reuse."},
+    {"face": "Broadcaster and state ownership of archives", "what_it_requires": "The public archives sit under the Ministry of Information, so access depends on ministerial and institutional agreement and on political continuity. Private broadcasters decide for themselves."},
+    {"face": "Community and moral ownership (added)", "what_it_requires": "Speakers, families and localities expect a say over how their voices are used. This norm is not codified in Lebanon but drives trust; compare the Māori data-sovereignty licences."},
+    {"face": "UNESCO intangible-heritage framework (added)", "what_it_requires": "Safeguarding must be community-led, based on consent, and aimed at keeping a practice alive, not freezing it in an archive."},
+    {"face": "Physical and security risk (added)", "what_it_requires": "War, displacement and power cuts make copies held in a single location unsafe. Off-site redundancy and emergency protocols are needed."},
+    {"face": "Diglossia and literacy (added)", "what_it_requires": "Writing norms favour Standard Arabic, so access designed around text excludes non-readers and those who write only in Arabizi. Oral and audio channels need to be designed in from the start."}
+  ],
+  "options": [
+    {
+      "id": "O1",
+      "name": "Rights-triage register for broadcaster archives",
+      "description": "Reframe the bottleneck as legal uncertainty rather than technology. Sort every archive item into one of four buckets: over 50 years since broadcast; broadcaster-owned and under 50 years; contains performers or third-party works; unknown. Publish the register so that funders and users can act on the items that are already clear.",
+      "technique": "T6",
+      "chain_stage": "describe",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": ["Ministry of Information", "Télé Liban and Radio Liban archive units", "private broadcasters", "copyright lawyers", "university law clinics"],
+      "who_benefits": ["researchers", "educators", "funders needing clarity", "the general public"],
+      "who_could_be_left_out": ["heirs of performers who are not consulted", "communities filmed without say"],
+      "faces_affected": ["Lebanese copyright law", "broadcaster ownership", "community ownership"],
+      "what_would_make_it_fail": "Broadcasters treat the register as a liability disclosure and refuse to cooperate, or ministerial turnover stalls the work.",
+      "support": [
+        {"type": "source", "claim": "Broadcaster rights last 50 years from broadcast.", "url": "https://blogs.ashmolean.org/commons.wikimedia.org/wiki/Commons_Copyright_rules_by_territory/Lebanon.html", "fragment": "The term of protection granted to broadcasting organizations shall be 50 years", "premises": []},
+        {"type": "source", "claim": "There is no general fair-use clause, so case-by-case clearance matters.", "url": "https://aub.edu.lb.libguides.com/copyright/Lebanese-Law", "fragment": "“Fair Use” concept is not embedded in the law", "premises": []},
+        {"type": "reasoning", "claim": "Programmes broadcast in the 1960s and early 1970s are already past the broadcaster's 50-year term.", "url": "", "fragment": "", "premises": ["Télé Liban broadcast from the late 1950s", "The term runs from the end of the year of broadcast", "Performer and author rights may still apply to the same content"]}
+      ]
+    },
+    {
+      "id": "O2",
+      "name": "Rescue tapes at private and regional stations",
+      "description": "Survey private TV channels, regional and defunct radio stations, and their retired technicians for surviving tapes. Offer free transfer in exchange for a preservation copy and a basic rights agreement. Give priority to formats at physical risk.",
+      "technique": "T1",
+      "chain_stage": "record_or_rescue",
+      "scale": "region",
+      "depends_on_ai": false,
+      "actors": ["private and regional broadcasters", "retired technicians", "AMAR-type sound archives", "universities"],
+      "who_benefits": ["regional communities whose local radio was never archived", "researchers"],
+      "who_could_be_left_out": ["stations that have already closed with no successor holding rights"],
+      "faces_affected": ["broadcaster ownership", "Lebanese copyright law", "physical risk"],
+      "what_would_make_it_fail": "Owners fear losing commercial value, or tapes have already been recycled or discarded.",
+      "support": [
+        {"type": "source", "claim": "Arab radio services, including Lebanese ones, have taped over historic recordings.", "url": "https://www.egyptindependent.com/let-music-play-arab-music-turn-century-finally-finds-home/", "fragment": "The same can be said for Syrian and Lebanese radio.", "premises": ["The preceding sentence in the source describes a football game recorded over an old concert"]},
+        {"type": "reasoning", "claim": "Archive attention has focused on public institutions.", "url": "", "fragment": "", "premises": ["The current state project covers bodies under the Ministry of Information", "Private and regional holdings fall outside that scope"]}
+      ]
+    },
+    {
+      "id": "O3",
+      "name": "Household off-air recording amnesty",
+      "description": "Invite families to bring old VHS tapes, cassettes and reel recordings made from TV and radio, or of family gatherings, to mobile digitisation days. The family keeps the original and a copy. With consent, the archive keeps a copy for gaps in broadcaster holdings.",
+      "technique": "T1",
+      "chain_stage": "find",
+      "scale": "household",
+      "depends_on_ai": false,
+      "actors": ["households", "municipalities", "parishes, mosques and clubs", "volunteer digitisers"],
+      "who_benefits": ["families", "archives with gaps", "older people who hold the media"],
+      "who_could_be_left_out": ["households without stored media", "displaced families who lost belongings"],
+      "faces_affected": ["broadcaster ownership", "Lebanese personal data law", "GDPR if foreign-funded"],
+      "what_would_make_it_fail": "Families fear that their private recordings will be exposed, or broadcasters object to copies of their programmes being kept.",
+      "support": [
+        {"type": "reasoning", "claim": "Home recordings may fill gaps where broadcasters overwrote their own tapes.", "url": "", "fragment": "", "premises": ["Broadcasters overwrote tapes (see O2)", "Households recorded popular programmes for decades"]},
+        {"type": "source", "claim": "Purely personal processing is outside the scope of Lebanese data law.", "url": "https://platform.dataguidance.com/notes/lebanon-data-protection-overview", "fragment": "not applicable to data processing related to personal activities", "premises": []}
+      ]
+    },
+    {
+      "id": "O4",
+      "name": "Re-broadcast archives on free airwaves",
+      "description": "Instead of putting the archive online first, schedule rights-cleared archive programmes on terrestrial TV and radio. Broadcast reaches older, low-income and rural audiences without internet access or literacy, and it is harder to scrape in bulk.",
+      "technique": "T5",
+      "chain_stage": "access",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": ["Télé Liban", "Radio Liban", "regional radios"],
+      "who_benefits": ["older people", "rural and low-income households", "non-readers"],
+      "who_could_be_left_out": ["the diaspora", "younger audiences who do not watch linear TV"],
+      "faces_affected": ["broadcaster ownership", "Lebanese copyright law", "market practice"],
+      "what_would_make_it_fail": "The public broadcaster lacks funds or a reliable power supply, or performer rights block re-broadcast.",
+      "support": [
+        {"type": "source", "claim": "The public broadcaster was the only channel for decades, so its archive is shared memory.", "url": "https://www.voanews.com/a/lebanon-to-seek-unesco-recognition-for-pioneering-tv-archive-/7418729.html", "fragment": "The only television channel in Lebanon until 1985", "premises": []},
+        {"type": "source", "claim": "Oral heritage such as zajal was broadcast on Télé Liban.", "url": "https://www.lorientlejour.com/article/898236/al-zajal-poesie-declamee-du-liban-sur-la-liste-du-patrimoine-mondial-de-lunesco.html", "fragment": "soirée de zajal diffusée il y a plusieurs années sur la chaîne Télé Liban", "premises": []}
+      ]
+    },
+    {
+      "id": "O5",
+      "name": "Phone line to listen to archives",
+      "description": "Set up a free or low-cost phone number with a keypad menu (by region, genre or decade) that plays short archive excerpts and lets callers leave a spoken comment or memory. It works on any basic phone and needs no reading.",
+      "technique": "T5",
+      "chain_stage": "access",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": ["telecom operators", "archive holders", "NGOs working with older people"],
+      "who_benefits": ["people who do not read or write", "older women", "rural residents", "the diaspora (by international call)"],
+      "who_could_be_left_out": ["deaf users", "people who cannot afford call costs if the line is not free"],
+      "faces_affected": ["broadcaster ownership", "Lebanese personal data law (recorded comments)", "GDPR"],
+      "what_would_make_it_fail": "Call costs, the operator's unwillingness to zero-rate the line, or no budget to curate the excerpts.",
+      "support": [
+        {"type": "source", "claim": "Illiteracy has been concentrated among older women.", "url": "https://www.businessnews.com.lb/cms/Story/StoryDetails/7379/~/images/bar.jpg", "fragment": "this applies only to older women", "premises": []},
+        {"type": "reasoning", "claim": "Audio-only access removes the literacy barrier.", "url": "", "fragment": "", "premises": ["Online catalogues require reading", "Phones are near-universal"]}
+      ]
+    },
+    {
+      "id": "O6",
+      "name": "Schoolchildren interview their elders",
+      "description": "Model a scheme on Ireland's 1937 Schools' Collection: pupils record elders at home on a shared list of themes (sayings, work songs, games, remedies, place names). The pupil, family and school keep copies. Families may deposit them with an archive if they consent.",
+      "technique": "T4",
+      "chain_stage": "record_or_rescue",
+      "scale": "neighbourhood",
+      "depends_on_ai": false,
+      "actors": ["schools", "Ministry of Education", "teachers", "grandparents"],
+      "who_benefits": ["children", "older people", "local communities", "future generations"],
+      "who_could_be_left_out": ["out-of-school children", "elders without grandchildren nearby", "families who distrust institutions"],
+      "faces_affected": ["Lebanese personal data law", "GDPR if foreign-funded", "community ownership"],
+      "what_would_make_it_fail": "Teacher overload and strikes, privacy fears, or sectarian sensitivities over some themes.",
+      "support": [
+        {"type": "source", "claim": "Ireland used schoolchildren as folklore collectors at national scale.", "url": "https://folklife.si.edu/magazine/1930s-irish-folklore-duchas-project", "fragment": "embarked on a project with an unlikely group of researchers: schoolchildren", "premises": []}
+      ]
+    },
+    {
+      "id": "O7",
+      "name": "Diaspora volunteers transcribe and tag recordings",
+      "description": "Run an online platform where volunteers anywhere transcribe and tag archive audio, in Arabic script or in an agreed Arabizi convention, and add place and context notes. This turns diaspora nostalgia into catalogue work.",
+      "technique": "T4",
+      "chain_stage": "describe",
+      "scale": "diaspora",
+      "depends_on_ai": false,
+      "actors": ["diaspora associations", "students", "archive holders", "script-standardisation collectives"],
+      "who_benefits": ["the diaspora", "researchers", "future users who search by text"],
+      "who_could_be_left_out": ["non-readers", "people without stable internet"],
+      "faces_affected": ["broadcaster ownership", "GDPR (volunteers in the EU)", "market practice (transcripts are scrapeable)"],
+      "what_would_make_it_fail": "Inconsistent spelling, low volunteer retention, or rights holders refusing online exposure.",
+      "support": [
+        {"type": "source", "claim": "Ireland's folklore collection was transcribed by crowdsourcing.", "url": "https://en.wikipedia.org/wiki/Irish_Folklore_Commission", "fragment": "online crowdsourcing effort to digitize and transcribe", "premises": []},
+        {"type": "source", "claim": "There are local efforts to standardise a written form of Lebanese.", "url": "https://teachmideast.org/?p=1429", "fragment": "Bel Lebnééné aims to standardize a script for the local language", "premises": []}
+      ]
+    },
+    {
+      "id": "O8",
+      "name": "Community guardianship licence for voice collections",
+      "description": "Adapt the Māori Kaitiakitanga licence model: speakers grant use for community benefit and education only, and surveillance or unconsented commercial training is excluded. A trusted custodian holds the data as a guardian, not as an owner.",
+      "technique": "T4",
+      "chain_stage": "preserve",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": ["civil-society archives", "lawyers", "speaker communities", "funders"],
+      "who_benefits": ["speakers", "communities", "future generations"],
+      "who_could_be_left_out": ["groups without a recognised representative body", "commercial users who would build public tools"],
+      "faces_affected": ["community ownership", "market practice", "GDPR", "Lebanese copyright law"],
+      "what_would_make_it_fail": "There is no single legitimate community body in a plural society, or the licence cannot be enforced against foreign actors.",
+      "support": [
+        {"type": "source", "claim": "The licence keeps control of the data with the community.", "url": "https://www.itu.int/hub/2022/08/ai-indigenous-languages-maori-te-reo/", "fragment": "ensures that data sovereignty remains within local communities", "premises": []},
+        {"type": "position", "claim": "Speakers should have a say over secondary uses of their voices.", "url": "", "fragment": "", "premises": []}
+      ]
+    },
+    {
+      "id": "O9",
+      "name": "Consent-only speech recognition to index archives",
+      "description": "Train a small speech-recognition model only on consented Lebanese speech, and use it to generate searchable transcripts of archive hours that humans could never transcribe by hand. The model stays under the custodian's licence and is not released for open reuse.",
+      "technique": "T4",
+      "chain_stage": "describe",
+      "scale": "nation",
+      "depends_on_ai": true,
+      "actors": ["universities", "archive custodians", "speaker volunteers", "compute donors"],
+      "who_benefits": ["researchers", "archive users", "custodians who lack staff"],
+      "who_could_be_left_out": ["speakers of under-represented regional varieties, who may be transcribed badly"],
+      "faces_affected": ["GDPR (voice data)", "Lebanese personal data law", "market practice", "community ownership"],
+      "what_would_make_it_fail": "Too little consented data, poor accuracy on regional varieties, or pressure to release or sell the model.",
+      "support": [
+        {"type": "source", "claim": "A broadcaster-led model trained only on consented data is feasible.", "url": "https://thespinoff.co.nz/kaupapa/22-11-2025/reclaiming-the-future-maori-voices-leading-in-the-age-of-ai-and-quantum-tech", "fragment": "built exclusively from material contributed with full consent", "premises": []}
+      ]
+    },
+    {
+      "id": "O10",
+      "name": "Shield archives from bulk harvesting",
+      "description": "Reframe the archive as an asset that can be extracted. Serve audio by streaming only, with tiered access (public excerpts, registered full access, research agreements), explicit no-training terms, and self-hosting instead of large platforms. Bulk access is negotiated, not scraped.",
+      "technique": "T6",
+      "chain_stage": "access",
+      "scale": "global",
+      "depends_on_ai": false,
+      "actors": ["archive custodians", "hosting providers", "lawyers"],
+      "who_benefits": ["speaker communities", "custodians with bargaining power"],
+      "who_could_be_left_out": ["casual users who face sign-up friction", "open-access advocates"],
+      "faces_affected": ["market practice", "community ownership", "GDPR", "broadcaster ownership"],
+      "what_would_make_it_fail": "Determined scrapers bypass the controls, or the friction kills public use.",
+      "support": [
+        {"type": "source", "claim": "Large speech models are trained on audio collected from the web.", "url": "https://openai.com/index/whisper/", "fragment": "680,000 hours of multilingual and multitask supervised data collected from the web", "premises": []},
+        {"type": "source", "claim": "Hosting on big platforms was seen as handing over control.", "url": "https://www.technologyreview.com/2022/04/22/1050394/artificial-intelligence-for-the-people/", "fragment": "It would give the tech giants license to do what they wanted", "premises": []},
+        {"type": "source", "claim": "Community voice corpora attract corporate interest.", "url": "https://thespinoff.co.nz/atea/29-07-2022/indigenous-data-sovereignty-will-make-the-internet-a-better-place-for-maori", "fragment": "Te Hiku Media had to fend off corporations hoping for access to it", "premises": []}
+      ]
+    },
+    {
+      "id": "O11",
+      "name": "Map where the dialect thrives versus fades",
+      "description": "Test the premise. Commission a quick sociolinguistic map of the domains where Lebanese is expanding (talk shows, online chat, music) and those where it is shrinking (regional varieties, crafts vocabulary, rituals, minority languages). Redirect resources to the shrinking zones only.",
+      "technique": "T3",
+      "chain_stage": "find",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": ["linguists", "universities", "municipalities"],
+      "who_benefits": ["funders and planners", "communities whose losses are invisible"],
+      "who_could_be_left_out": ["domains wrongly judged healthy"],
+      "faces_affected": ["community ownership", "Lebanese personal data law (fieldwork)"],
+      "what_would_make_it_fail": "The study is treated as an end in itself, or it is politicised along sectarian or regional lines.",
+      "support": [
+        {"type": "source", "claim": "The dialect keeps its role online.", "url": "https://recercat.cat/handle/2072/318132?show=full", "fragment": "Lebanese Arabic maintaining its informal character online", "premises": []},
+        {"type": "source", "claim": "The perceived threat from youth practices is often to Standard Arabic, not to the dialect.", "url": "https://repositories.lib.utexas.edu/handle/2152/72420", "fragment": "fear that more standard forms of Arabic may be in danger", "premises": []}
+      ]
+    },
+    {
+      "id": "O12",
+      "name": "Regional varieties atlas recorded by municipalities",
+      "description": "If the real flattening is regional variation merging into a media koine, record a short standard word list and free conversation with elderly speakers in each municipality. Results become a public sound atlas held by municipalities and a national archive.",
+      "technique": "T3",
+      "chain_stage": "record_or_rescue",
+      "scale": "region",
+      "depends_on_ai": false,
+      "actors": ["municipalities and unions of municipalities", "linguistics departments", "local youth"],
+      "who_benefits": ["rural and regional communities", "older speakers", "linguists"],
+      "who_could_be_left_out": ["displaced border communities", "areas with weak municipalities"],
+      "faces_affected": ["Lebanese personal data law", "GDPR if foreign-funded", "physical risk"],
+      "what_would_make_it_fail": "Conflict in some regions, municipal paralysis, or elders declining to be recorded.",
+      "support": [
+        {"type": "reasoning", "claim": "Media exposure favours a common urban variety over local ones.", "url": "", "fragment": "", "premises": ["The dialect dominates national media", "Young speakers model their speech on media and peers", "Regional features are carried mainly by older rural speakers"]}
+      ]
+    },
+    {
+      "id": "O13",
+      "name": "Monthly live zajal and storytelling circles",
+      "description": "Fund regular, low-cost evenings of zajal, storytelling and sung poetry in villages, neighbourhood cafés and diaspora clubs, with young performers paired with veterans. The aim is living use, not recording.",
+      "technique": "T5",
+      "chain_stage": "keep_alive",
+      "scale": "neighbourhood",
+      "depends_on_ai": false,
+      "actors": ["performers", "cafés and clubs", "municipalities", "heritage centres", "diaspora associations"],
+      "who_benefits": ["older people", "local audiences", "young performers", "the diaspora"],
+      "who_could_be_left_out": ["women, if venues and norms are male-dominated", "people in insecure areas"],
+      "faces_affected": ["UNESCO ICH framework", "Lebanese copyright law (folklore-inspired works)"],
+      "what_would_make_it_fail": "Insecurity, the economic crisis cutting audiences, or the circles turning into folklorised staged shows.",
+      "support": [
+        {"type": "source", "claim": "Recurring heritage evenings already exist as a model.", "url": "https://lau.edu.lb/news-events/news/archive/celebrating_the_intangible_leb", "fragment": "CLH hosts one such evening every month", "premises": []},
+        {"type": "source", "claim": "Zajal is a living oral genre.", "url": "https://ich.unesco.org/en/RL/01000", "fragment": "Al-Zajal is a form of Lebanese folk poetry declaimed or sung", "premises": []}
+      ]
+    },
+    {
+      "id": "O14",
+      "name": "Diaspora family transmission kits",
+      "description": "Provide free audio kits (stories, lullabies, games, everyday phrases) plus a weekly call routine pairing children abroad with grandparents or volunteer elders in Lebanon. The aim is oral use, without requiring the children to learn to read.",
+      "technique": "T2",
+      "chain_stage": "transmit",
+      "scale": "diaspora",
+      "depends_on_ai": false,
+      "actors": ["diaspora associations", "churches and mosques abroad", "grandparents", "volunteer elders"],
+      "who_benefits": ["diaspora children", "isolated older people in Lebanon"],
+      "who_could_be_left_out": ["families without connectivity", "mixed-language households unwilling to take part"],
+      "faces_affected": ["GDPR (EU-resident children)", "community ownership"],
+      "what_would_make_it_fail": "Children lose interest, time zones get in the way, or there are child-safety concerns with volunteer pairings.",
+      "support": [
+        {"type": "source", "claim": "There are no official figures on emigration, so the size of the diaspora is uncertain.", "url": "https://today.lorientlejour.com/article/1273914/more-and-more-young-lebanese-seek-to-emigrate-but-no-official-figures-exist-for-how-many-have-left.html", "fragment": "no official figures exist for how many have left", "premises": []},
+        {"type": "reasoning", "claim": "Transmission in emigrant families weakens by the second generation unless there is regular oral use.", "url": "", "fragment": "", "premises": ["Children abroad are schooled in the host language", "Contact with dialect speakers declines"]}
+      ]
+    },
+    {
+      "id": "O15",
+      "name": "Household memory recordings kept privately",
+      "description": "Distribute simple guides, such as a printed card or a voice message, to help families record their elders on their own phones and store the recordings in the family, with no central repository. Families can later choose to deposit them.",
+      "technique": "T2",
+      "chain_stage": "record_or_rescue",
+      "scale": "household",
+      "depends_on_ai": false,
+      "actors": ["families", "community health workers", "religious and social networks"],
+      "who_benefits": ["older people", "grandchildren", "low-income families"],
+      "who_could_be_left_out": ["isolated elders", "families without smartphones"],
+      "faces_affected": ["Lebanese personal data law (household exemption)", "market practice (cloud backups)"],
+      "what_would_make_it_fail": "Recordings are lost when phones break, or they are uploaded to platforms that harvest them.",
+      "support": [
+        {"type": "reasoning", "claim": "Household recording carries a light legal burden and builds trust.", "url": "", "fragment": "", "premises": ["Personal processing is exempt under Law 81/2018 (see O3)", "No institution has to be trusted at the outset"]}
+      ]
+    },
+    {
+      "id": "O16",
+      "name": "Legal reform for heritage archives",
+      "description": "Propose amendments to Law 75/1999: a preservation copy exception for archives, an orphan-works regime for recordings whose rights holders cannot be traced, and a clear rule for folklore-based recordings. This removes legal fog for every actor at once.",
+      "technique": "T6",
+      "chain_stage": "preserve",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": ["Parliament", "Ministry of Culture", "Ministry of Economy (IP office)", "bar association", "archives"],
+      "who_benefits": ["all archive holders", "the public", "researchers"],
+      "who_could_be_left_out": ["rights holders who lose leverage", "communities if folklore rules favour the state"],
+      "faces_affected": ["Lebanese copyright law", "broadcaster ownership", "community ownership"],
+      "what_would_make_it_fail": "Parliamentary paralysis, and lobbying by rights holders.",
+      "support": [
+        {"type": "source", "claim": "Folklore-inspired works are protected, which complicates reuse of heritage recordings.", "url": "https://download.osmand.net/wiki/Commons:Copyright_rules_by_territory/Lebanon/es", "fragment": "However, works inspired by folklore shall enjoy protection.", "premises": []}
+      ]
+    },
+    {
+      "id": "O17",
+      "name": "Single consent protocol meeting both legal regimes",
+      "description": "Write one plain-language, oral-first consent protocol that satisfies both GDPR (explicit, granular, revocable consent; no speaker identification unless agreed) and Lebanese law, so that foreign-funded projects do not each improvise. It includes a version read aloud for non-readers.",
+      "technique": "T6",
+      "chain_stage": "preserve",
+      "scale": "global",
+      "depends_on_ai": false,
+      "actors": ["funders", "data-protection lawyers", "archives", "community representatives"],
+      "who_benefits": ["speakers", "small projects", "non-readers"],
+      "who_could_be_left_out": ["people who cannot consent (deceased speakers in old recordings)"],
+      "faces_affected": ["GDPR", "Lebanese personal data law", "community ownership"],
+      "what_would_make_it_fail": "Funders' lawyers reject a shared template, or the protocol becomes too heavy for fieldwork.",
+      "support": [
+        {"type": "source", "claim": "Under GDPR, processing biometric data for identification is prohibited by default.", "url": "https://www.thomashelbing.com/en/wissen/dsgvo-hub/begriffe-und-definitionen/1.2.14-biometrische-daten", "fragment": "The processing of these data is prohibited in principle.", "premises": []},
+        {"type": "source", "claim": "Lebanese law lacks a sensitive-data category, which creates a gap with GDPR.", "url": "https://www.dlapiperdataprotection.com/index.html?t=law&c=LB", "fragment": "The Law brings no definition of sensitive personal data per se.", "premises": []},
+        {"type": "source", "claim": "There is no Lebanese regulator to rely on.", "url": "https://platform.dataguidance.com/notes/lebanon-data-protection-overview", "fragment": "Lebanon does not have an independent data protection authority.", "premises": []}
+      ]
+    },
+    {
+      "id": "O18",
+      "name": "Minimum seed archive if nothing else",
+      "description": "Accept the no-intervention trajectory but secure a small, curated seed set: a few hundred hours covering each region, genre and decade, held in three locations. This keeps the option of later revival or study open at minimal cost.",
+      "technique": "T7",
+      "chain_stage": "preserve",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": ["one or two existing archives", "a foreign partner institution"],
+      "who_benefits": ["future generations", "researchers"],
+      "who_could_be_left_out": ["everything outside the seed selection", "living communities, since this does not keep the dialect in use"],
+      "faces_affected": ["broadcaster ownership", "Lebanese copyright law", "physical risk"],
+      "what_would_make_it_fail": "Selection bias toward urban and elite material, or rights blocking copies abroad.",
+      "support": [
+        {"type": "reasoning", "claim": "A small curated set preserves option value cheaply.", "url": "", "fragment": "", "premises": ["Full rescue is underfunded", "Losses are irreversible, while curation can expand later"]}
+      ]
+    },
+    {
+      "id": "O19",
+      "name": "Distributed backup copies with diaspora institutions",
+      "description": "Place encrypted preservation copies with partner libraries and universities in diaspora countries, held under deposit agreements that leave ownership and access control in Lebanon. This protects against war, fire and power failure.",
+      "technique": "T2",
+      "chain_stage": "preserve",
+      "scale": "global",
+      "depends_on_ai": false,
+      "actors": ["national archives", "foreign national libraries", "diaspora universities"],
+      "who_benefits": ["future generations", "custodians facing physical risk"],
+      "who_could_be_left_out": ["local users, if copies abroad become the only accessible ones"],
+      "faces_affected": ["physical risk", "GDPR (storage in the EU)", "broadcaster ownership", "Lebanese copyright law"],
+      "what_would_make_it_fail": "Sovereignty concerns block export, or partner institutions start treating the copies as their own.",
+      "support": [
+        {"type": "source", "claim": "The current initiative already includes emergency digitisation.", "url": "https://nna-leb.gov.lb/en/%D9%85%D8%AA%D9%81%D8%B1%D9%82%D8%A7%D8%AA/718594/makary-and-unesco-beirut-launch-a-new-initiative-t", "fragment": "complement it with emergency digitalization actions", "premises": []},
+        {"type": "source", "claim": "Foreign partners already fund archive work.", "url": "https://today.lorientlejour.com/article/1425761/ministry-of-information-unesco-announce-new-initiative-to-digitalize-tele-libans-archive.html", "fragment": "financed by France at the cost of half a million euros", "premises": []}
+      ]
+    },
+    {
+      "id": "O20",
+      "name": "Paid apprenticeships with oral-tradition bearers",
+      "description": "Pay elderly bearers (zajal poets, storytellers, work-song singers, craft speakers) a stipend to train young apprentices for a year. This treats bearers as teachers rather than as subjects to be recorded.",
+      "technique": "T1",
+      "chain_stage": "transmit",
+      "scale": "region",
+      "depends_on_ai": false,
+      "actors": ["tradition bearers", "young apprentices", "Ministry of Culture", "NGOs and funders"],
+      "who_benefits": ["low-income older people", "rural youth", "local communities"],
+      "who_could_be_left_out": ["genres without a recognised master", "women bearers in less visible genres"],
+      "faces_affected": ["UNESCO ICH framework", "community ownership"],
+      "what_would_make_it_fail": "Few young people are interested, stipends stop after one funding cycle, or selection is politicised.",
+      "support": [
+        {"type": "source", "claim": "Zajal is passed on informally, which makes it fragile when gatherings decline.", "url": "https://ich.unesco.org/en/RL/washi-traditional-handmade-paper-in-japan-01000", "fragment": "Transmission of Al-Zajal is largely informal", "premises": []}
+      ]
+    },
+    {
+      "id": "O21",
+      "name": "Protect gathering spaces, not just recordings",
+      "description": "Reframe the heritage as the social practice (evening gatherings, village squares, cafés, seasonal festivals), not the recorded artefact. Support the times and places where people speak together, through municipal permits, small grants and safe venues.",
+      "technique": "T6",
+      "chain_stage": "keep_alive",
+      "scale": "neighbourhood",
+      "depends_on_ai": false,
+      "actors": ["municipalities", "café owners", "festival committees", "parishes and mosques"],
+      "who_benefits": ["older people", "rural communities", "returning emigrants"],
+      "who_could_be_left_out": ["people in depopulated villages", "the diaspora"],
+      "faces_affected": ["UNESCO ICH framework", "physical risk"],
+      "what_would_make_it_fail": "Depopulation of villages, insecurity, or the economic crisis closing venues.",
+      "support": [
+        {"type": "source", "claim": "Heritage bodies already frame safeguarding as including voices and practices.", "url": "https://lebanon.icomos.org/?p=3333", "fragment": "protecting not only monuments and sites, but also the voices and practices", "premises": []}
+      ]
+    },
+    {
+      "id": "O22",
+      "name": "Include Lebanon's other spoken heritages",
+      "description": "Widen the scope to Armenian, Syriac and Aramaic liturgical speech, Kurdish, Domari and Lebanese Sign Language, along with community-specific registers. Ask each community what it wants preserved and who should hold it.",
+      "technique": "T1",
+      "chain_stage": "find",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": ["community associations", "religious institutions", "the deaf community", "linguists"],
+      "who_benefits": ["minority communities", "deaf people", "future generations"],
+      "who_could_be_left_out": ["groups without legal status or organised representation"],
+      "faces_affected": ["community ownership", "Lebanese personal data law", "GDPR"],
+      "what_would_make_it_fail": "The communities distrust state or foreign projects, or there is political sensitivity around some groups.",
+      "support": [
+        {"type": "position", "claim": "Lebanese spoken heritage is plural and should not be reduced to the majority dialect.", "url": "", "fragment": "", "premises": []},
+        {"type": "reasoning", "claim": "Smaller languages face greater risk than the majority dialect.", "url": "", "fragment": "", "premises": ["They have fewer speakers", "They have little media presence", "Emigration hits small communities proportionally harder"]}
+      ]
+    },
+    {
+      "id": "O23",
+      "name": "Spoken-question search of the archive",
+      "description": "Let users search the archive by speaking a question in Lebanese (for example, songs from the Bekaa in the 1970s) on a basic phone or a kiosk. The system replies with audio. It relies on locally governed speech tools (see O9).",
+      "technique": "T5",
+      "chain_stage": "access",
+      "scale": "nation",
+      "depends_on_ai": true,
+      "actors": ["archive custodians", "universities", "telecom operators"],
+      "who_benefits": ["non-readers", "older people", "visually impaired people"],
+      "who_could_be_left_out": ["speakers of varieties the system recognises poorly", "people without data access"],
+      "faces_affected": ["GDPR (voice queries)", "Lebanese personal data law", "market practice"],
+      "what_would_make_it_fail": "Poor recognition of dialect variation, or queries being logged and reused.",
+      "support": [
+        {"type": "reasoning", "claim": "Text search excludes the groups most tied to old oral heritage.", "url": "", "fragment": "", "premises": ["Illiteracy is concentrated among older people (see O5)", "Catalogues are text-based"]}
+      ]
+    },
+    {
+      "id": "O24",
+      "name": "Tie school activities to home use",
+      "description": "Learn from Irish revival efforts: school exposure alone does not produce daily use. Any school-based heritage activity must lead to use outside school, such as family listening assignments, neighbourhood performances or local radio slots run by pupils.",
+      "technique": "T4",
+      "chain_stage": "transmit",
+      "scale": "nation",
+      "depends_on_ai": false,
+      "actors": ["schools", "families", "local radio stations"],
+      "who_benefits": ["children", "families", "local radio"],
+      "who_could_be_left_out": ["children in unstable schooling", "refugee and migrant pupils"],
+      "faces_affected": ["community ownership", "Lebanese personal data law (pupil recordings)"],
+      "what_would_make_it_fail": "The activities become a graded chore with no real-life setting.",
+      "support": [
+        {"type": "source", "claim": "In Ireland, daily use outside school is low and falling despite wide school exposure.", "url": "https://www.irishtimes.com/ireland/2023/05/30/census-2022-fall-in-percentage-of-daily-irish-speakers-but-greater-proficiency-among-youth", "fragment": "numbered 71,968 in 2022, which is a fall of 1,835", "premises": []},
+        {"type": "source", "claim": "Most daily Irish speech happens inside education.", "url": "https://www.cso.ie/en/releasesandpublications/ep/p-cpsr/censusofpopulation2022-summaryresults/educationandirishlanguage", "fragment": "623,961 spoke Irish daily within and outside the education system", "premises": []}
+      ]
+    }
+  ]
+}
