@@ -1,0 +1,691 @@
+Lebanese in the AI Era: Strategy v4
+Cycle 4 — Phase B — Builder version
+1. Purpose: two objectives, one project
+The project pursues two independently valuable objectives, supported by common infrastructure but evaluated against different measures of success.
+
+Objective 1 — AI that serves Lebanese speakers. Make spoken Lebanese, including everyday mixing with French and English, Arabic script and Arabizi, usable in AI and digital services. Prioritize Lebanese-only speakers with limited economic or educational resources, followed by the diaspora. Researchers and AI businesses remain secondary beneficiaries.
+
+The planning forecast is that large AI models will probably speak common Lebanese reasonably well within approximately two years. Accordingly, the project's comparative value shifts towards independent evaluation, accessible services, adoption and documented, consented data rather than ownership of a Lebanese foundation model. [Owner decision]
+
+Objective 2 — Cultural preservation. Preserve and sustain the spoken heritage that linguistic flattening erases: regional vocabulary, oral arts, occupational speech, cultural contexts and intergenerational transmission. Its success does not depend on AI development. AI remains an optional supporting instrument, not the objective.
+
+The owner's position that cultural flattening is irreversible remains a value judgment, not an established empirical finding.
+
+Reasoning: Better AI performance does not necessarily sustain linguistic diversity or the social practices through which heritage is transmitted. Separate objectives therefore require separate programmes, gates and indicators.
+One project — two independent objectives
+Objective 1
+
+AI access, evaluation and adoption
+
+K30 · P-A · K07 · P-B · K21 · K16
+Success: people complete real tasks
+
+Objective 2
+
+Living heritage and preservation
+
+Four integrated cultural programmes
+Success: heritage survives and remains in use
+
+
+
+Shared infrastructure
+
+K02 governance · C35 consent · K22 provenance · K32 context · legal compliance · institutional continuity
+
+Shared infrastructure does not imply shared data permissions or dependency on AI success.
+2. Design principles
+1. Adoption is a deliverable; K30 owns real use.
+2. No retention, publication or licensing before applicable gates pass.
+3. Public ASR and private synthesis have distinct consent and access regimes. [D1, owner]
+4. Withdrawal excludes project-controlled future releases and training; removal from existing weights or uncontrolled copies is not promised. [D1]
+5. Wages precede speculative royalties.
+6. Community authority never overrides individual rights.
+7. Cultural preservation continues independently of AI performance or commercial revenue. [Owner, H14]
+Reasoning: Retain v3's adoption, gate, compensation and community-governance principles while separating incompatible access regimes and protecting independent cultural outcomes.
+3. Objective 1 — AI access, evaluation and adoption
+K30 — Human-AI hybrid access network. Retain two desks and a telephone line, two user-selected low-risk digital tasks, human-only assistance and randomized comparison with human+AI and speech-first AI. Record overrides, errors, bail-outs and completion separately. Evaluation recordings remain non-public unless separately contributed through P-A consent. Human-only assistance survives AI failure. [D1, H6]
+
+P-A — Inclusive paid collection. Prioritize elderly, rural and non-literate speakers. Pay recording, transcription and validation work. Maintain two separate collections:
+	ASR	TTS / speech-to-speech
+Collection	Crowdsourced	Few selected voices
+Environment	Natural ambient noise	Studio quality
+Audio	Publicly downloadable after clearance	Private
+Identity metadata	No names or identifying metadata	Pseudonyms
+Models	Publication subject to applicable gates	Never published
+Consent	Explicit public-release consent	Separate private-use consent
+
+The same individual may contribute to both, but no public cross-collection linkage is permitted. Preserve ordinary environmental noise while quarantining sensitive disclosures and third-party speech. Diaspora contributions retain trained-facilitator oversight. [D1, owner]
+
+K07 — Mixing and Arabizi tools. Retain language identification, transliteration, normalization and ASR-first task prototypes. Compare third-party systems before undertaking local fine-tuning. Develop private synthesis only where independently demonstrated task needs justify it. [Owner, D2]
+
+P-B — Independent evaluation. Retain native-speaker panels, paid cultural red-teaming, quarterly controlled tests and rankings. Evaluate third-party and project models under identical conditions, including noisy speech, regional variation and code-switching. Protect hidden test sets against contamination. Apply the subgroup performance and harm gates in the annex. [Owner, H6, H12]
+
+K21 — Research network. Retain participatory research and shared tasks. Researchers use public ASR releases and separately authorized documentation. Private synthesis is not a general research-access resource. [D1, owner]
+
+K16 — Levantine hub. Retain annotation alignment and separate Lebanese evaluation. Joint models and regional data pooling remain deferred.
+
+Reasoning: The model-improvement forecast favors reusable evaluation and accessible applications. Public training data must not be confused with confidential service interactions or held-out evaluation data.
+4. Objective 2 — Cultural preservation
+Four integrated programmes cover the complete selected portfolio.
+Programme C-A — Living heritage and transmission
+Combines C21, C25, C26, C27 and C29.
+- Record crafts, farming, work, humour, games and oral traditions in their cultural contexts, with paid participation and community-defined boundaries.
+- Fund year-long apprenticeships pairing young people with paid tradition bearers. Provide apprentice stipends and transparent selection.
+- Support recurring zajal, storytelling, theatre and sung-poetry gatherings in existing community spaces.
+- Protect gathering places through municipal cooperation, accessible venues, permits and small grants.
+- Encourage intergenerational household circles through optional spoken prompts, without recording, registration or evidence-submission requirements. Offer alternatives for isolated elders.
+Measure: sustained apprenticeships, continued practice, accessible gatherings and community-defined transmission outcomes—not recording volume.
+Programme C-B — Broadcaster archive rescue and rights clearance
+Combines C01, C03, C05 and C02, supporting C10.
+
+Inventory public, private, regional and discontinued broadcasters and independent production collections. Record ownership, formats, condition and accessibility; connect existing preservation initiatives.
+
+Mandatory programme-level language audit: classify programmes as spoken Lebanese, MSA, mixed or other. Everyday French and English mixing within Lebanese speech qualifies as spoken Lebanese. Mixed MSA/Lebanese programmes remain excluded pending classification. Only spoken-Lebanese programmes enter rescue, detailed cataloguing, escrow and re-broadcast.
+
+The owner's expectation of substantial MSA holdings is a planning assumption, not a measured finding.
+
+Prioritize endangered eligible recordings. Offer contractual preservation escrow without transferring ownership or requiring publication. Fund paid regional audiovisual-preservation trainees paired with retired broadcaster technicians.
+
+Apply C02's four rights-triage categories: broadcasts older than 50 years; broadcaster-owned younger material; third-party works or performers; unknown rights. Categories may overlap. Publish a non-sensitive rights register distinguishing verified clearance from unresolved claims.
+
+Measure: eligible collections inventoried, endangered recordings preserved, rights cleared and technicians demonstrating independent preservation competence.
+Programme C-C — Mobile rescue, listening and circulation
+Combines C04, C13 and C10.
+
+Operate a mobile rescue-and-listening unit. Digitize household tapes and videos; return originals and copies regardless of archive consent. Retention requires separate contributor, third-party and copyright clearance.
+
+Provide facilitated, solar-backed offline listening points in libraries, municipalities and community centres without requiring literacy, registration or personal devices.
+
+Re-broadcast cleared spoken-Lebanese programmes through public, private and regional stations. Broadcasting is not represented as protection against unauthorized recording.
+
+Measure: household materials rescued, listening-point availability, underserved communities reached and cleared programmes returned to circulation.
+Programme C-D — Community archives and linguistic diversity
+Combines C09, C16 and C33.
+
+Establish community-governed regional repositories sharing technical preservation services but retaining local access authority. Provide independent appeals and external reviews against local gatekeeping.
+
+Enable diaspora cataloguing through Arabic script, Arabizi and spoken annotations. Preserve spelling and regional variation.
+
+Invite Armenian, Syriac, Aramaic, Kurdish, Domari and other communities to define their own preservation priorities. Lebanese Sign Language receives Deaf-led visual preservation.
+
+Collections may be public, community-only, restricted or temporarily closed. No heritage collection becomes AI training material by default.
+
+Measure: community-approved collections, contextual catalogue quality, representation and effective community control.
+
+Reasoning for C-A–D: The portfolio covers transmission, rescue, description, access and circulation. Merging complementary mechanisms reduces organizational duplication without eliminating options. Minority-language preservation is a distinct community-led strand, not an exception permitting MSA broadcaster archives.
+5. Shared infrastructure and legal safeguards
+K02 — Governance. A legally capable host holds controller responsibility. A community-majority council controls permitted commercial categories and sensitive protocols; the privacy officer controls privacy compliance; the independent reviewer hears appeals and validates gates. Individual consent, legality and protective vetoes prevail over permission to proceed. Disagreements suspend the contested activity. [H15]
+
+C35 — Consent. One oral-first, comprehension-tested protocol with distinct ASR publication, private synthesis, heritage preservation, public listening, broadcasting and research modules. Provide anonymous withdrawal credentials and accessible complaint channels.
+
+K22/K32 — Provenance and context. Retain release validation, lineage and contextual envelopes. Separate public manifests from protected internal records. Cultural materials never inherit AI permissions merely through shared infrastructure. [D1]
+
+Legal and market safeguards:
+- Lebanese Law 81/2018: Articles 94–98 distinguish exemptions, declarations and sensitive-data licences. Article 96(12) expressly includes foreign transfers in declarations. The reviewed text does not establish a universal separate transfer-authorization requirement. Obtain counsel's determination and any required filings or permissions. [D2] [S1]
+- Compute: private synthesis defaults to physically Lebanese infrastructure. Verify processing, backups, subprocessors, remote access and support locations before use. Foreign processing requires documented legal clearance and applicable authorizations. Actual infrastructure location remains unverified. [D2]
+- GDPR: adopt funder-required GDPR safeguards; distinguish ordinary voice personal data from biometric processing for unique identification. Complete high-risk impact assessments and applicable international-transfer safeguards. [D1, D2] [S2]
+- Market practice: internet audio is used in model training. Public ASR consent must explicitly explain harvesting, redistribution and the limits of withdrawal. [D1] [S3–S4]
+- Copyright: broadcaster rights, underlying works, performers and contractual restrictions require separate clearance. Fifty years since broadcast does not establish unrestricted reuse. Escrow grants only contracted rights, not statutory immunity. [Owner] [S5]
+6. Delivery and continuity
+Period	Objective 1	Objective 2
+M0–3	Host, baseline, consent, G-1	Inventory design; community consultation
+M3–6	Pilot, two tasks, council, G-2	Language audit; apprenticeships and mobile pilots
+M6–12	ASR tools, benchmark, G-3	Eligible archive rescue; technician training
+M12–18	G-4; adoption; K16 alignment	Escrow, listening points, cleared broadcasting
+M18–24	G-5; independent review	Transmission and preservation review
+After M24	Funded continuation or orderly closure	Independent cultural continuation
+
+Continuity [H14, H15]. Before collection, contract a successor custodian and protected provision for withdrawal, deletion, security and preservation. By month 18, require a funded post-month-24 operating plan, drawing on institutional support, grants and service agreements—not speculative licensing revenue.
+
+Without renewal, stop new collection and licensing. The host or contracted successor retains residual duties while relevant assets remain. If lawful succession is impossible, securely delete personal assets rather than abandon them; rights-restricted archives follow their deposit agreements.
+7. Outstanding gaps
+G1: adoption beyond pilot locations remains untested. G2: long-term financing and compute procurement remain unresolved. G3: archive eligibility, physical condition and rights require actual audits.
+
+Annex
+A. Binding AI gates
+The following numerical thresholds are proposed policy choices, not empirical findings. Communities may strengthen them before G-2; subsequent weakening cannot rescue a failed evaluation.
+Gate	Conditions
+G-1 — Retention	Contracted host/successor; lawful processing; tested oral consent and withdrawal; secure storage; provenance; compute verification; quarantine. Otherwise non-retained trials only.
+G-2 — Expansion	Audit 10–15-speaker pilot; constitute council; activate appeals; preregister evaluation and subgroup quotas.
+G-3 — Release/training	Validator, datasheet, consent and rights clearance, quarantine resolved, test/train separation; verify private synthesis isolation.
+G-4 — Commercial use	K30 baseline and testing cycle; council approval; lawful purposes; applicable downstream contracts; independently funded operations. Public ASR remains downloadable.
+G-5 — Scaling	All performance, subgroup, safety, withdrawal and continuity conditions below pass.
+
+B. Performance and statistical rules [H6, H12]
+Evaluate both AI routes against randomized human-only assistance for each task and priority subgroup: Lebanese-only, non-literate, low-income, rural, elderly and phone-only users, including preregistered high-exclusion intersections.
+- Completion: lower confidence bound at least 80%; AI–human difference at least −5 percentage points.
+- Errors and re-contacts: upper confidence bound on excess risk no greater than 3 percentage points each.
+- Human+AI: demonstrate shorter completion time than human-only.
+- Repeat use: at least 40% of eligible users with recurring task needs return to an AI route within 60 days.
+- Top-five remediable failures: all addressed; recurrence reduced at least 20% relative to baseline.
+- Bail-outs count as AI failures; minimal overrides are predefined.
+Power every required comparison at 90%, controlling familywise error at 5%; incorporate clustering, attrition and subgroup overlap. An underpowered subgroup is inconclusive, not passing.
+
+One serious attributable privacy or task-related harm triggers immediate suspension and independent investigation. Preregister interim statistical stopping boundaries.
+
+G-5 failure freezes expansion and new licences; retain human-only support, fix failures and retest once. Second failure ends the failed AI deployment pipeline, not cultural programmes or residual governance duties.
+C. Access and release contract [D1, D2]
+Public ASR audio is not anonymous merely because names are absent. Publish cleared audio, transcripts, non-identifying context and purpose-specific terms. No identifiable third-party material or hidden benchmark audio enters releases.
+
+Synthesis-only tiers:
+- Tier 0: safe documentation and aggregates.
+- Tier 1: approved internal derivatives, including restricted embeddings.
+- Tier 2: private raw recordings, training environments and models; authorized personnel only; no external model or audio publication.
+Each release records opaque record identifiers, parent links, asset class, consent version, purposes, context reference, annotation versions, script, restrictions and withdrawal status. Protected manifests retain additional compliance evidence.
+
+Derivatives inherit restrictive parent permissions. Unknown origin, conflicting permissions, withdrawn sources and test/train overlap block release. Use JSON validation first; PROV-O mapping later.
+D. Quarantine, withdrawal and appeals [H9, H15]
+Mute separable incidental speech; purge original within 14 days after quality assurance. Hold identifiable bystanders encrypted for at most 30 days; safely re-consent, mute or purge. Scrub sensitive disclosures within 14 days or purge. Immediately purge unconsented minors or evident distress.
+
+Decide appeals independently within seven days, inside the original quarantine limit. No appeal stays individual deletion or extends retention.
+
+Acknowledge withdrawal within seven days; block further release/training immediately; remove controlled copies within 30 days unless lawful retention is necessary. Notify contracted recipients and require deletion attestations within 30 days. Public downstream copies cannot be guaranteed recoverable. Preserve only necessary compliance evidence.
+E. Cultural gates
+Before retention: applicable consent, language eligibility, community authority and preservation rights. Before listening, online access or broadcast: separate clearance. Review local governance, preservation integrity and transmission annually. Failure stops the affected cultural operation only.
+F. Source register
+ID	Source and exact fragment
+S1	Law 81/2018, Art. 96(12): “نقل البيانات ذات الطابع الشخصي الى دولة اخرى في اي شكل كان.”  Electronic transactions and…
+S2	GDPR, Arts. 9 and 35: “for the purpose of uniquely identifying a natural person”; “likely to result in a high risk”.
+S3	Speech anonymization, 2025: “balance privacy and utility”.  Nature
+S4	Whisper model card: “audio and the corresponding transcripts collected from the internet”.  GitHub
+S5	Law 75/1999: “The term of protection granted to broadcasting organizations shall be 50 years”.  WIPO
+S6	LebEval: “a new benchmark derived from native Lebanese content”.  arXiv
+S7	SenZi: “11.3K positive and 13.3K negative words”.  ACL Anthology
+S8	Masakhane: “MT benchmarks for over 30 languages”.  arXiv
+
+
+Change register — machine-readable
+The following register distinguishes owner instructions, sourced findings and builder reasoning. All 15 portfolio options are incorporated, including C35 as shared infrastructure.
+{
+  "changes": [
+    {
+      "section": "1. Purpose",
+      "change": "Replace the predominantly AI-oriented purpose with two independent objectives under one project.",
+      "addresses": "owner",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "AI accessibility and cultural continuity require separate success criteria.",
+          "premises": [
+            "Owner mandates two objectives.",
+            "AI competence does not necessarily imply living cultural transmission."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "1. Purpose; 3. K07 and P-B",
+      "change": "Prioritize independent evaluation, adoption and consented data over proprietary foundation-model development.",
+      "addresses": "owner",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Third-party model improvements may reduce the marginal value of proprietary training.",
+          "premises": [
+            "Owner forecasts reasonably competent common Lebanese AI within approximately two years.",
+            "The forecast is uncertain.",
+            "Model ownership is not required for independent evaluation or assisted access."
+          ]
+        },
+        {
+          "type": "source",
+          "claim": "Native Lebanese evaluation resources already exist.",
+          "url": "https://arxiv.org/abs/2505.00114",
+          "fragment": "a new benchmark derived from native Lebanese content"
+        }
+      ]
+    },
+    {
+      "section": "2. Design principles; 3. P-A",
+      "change": "Replace controlled access by default with public ASR and private synthesis regimes.",
+      "addresses": "D1",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Public ASR cannot be governed by a blanket prohibition on raw audio downloads.",
+          "premises": [
+            "ASR recordings are public by owner decision.",
+            "Explicit publication consent is mandatory.",
+            "Absence of names does not establish anonymity."
+          ]
+        },
+        {
+          "type": "source",
+          "claim": "Speech privacy and data utility must be balanced.",
+          "url": "https://www.nature.com/articles/s41746-025-01987-3",
+          "fragment": "balance privacy and utility"
+        }
+      ]
+    },
+    {
+      "section": "3. P-A",
+      "change": "Specify ambient-noise crowdsourcing for ASR and limited studio-quality pseudonymous voices for synthesis.",
+      "addresses": "owner",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "The two collections require different recording and access protocols.",
+          "premises": [
+            "Owner requires public noisy ASR.",
+            "Owner requires private studio-quality synthesis.",
+            "The same person may contribute to both.",
+            "Public cross-linkage would undermine separation."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "3. K30, K21; Annex C",
+      "change": "Separate public ASR training data from confidential service logs, hidden evaluation material and private synthesis assets.",
+      "addresses": "D1",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Participation in a service or evaluation does not establish consent to public audio release.",
+          "premises": [
+            "Consent must be purpose-specific.",
+            "Independent evaluation requires test/train separation.",
+            "Owner prohibits synthesis publication."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "5. Lebanese law",
+      "change": "Distinguish declaration, exemption, sensitive-processing licences and foreign-transfer disclosure.",
+      "addresses": "D2",
+      "support": [
+        {
+          "type": "source",
+          "claim": "Article 96 expressly addresses foreign transfers within the declaration.",
+          "url": "https://lebaneselegislation.com/en/law/278573/",
+          "fragment": "نقل البيانات ذات الطابع الشخصي الى دولة اخرى في اي شكل كان."
+        },
+        {
+          "type": "reasoning",
+          "claim": "A declaration requirement cannot automatically be interpreted as a universal separate transfer licence.",
+          "premises": [
+            "Article 94 establishes exemptions.",
+            "Article 95 establishes declarations.",
+            "Article 96 establishes declaration content.",
+            "Article 97 establishes licences for specified categories.",
+            "Application to the actual processing requires Lebanese counsel."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "5. Compute; Annex A",
+      "change": "Require verified Lebanese processing or documented legal clearance for foreign processing before private synthesis training.",
+      "addresses": "D2",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Compute location cannot be inferred from the customer's location or provider identity.",
+          "premises": [
+            "No selected infrastructure provider or deployment evidence was supplied.",
+            "Processing may involve backups and subprocessors.",
+            "Owner requires local or authorized foreign synthesis training."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "5. GDPR",
+      "change": "Distinguish voice personal data from biometric processing for unique identification; require high-risk impact assessment.",
+      "addresses": "D2",
+      "support": [
+        {
+          "type": "source",
+          "claim": "Article 9 addresses biometric data used for unique identification.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+          "fragment": "for the purpose of uniquely identifying a natural person"
+        },
+        {
+          "type": "source",
+          "claim": "Article 35 establishes impact-assessment obligations for high-risk processing.",
+          "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+          "fragment": "likely to result in a high risk"
+        }
+      ]
+    },
+    {
+      "section": "5. Market practice; Annex D",
+      "change": "Disclose public audio harvesting and limit withdrawal promises to controlled assets and enforceable recipients.",
+      "addresses": "D1",
+      "support": [
+        {
+          "type": "source",
+          "claim": "Internet audio is used in commercial AI development.",
+          "url": "https://github.com/openai/whisper/blob/main/model-card.md",
+          "fragment": "audio and the corresponding transcripts collected from the internet"
+        },
+        {
+          "type": "reasoning",
+          "claim": "Uncontrolled public copies cannot be guaranteed recoverable.",
+          "premises": [
+            "Public downloads do not require individual recipient identification.",
+            "Third parties may redistribute or retain downloaded material.",
+            "The project can control its own distribution and contractual relationships."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Annex B",
+      "change": "Establish absolute completion floors, non-inferiority margins, efficiency and repeat-use requirements separately for excluded groups.",
+      "addresses": "H6",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Aggregate performance alone cannot establish equitable AI access.",
+          "premises": [
+            "High-performing groups may conceal subgroup failures.",
+            "Non-inferiority alone permits poor performance if human-only performance is poor.",
+            "Both absolute and comparator-based thresholds are therefore required.",
+            "Numerical thresholds are proposed policy choices."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Annex B",
+      "change": "Require powered subgroup comparisons, multiplicity control and serious-harm stopping.",
+      "addresses": "H12",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "An inconclusive subgroup must not be treated as a successful subgroup.",
+          "premises": [
+            "Small samples create uncertainty.",
+            "Multiple comparisons can produce misleading results.",
+            "A serious attributable harm warrants suspension pending independent review."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "6. Continuity; Annex A",
+      "change": "Require funded continuity or orderly closure, with residual obligations assigned before collection.",
+      "addresses": "H14",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Withdrawal and security obligations cannot expire automatically with project funding.",
+          "premises": [
+            "Personal assets may outlive initial grants.",
+            "Licence revenue is uncertain.",
+            "A responsible custodian must remain while relevant assets are retained."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "5. K02; 6. Continuity",
+      "change": "Allocate decision authority, establish protective-veto precedence and require contracted succession.",
+      "addresses": "H15",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "A permissive vote cannot override legality, individual consent or an unresolved protective veto.",
+          "premises": [
+            "Council authority concerns collective policy.",
+            "The privacy officer addresses privacy compliance.",
+            "The reviewer independently assesses gates and appeals.",
+            "The host remains legally accountable."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Annex D",
+      "change": "Introduce a seven-day maximum quarantine appeal deadline within existing retention limits.",
+      "addresses": "H9",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Appeals need predictable resolution without prolonging risky retention.",
+          "premises": [
+            "Quarantine contains potentially sensitive material.",
+            "Independent review protects against erroneous decisions.",
+            "An appeal must not suspend mandatory deletion."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "4. Programme C-A",
+      "change": "Integrate contextual documentation, paid apprenticeships, living performances, gathering spaces and unrecorded household transmission.",
+      "addresses": "portfolio",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Documentation and living transmission are complementary but distinct preservation mechanisms.",
+          "premises": [
+            "C21 preserves speech in context.",
+            "C25 transfers embodied knowledge.",
+            "C26 supports continued oral performance.",
+            "C27 supports gathering conditions.",
+            "C29 enables private intergenerational practice."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "4. Programme C-B",
+      "change": "Introduce broadcaster inventory, programme-language filtering, rescue, preservation escrow and rights clearance.",
+      "addresses": "owner",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Language eligibility precedes archive preservation work funded by this project.",
+          "premises": [
+            "Owner limits broadcaster work to spoken Lebanese.",
+            "MSA is expressly excluded.",
+            "Everyday mixing with French and English qualifies.",
+            "Collection-level language assumptions are insufficient."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "4. Programme C-B",
+      "change": "Add paid regional audiovisual preservation training paired with retired broadcaster technicians.",
+      "addresses": "portfolio",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Rescue work should also create regional preservation capacity.",
+          "premises": [
+            "C03 includes retired technicians.",
+            "Screeners independently proposed paid technician training.",
+            "Practical mentorship combines preservation and knowledge transfer."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "4. Programme C-B; 5. Copyright",
+      "change": "Treat age-based rights categories as triage rather than automatic clearance.",
+      "addresses": "portfolio",
+      "support": [
+        {
+          "type": "source",
+          "claim": "Lebanese law provides a fifty-year broadcaster protection period.",
+          "url": "https://www.wipo.int/wipolex/en/legislation/details/2786",
+          "fragment": "The term of protection granted to broadcasting organizations shall be 50 years"
+        },
+        {
+          "type": "reasoning",
+          "claim": "Expiration of broadcaster rights alone cannot establish unrestricted use.",
+          "premises": [
+            "Underlying works may carry separate rights.",
+            "Performers may carry separate rights.",
+            "Escrow contracts authorize only specified operations."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "4. Programme C-C",
+      "change": "Combine household tape rescue and offline listening in one mobile unit, connected to rights-cleared broadcasting.",
+      "addresses": "portfolio",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "A mobile unit can combine preservation services with accessible cultural circulation.",
+          "premises": [
+            "C04 supplies household rescue.",
+            "C13 supplies facilitated offline access.",
+            "C10 supplies broadcast circulation.",
+            "Digitization services must not depend on permission to retain a copy."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "4. Programme C-D",
+      "change": "Combine community archives, collaborative listening-based cataloguing and other linguistic heritages.",
+      "addresses": "portfolio",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Regional repositories can share preservation services without surrendering local authority.",
+          "premises": [
+            "C09 establishes community governance.",
+            "C16 provides collaborative description.",
+            "C33 extends preservation to other spoken and signed heritages.",
+            "Sign-language preservation requires appropriate visual media and Deaf-led governance."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "5. C35, K22 and K32",
+      "change": "Apply modular oral consent, provenance and contextual documentation across both objectives without transferring permissions.",
+      "addresses": "portfolio",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Shared infrastructure does not require shared data access.",
+          "premises": [
+            "Both objectives require consent and accountability.",
+            "ASR, synthesis and heritage have different purposes.",
+            "Purpose-specific permissions must survive transformations."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "6. Delivery; Annex E",
+      "change": "Introduce a parallel cultural delivery sequence and independent cultural gates.",
+      "addresses": "owner",
+      "support": [
+        {
+          "type": "reasoning",
+          "claim": "Failure of an AI performance gate must not terminate otherwise lawful cultural preservation.",
+          "premises": [
+            "The objectives are independently valuable.",
+            "They have different success measures.",
+            "Shared legal and governance safeguards remain binding."
+          ]
+        }
+      ]
+    },
+    {
+      "section": "Annex F",
+      "change": "Retain directly checked relevant evidence from v3 and add primary legal and market-practice references.",
+      "addresses": "owner",
+      "support": [
+        {
+          "type": "source",
+          "claim": "Lebanese Arabizi lexical resources exist.",
+          "url": "https://aclanthology.org/R19-1138/",
+          "fragment": "11.3K positive and 13.3K negative words"
+        },
+        {
+          "type": "source",
+          "claim": "Participatory research has produced multilingual benchmarks.",
+          "url": "https://arxiv.org/abs/2010.02353",
+          "fragment": "MT benchmarks for over 30 languages"
+        },
+        {
+          "type": "reasoning",
+          "claim": "Unnecessary quantitative claims can be removed without abandoning their associated programme mechanisms.",
+          "premises": [
+            "The strategy has strict length limits.",
+            "Exact source fragments are mandatory.",
+            "Previously cited claims not independently reopened are not represented as newly verified."
+          ]
+        }
+      ]
+    }
+  ],
+  "merges": [
+    {
+      "programme": "C-A: Living heritage and transmission",
+      "options": ["C21", "C25", "C26", "C27", "C29"]
+    },
+    {
+      "programme": "C-B: Broadcaster archive rescue and rights clearance",
+      "options": ["C01", "C03", "C05", "C02"]
+    },
+    {
+      "programme": "C-C: Mobile rescue, listening and circulation",
+      "options": ["C04", "C13", "C10"]
+    },
+    {
+      "programme": "C-D: Community archives and linguistic diversity",
+      "options": ["C09", "C16", "C33"]
+    },
+    {
+      "programme": "Shared infrastructure: Oral-first consent",
+      "options": ["C35"]
+    }
+  ],
+  "deferred": [],
+  "open_questions_for_owner": [
+    "Approve or strengthen the proposed 80% absolute completion floor, five-percentage-point non-inferiority margin and three-percentage-point error and re-contact margins.",
+    "Approve the proposed repeat-use floor, failure-recurrence threshold and statistical power requirement.",
+    "Determine which high-exclusion subgroup intersections must be independently powered before G-2.",
+    "Confirm the legal host, ring-fenced charter and successor-custodian eligibility criteria.",
+    "Identify the actual compute provider, physical processing country, backup locations and subprocessors. These cannot be verified before infrastructure is identified.",
+    "Obtain Lebanese counsel's written determination on Articles 94–98, applicable declarations, licences and foreign-transfer requirements.",
+    "Approve public ASR usage terms, recognizing that contractual restrictions cannot guarantee control of anonymous downstream recipients.",
+    "Approve the proposed withdrawal and quarantine appeal deadlines.",
+    "Determine treatment of genuinely mixed Lebanese/MSA programmes that cannot be classified as spoken Lebanese at programme level.",
+    "Confirm council selection criteria and prohibited commercial-use categories.",
+    "Approve licence pricing and any royalty arrangements without making operations dependent on their revenue.",
+    "Set K16 alignment and pooling veto criteria.",
+    "Confirm independent financing and protected provision for post-month-24 stewardship.",
+    "Approve community-defined cultural success criteria and continuation conditions.",
+    "Review whether the proposed independent reviewer has sufficient contractual authority to enforce suspension and succession provisions."
+  ]
+}
+
+
+
+Builder's verification notes
+The following limitations should remain visible to the next evaluator rather than being treated as resolved facts.
+Issue	Builder disposition
+D1 — Public ASR contradiction	Resolved at design level
+D2 — Transfer legality	Statutory distinction established; counsel confirmation outstanding
+D2 — Actual compute country	Unverified; mandatory precondition introduced
+H6 — Performance floor	Explicit proposed thresholds introduced
+H14 — Continuity	Contractual mechanism introduced; funding not secured or verified
+H15 — Governance	Authority, veto precedence and succession specified
+H9 — Appeals	Maximum deadline introduced
+H12 — Statistical safeguards	Power and harm-stopping requirements introduced
+Portfolio completeness	15 of 15 options incorporated
+Required combinations	Both incorporated
+
+Important legal finding: the v3 DLA Piper reference describes Lebanese law as silent on cross-border transfers. However, Article 96(12) expressly addresses foreign transfers within the declaration requirements. The statutory text therefore warrants a more precise interpretation than the secondary summary. This does not establish that every foreign transfer requires separate ministerial authorization. 
+
+Data Protection Laws of the World+1
+
+The performance thresholds, appeal deadlines, month-18 continuity checkpoint and conservative treatment of mixed MSA/Lebanese programmes are builder decisions introduced without explicit numerical or operational instructions from the owner.
+
+Some peripheral v3 references and quantitative examples were omitted rather than represented as newly verified. Their underlying programme mechanisms were retained where compatible with the new instructions. The GDPR article wording is established statutory language, although direct fragment retrieval from EUR-Lex was unsuccessful during this verification.
+
+The strategy is ready for adversarial evaluation as a proposed design, not as evidence that legal authorization, infrastructure, funding or operational readiness has already been secured.

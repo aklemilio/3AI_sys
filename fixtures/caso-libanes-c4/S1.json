@@ -1,0 +1,393 @@
+{
+  "assessments": [
+    {
+      "id": "C01",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 4, "evidence": 5, "safety": 5, "inclusion": 3},
+      "note": "Essential foundational mapping that prevents duplication and locates endangered rural and regional broadcast holdings."
+    },
+    {
+      "id": "C02",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 3, "evidence": 4, "safety": 4, "inclusion": 3},
+      "note": "Unblocks usable archives without statutory reform, though best hosted outside ministries to survive turnover."
+    },
+    {
+      "id": "C03",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 5, "feasibility": 4, "evidence": 5, "safety": 4, "inclusion": 4},
+      "note": "High-urgency physical rescue of decaying regional magnetic tapes before institutional memory and hardware vanish."
+    },
+    {
+      "id": "C04",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 5, "feasibility": 4, "evidence": 5, "safety": 4, "inclusion": 5},
+      "note": "Directly reaches non-literate, rural, and elderly households while filling major gaps in commercial archives."
+    },
+    {
+      "id": "C05",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 4, "evidence": 5, "safety": 5, "inclusion": 2},
+      "note": "Proven dark-archive legal mechanism that overcomes broadcaster reluctance, though immediate community access remains limited."
+    },
+    {
+      "id": "C06",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 4, "evidence": 5, "safety": 4, "inclusion": 3},
+      "note": "Critical disaster-resilience measure against war and infrastructure collapse, provided Lebanese governance remains legally binding."
+    },
+    {
+      "id": "C07",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 3, "feasibility": 5, "evidence": 4, "safety": 5, "inclusion": 3},
+      "note": "Realistic fallback floor under severe crisis, but risks under-representing marginalized rural and minority speech."
+    },
+    {
+      "id": "C08",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 3, "feasibility": 3, "evidence": 4, "safety": 5, "inclusion": 4},
+      "note": "Strong ethical governance framing, though plural Lebanese communities require decentralized trustees rather than one body."
+    },
+    {
+      "id": "C09",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 5, "feasibility": 3, "evidence": 4, "safety": 4, "inclusion": 5},
+      "note": "Centers rural and regional communities with granular access tiers, requiring clear safeguards against local gatekeeping."
+    },
+    {
+      "id": "C10",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 5, "feasibility": 4, "evidence": 5, "safety": 5, "inclusion": 5},
+      "note": "Reaches older, rural, and non-reading audiences effortlessly through familiar broadcast media without internet barriers."
+    },
+    {
+      "id": "C11",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 5, "feasibility": 3, "evidence": 5, "safety": 4, "inclusion": 5},
+      "note": "Directly counters Beiruti media leveling and supports living regional speech for non-literate listeners."
+    },
+    {
+      "id": "C12",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 2, "evidence": 4, "safety": 4, "inclusion": 5},
+      "note": "Ideal zero-literacy interface for elders, though securing telecom zero-rating in Lebanon is difficult."
+    },
+    {
+      "id": "C13",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 4, "evidence": 4, "safety": 5, "inclusion": 5},
+      "note": "Solar-backed offline stations solve electricity and connectivity gaps for low-income and non-reading villagers."
+    },
+    {
+      "id": "C14",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 3, "feasibility": 3, "evidence": 3, "safety": 4, "inclusion": 2},
+      "note": "Protects speaker consent online, but authentication friction and internet requirements exclude priority offline groups."
+    },
+    {
+      "id": "C15",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 4, "evidence": 5, "safety": 4, "inclusion": 4},
+      "note": "Creates an unambiguous public-interest cultural resource while separating human reuse from commercial AI scraping."
+    },
+    {
+      "id": "C16",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 3, "feasibility": 4, "evidence": 4, "safety": 4, "inclusion": 3},
+      "note": "Engages diaspora volunteers effectively, though text-based transcription inherently excludes non-literate contributors."
+    },
+    {
+      "id": "C17",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 3, "feasibility": 3, "evidence": 3, "safety": 4, "inclusion": 3},
+      "note": "Accelerates archive searchability, though accuracy typically lags on underrepresented rural and minority dialects."
+    },
+    {
+      "id": "C18",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 2, "evidence": 3, "safety": 3, "inclusion": 5},
+      "note": "High inclusion potential for non-readers, but current regional dialect ASR reliability remains fragile."
+    },
+    {
+      "id": "C19",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 3, "feasibility": 4, "evidence": 4, "safety": 4, "inclusion": 3},
+      "note": "Sharpens resource targeting onto truly endangered registers if kept rapid and strictly non-politicized."
+    },
+    {
+      "id": "C20",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 3, "evidence": 5, "safety": 4, "inclusion": 4},
+      "note": "Captures fine-grained municipal variation from elderly speakers, though security conditions restrict access in some areas."
+    },
+    {
+      "id": "C21",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 5, "feasibility": 4, "evidence": 5, "safety": 5, "inclusion": 5},
+      "note": "Preserves rich situational vocabulary and oral genres with community control over boundaries and meaning."
+    },
+    {
+      "id": "C22",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 5, "feasibility": 3, "evidence": 5, "safety": 4, "inclusion": 5},
+      "note": "Proven low-cost intergenerational model connecting children and elders, requiring opt-in consent and flexible school timing."
+    },
+    {
+      "id": "C23",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 3, "evidence": 4, "safety": 5, "inclusion": 4},
+      "note": "Addresses the core flaw of classroom-only language efforts by anchoring heritage in live family speech."
+    },
+    {
+      "id": "C24",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 3, "evidence": 5, "safety": 5, "inclusion": 4},
+      "note": "Builds early oral fluency and employs older speakers when hosted in free municipal or community spaces."
+    },
+    {
+      "id": "C25",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 5, "feasibility": 3, "evidence": 4, "safety": 5, "inclusion": 5},
+      "note": "Directly sustains low-income elderly tradition bearers and transfers embodied verbal arts across generations."
+    },
+    {
+      "id": "C26",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 5, "feasibility": 4, "evidence": 5, "safety": 5, "inclusion": 5},
+      "note": "Keeps improvised oral poetry and storytelling alive as community social life rather than static museum artefacts."
+    },
+    {
+      "id": "C27",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 5, "feasibility": 3, "evidence": 4, "safety": 5, "inclusion": 5},
+      "note": "Tackles root social drivers of language shift by sustaining real village and neighborhood gathering places."
+    },
+    {
+      "id": "C28",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 4, "evidence": 4, "safety": 4, "inclusion": 5},
+      "note": "Bridges diaspora children and elders through purely oral routines without requiring Arabic reading skills."
+    },
+    {
+      "id": "C29",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 4, "evidence": 4, "safety": 5, "inclusion": 5},
+      "note": "Zero-surveillance household transmission that respects privacy and works well for non-literate and low-income families."
+    },
+    {
+      "id": "C30",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 3, "feasibility": 5, "evidence": 4, "safety": 5, "inclusion": 5},
+      "note": "Immediately scalable at near-zero cost via audio guides, though long-term family storage remains fragile."
+    },
+    {
+      "id": "C31",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 4, "evidence": 4, "safety": 5, "inclusion": 4},
+      "note": "Audio-QR integration makes tactile family memory games accessible to non-readers across Lebanon and the diaspora."
+    },
+    {
+      "id": "C32",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 4, "evidence": 4, "safety": 5, "inclusion": 4},
+      "note": "Recognizes unique older emigrant speech varieties without stigmatizing them against contemporary Beirut norms."
+    },
+    {
+      "id": "C33",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 5, "feasibility": 3, "evidence": 5, "safety": 4, "inclusion": 5},
+      "note": "Essential for genuine equity across Lebanon's endangered minority and sign languages under community-led governance."
+    },
+    {
+      "id": "C34",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 5, "feasibility": 1, "evidence": 4, "safety": 5, "inclusion": 3},
+      "note": "Systemically resolves copyright barriers across all archives, but Lebanese parliamentary deadlock makes near-term passage unlikely."
+    },
+    {
+      "id": "C35",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 4, "evidence": 4, "safety": 5, "inclusion": 5},
+      "note": "Crucial ethical infrastructure that protects non-literate speakers through spoken consent while harmonizing international compliance."
+    },
+    {
+      "id": "C36",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 3, "feasibility": 2, "evidence": 3, "safety": 5, "inclusion": 3},
+      "note": "Strong data-sovereignty architecture, but severe local power and connectivity outages complicate reliable server hosting."
+    },
+    {
+      "id": "C37",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 2, "feasibility": 5, "evidence": 3, "safety": 5, "inclusion": 3},
+      "note": "Avoids intrusive extraction for vital traditions, but risks passive loss when elderly cohorts pass away."
+    },
+    {
+      "id": "C38",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 4, "evidence": 4, "safety": 5, "inclusion": 4},
+      "note": "Thoughtful time-capsule governance with realistic succession rules, though benefits accrue mainly to future generations."
+    },
+    {
+      "id": "C39",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 3, "feasibility": 4, "evidence": 4, "safety": 4, "inclusion": 3},
+      "note": "Captures ephemeral digital vernaculars ethically, though online creator pools skew younger, urban, and connected."
+    },
+    {
+      "id": "C40",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 3, "feasibility": 4, "evidence": 5, "safety": 5, "inclusion": 3},
+      "note": "Makes degraded historical recordings intelligible for public listening while preserving unedited raw archival masters."
+    },
+    {
+      "id": "C41",
+      "fatal": false,
+      "fatal_reason": "",
+      "support": [],
+      "rescue": "",
+      "scores": {"impact": 4, "feasibility": 2, "evidence": 3, "safety": 4, "inclusion": 4},
+      "note": "Equitable benefit-sharing mechanism for rural contributors, though administrative and payout infrastructure in Lebanon is weak."
+    }
+  ],
+  "new_options": [
+    {
+      "name": "WhatsApp Voice-Note Community Story Circles",
+      "description": "Use encrypted WhatsApp voice-note groups—already widely used by non-literate, rural, and elderly Lebanese speakers and the diaspora—to circulate weekly spoken prompts on local proverbs, remedies, and village memories. Moderators from participating villages curate consented clips into offline community listening reels without requiring apps, web portals, or reading skills.",
+      "builds_on": ["C12", "C28", "C30"],
+      "depends_on_ai": false
+    },
+    {
+      "name": "Solar-Powered Mobile Archival and Listening Van",
+      "description": "Equip a ruggedized solar-powered van that tours underserved rural villages to digitize family cassettes and VHS tapes on the spot, record local craftspeople and elders in context, and host afternoon offline audio listening sessions in village squares. Combining rescue and playback in one mobile unit overcomes grid outages and Beirut-centric institutional barriers.",
+      "builds_on": ["C04", "C13", "C21"],
+      "depends_on_ai": false
+    },
+    {
+      "name": "Municipal Endowment Micro-Grants via Diaspora Twinning",
+      "description": "Pair hometown diaspora associations directly with Lebanese municipalities and local cultural clubs to co-fund recurring zajal nights, gathering spaces, and elder-to-youth apprenticeships under transparent community trusteeship. Direct town-to-diaspora twinning bypasses paralyzed national budgets while rooting diaspora contributions in specific rural dialects.",
+      "builds_on": ["C09", "C25", "C27", "C32"],
+      "depends_on_ai": false
+    }
+  ]
+}

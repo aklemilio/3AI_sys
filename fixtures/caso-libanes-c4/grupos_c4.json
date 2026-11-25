@@ -1,0 +1,315 @@
+{
+ "C01": {
+  "name": "Inventario nacional de archivos de emisoras",
+  "members": [
+   "E2:O1"
+  ],
+  "baseline": true
+ },
+ "C02": {
+  "name": "Triaje y gestión de derechos de archivos",
+  "members": [
+   "E1:O1",
+   "E2:O11"
+  ],
+  "baseline": false
+ },
+ "C03": {
+  "name": "Rescate de cintas en emisoras privadas y regionales",
+  "members": [
+   "E1:O2"
+  ],
+  "baseline": true
+ },
+ "C04": {
+  "name": "Rescate de cintas y vídeos domésticos",
+  "members": [
+   "E1:O3",
+   "E2:O2",
+   "E3:O2",
+   "E2:O4"
+  ],
+  "baseline": false
+ },
+ "C05": {
+  "name": "Depósito de custodia sin publicación (escrow)",
+  "members": [
+   "E2:O6",
+   "E3:O1"
+  ],
+  "baseline": false
+ },
+ "C06": {
+  "name": "Copias de seguridad distribuidas, también en la diáspora",
+  "members": [
+   "E1:O19",
+   "E2:O7"
+  ],
+  "baseline": false
+ },
+ "C07": {
+  "name": "Archivo semilla mínimo",
+  "members": [
+   "E1:O18"
+  ],
+  "baseline": false
+ },
+ "C08": {
+  "name": "Licencia de custodia comunitaria",
+  "members": [
+   "E1:O8",
+   "E3:O3"
+  ],
+  "baseline": false
+ },
+ "C09": {
+  "name": "Archivos sonoros regionales de gobierno comunitario",
+  "members": [
+   "E2:O8"
+  ],
+  "baseline": false
+ },
+ "C10": {
+  "name": "Reemitir archivos por radio y televisión",
+  "members": [
+   "E1:O4",
+   "E2:O15"
+  ],
+  "baseline": false
+ },
+ "C11": {
+  "name": "Red de radios locales en dialecto",
+  "members": [
+   "E3:O6"
+  ],
+  "baseline": false
+ },
+ "C12": {
+  "name": "Línea telefónica para escuchar archivos",
+  "members": [
+   "E1:O5"
+  ],
+  "baseline": false
+ },
+ "C13": {
+  "name": "Puntos de escucha sin internet",
+  "members": [
+   "E2:O12",
+   "E3:O16"
+  ],
+  "baseline": false
+ },
+ "C14": {
+  "name": "Acceso en línea por niveles contra la recolección",
+  "members": [
+   "E1:O10",
+   "E2:O13",
+   "E3:O9"
+  ],
+  "baseline": true
+ },
+ "C15": {
+  "name": "Colección abierta con derechos liberados",
+  "members": [
+   "E2:O14"
+  ],
+  "baseline": true
+ },
+ "C16": {
+  "name": "Catalogación colaborativa por escucha",
+  "members": [
+   "E1:O7",
+   "E2:O9"
+  ],
+  "baseline": false
+ },
+ "C17": {
+  "name": "Indexación de archivos con reconocimiento de voz",
+  "members": [
+   "E1:O9",
+   "E2:O10",
+   "E3:O12"
+  ],
+  "baseline": true
+ },
+ "C18": {
+  "name": "Búsqueda e interfaz por voz para quien no lee",
+  "members": [
+   "E1:O23",
+   "E2:O23",
+   "E3:O4"
+  ],
+  "baseline": false
+ },
+ "C19": {
+  "name": "Medir dónde se pierde antes de actuar",
+  "members": [
+   "E1:O11",
+   "E2:O3",
+   "E3:O7"
+  ],
+  "baseline": false
+ },
+ "C20": {
+  "name": "Atlas sonoro de variantes regionales",
+  "members": [
+   "E1:O12",
+   "E3:O17"
+  ],
+  "baseline": true
+ },
+ "C21": {
+  "name": "Grabar oficios, trabajo y vida cotidiana en contexto",
+  "members": [
+   "E2:O5",
+   "E3:O10"
+  ],
+  "baseline": false
+ },
+ "C22": {
+  "name": "Escolares entrevistan a sus mayores",
+  "members": [
+   "E1:O6",
+   "E3:O15"
+  ],
+  "baseline": true
+ },
+ "C23": {
+  "name": "Actividades escolares ligadas al uso en casa",
+  "members": [
+   "E1:O24"
+  ],
+  "baseline": false
+ },
+ "C24": {
+  "name": "Nidos lingüísticos para la infancia",
+  "members": [
+   "E2:O19"
+  ],
+  "baseline": false
+ },
+ "C25": {
+  "name": "Aprendizajes pagados con portadores de la tradición",
+  "members": [
+   "E1:O20",
+   "E2:O22",
+   "E3:O8"
+  ],
+  "baseline": false
+ },
+ "C26": {
+  "name": "Pagar la práctica viva: zajal, relatos, teatro",
+  "members": [
+   "E1:O13",
+   "E2:O16"
+  ],
+  "baseline": false
+ },
+ "C27": {
+  "name": "Proteger los espacios de encuentro",
+  "members": [
+   "E1:O21",
+   "E2:O17"
+  ],
+  "baseline": false
+ },
+ "C28": {
+  "name": "Transmisión familiar con la diáspora",
+  "members": [
+   "E1:O14",
+   "E3:O5"
+  ],
+  "baseline": true
+ },
+ "C29": {
+  "name": "Círculos familiares intergeneracionales sin grabar",
+  "members": [
+   "E2:O18"
+  ],
+  "baseline": false
+ },
+ "C30": {
+  "name": "Grabaciones familiares guardadas en casa",
+  "members": [
+   "E1:O15"
+  ],
+  "baseline": false
+ },
+ "C31": {
+  "name": "Barajas de refranes y recetas para la mesa familiar",
+  "members": [
+   "E3:O13"
+  ],
+  "baseline": false
+ },
+ "C32": {
+  "name": "La diáspora como reservorio propio",
+  "members": [
+   "E2:O20"
+  ],
+  "baseline": false
+ },
+ "C33": {
+  "name": "Incluir otras herencias habladas del Líbano",
+  "members": [
+   "E1:O22"
+  ],
+  "baseline": false
+ },
+ "C34": {
+  "name": "Reforma legal: preservación y obras huérfanas",
+  "members": [
+   "E1:O16"
+  ],
+  "baseline": false
+ },
+ "C35": {
+  "name": "Protocolo único de consentimiento oral",
+  "members": [
+   "E1:O17"
+  ],
+  "baseline": false
+ },
+ "C36": {
+  "name": "Datos de voz alojados en el Líbano, acceso federado",
+  "members": [
+   "E3:O11"
+  ],
+  "baseline": false
+ },
+ "C37": {
+  "name": "Intervención mínima con observación periódica",
+  "members": [
+   "E2:O21"
+  ],
+  "baseline": false
+ },
+ "C38": {
+  "name": "Depósitos para generaciones futuras",
+  "members": [
+   "E2:O24"
+  ],
+  "baseline": false
+ },
+ "C39": {
+  "name": "Preservar lo digital contemporáneo",
+  "members": [
+   "E2:O25"
+  ],
+  "baseline": false
+ },
+ "C40": {
+  "name": "Restauración acústica de cintas dañadas",
+  "members": [
+   "E3:O18"
+  ],
+  "baseline": false
+ },
+ "C41": {
+  "name": "Regalías colectivas por uso de archivos y voces",
+  "members": [
+   "E3:O14"
+  ],
+  "baseline": false
+ }
+}

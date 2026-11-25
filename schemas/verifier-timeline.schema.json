@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "verifier-timeline",
+  "title": "Tarea timeline del verificador (skills/verifier/SKILL.md)",
+  "type": "object",
+  "required": ["timeline_issues"],
+  "properties": {
+    "timeline_issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["gate", "activity", "problem", "fix"],
+        "properties": {
+          "gate": {"type": "string"},
+          "activity": {"type": "string"},
+          "problem": {"type": "string"},
+          "fix": {"type": "string"}
+        }
+      }
+    }
+  }
+}

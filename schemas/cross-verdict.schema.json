@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cross-verdict",
+  "title": "Salida del veredicto cruzado (skills/cross-verdict/SKILL.md)",
+  "type": "object",
+  "required": ["finding_status", "verdict"],
+  "properties": {
+    "finding_status": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "status"],
+        "properties": {
+          "id": {"type": "string"},
+          "status": {"enum": ["resolved", "partial", "not_resolved"]},
+          "why": {"type": "string"}
+        }
+      }
+    },
+    "new_problems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "severity", "problem", "fix"],
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string", "minLength": 1},
+          "severity": {"enum": ["critical", "high", "medium", "low"]},
+          "section": {"type": "string"},
+          "problem": {"type": "string"},
+          "fix": {"type": "string", "minLength": 1},
+          "support": {"type": "array", "items": {"type": "object", "required": ["type"]}}
+        }
+      }
+    },
+    "open_items": {"type": "object"},
+    "verdict": {"enum": ["ready", "ready with conditions", "not ready"]},
+    "verdict_reason": {"type": "string"}
+  }
+}
