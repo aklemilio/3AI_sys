@@ -111,7 +111,7 @@ def registrar(registro: dict, fuentes: list[dict], origen: str) -> dict:
         k = clave(f["url"], f.get("fragmento", ""))
         entrada = registro.setdefault(k, {"url": f["url"], "fragmento": f.get("fragmento", ""),
                                           "afirmaciones": [], "citada_en": [], "comprobaciones": [],
-                                          "estado": SIN_FRAGMENTO if not f.get("fragmento") else "sin_comprobar"})
+                                          "estado": SIN_FRAGMENTO if not f.get("fragmento") else SIN_COMPROBAR})
         if f.get("afirmacion") and f["afirmacion"] not in entrada["afirmaciones"]:
             entrada["afirmaciones"].append(f["afirmacion"])
         if origen not in entrada["citada_en"]:
@@ -123,6 +123,46 @@ def anotar_comprobacion(registro: dict, resultado: dict) -> None:
     entrada = registro[clave(resultado["url"], resultado["fragmento"])]
     entrada["comprobaciones"].append({k: resultado[k] for k in ("fecha", "estado", "nota")})
     entrada["estado"] = resultado["estado"]
+
+
+SIN_COMPROBAR = "sin_comprobar"
+
+
+def comprobar_pendientes(registro: dict, obtener: Descargador | None = None, hilos: int = 6) -> dict[str, int]:
+    """Comprueba en línea las fuentes con fragmento que aún no se han comprobado y
+    vuelve a intentar las inaccesibles (un corte de red no debe marcarlas para
+    siempre). Cada URL se descarga una sola vez (en paralelo) aunque la citen
+    varias afirmaciones. Devuelve el recuento por estado de las comprobadas ahora."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    obtener = obtener or descargar          # se resuelve al llamar: las pruebas sustituyen ``descargar``
+    pendientes = [e for e in registro.values()
+                  if e.get("estado") in (SIN_COMPROBAR, INACCESIBLE) and e.get("fragmento")]
+    if not pendientes:
+        return {}
+    urls = sorted({e["url"] for e in pendientes if str(e["url"]).startswith(("http://", "https://"))})
+
+    def bajar(url):
+        try:
+            return url, obtener(url), None
+        except (OSError, urllib.error.URLError, ValueError) as e:
+            return url, None, e
+
+    with ThreadPoolExecutor(max_workers=max(1, min(hilos, len(urls) or 1))) as pool:
+        descargas = {u: (c, e) for u, c, e in pool.map(bajar, urls)}
+
+    def de_cache(url):
+        contenido, error = descargas.get(url, (None, ValueError("URL no válida")))
+        if error:
+            raise error
+        return contenido
+
+    recuento: dict[str, int] = {}
+    for e in pendientes:
+        r = comprobar(e["url"], e["fragmento"], de_cache)
+        anotar_comprobacion(registro, r)
+        recuento[r["estado"]] = recuento.get(r["estado"], 0) + 1
+    return recuento
 
 
 def ausentes_en(registro: dict, texto_version: str) -> list[dict]:

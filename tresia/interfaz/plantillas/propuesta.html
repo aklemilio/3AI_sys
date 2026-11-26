@@ -20,7 +20,7 @@
       {% for a in p.afirmaciones %}
         <li>
           <p>{{ a.icono }} {% if a.marcada %}<a href="#af{{ a.n }}">{{ a.texto }}</a>{% else %}{{ a.texto }}{% endif %}</p>
-          <p class="meta">{{ a.tipo }} · solidez {{ a.solidez }}{% if a.estado_fuente %} · fuente {{ a.estado_fuente }}{% endif %}</p>
+          <p class="meta">{{ a.tipo }} · solidez {{ a.solidez }}{% if a.solidez_modelo %} (el verificador decía «{{ a.solidez_modelo }}»; el motor no pudo comprobar la fuente){% endif %}{% if a.estado_fuente %} · fuente {{ a.estado_fuente }}{% endif %}</p>
           {% if a.url %}<p class="meta"><a href="{{ a.url }}" target="_blank" rel="noopener noreferrer">{{ a.url }}</a></p>{% endif %}
           {% if a.fragmento %}<blockquote>{{ a.fragmento }}</blockquote>{% endif %}
           {% if a.premisas %}<ul class="premisas">{% for pr in a.premisas %}<li>{{ pr }}</li>{% endfor %}</ul>{% endif %}

@@ -17,7 +17,7 @@ from typing import Callable
 
 from tresia import adaptadores, perfiles
 from tresia.adaptadores import Adaptador, AdaptadorError
-from tresia.motor import manual, troceo
+from tresia.motor import consumo, manual, troceo
 from tresia.motor.ejecucion import Ejecucion, _ahora
 
 ROTACION = {  # ciclo -> (constructor, atacante, evaluadores del veredicto cruzado)
@@ -76,7 +76,7 @@ def ejecutar_ranura(run: Ejecucion, paso: str, ranura: str, adaptador: Adaptador
     prompt = ficha
     while True:
         try:
-            r = adaptador.llamar(prompt)
+            r = consumo.llamar(run, paso, ranura, adaptador, prompt, etiqueta_modelo)
         except AdaptadorError as e:
             if alternativas:
                 adaptador, etiqueta_modelo = alternativas.pop(0)

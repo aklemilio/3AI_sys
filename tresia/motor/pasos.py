@@ -40,8 +40,15 @@ def registrar_fusion(run: Ejecucion, grupos) -> dict:
 
 
 # --- criba ciega ---------------------------------------------------------------
-def opciones_para_criba(grupos: dict, exploradores: dict[str, dict]) -> list[dict]:
-    """Lista ciega para los cribadores: sin explorador ni ids de la fase A."""
+ESTADO_PARA_PAPELES = {"verificada": "verified (fragment found on the page)",
+                       "no_coincide": "NOT verified (fragment not found on the page)",
+                       "inaccesible": "NOT verified (page inaccessible)", "sin_fragmento": "NOT verifiable (no fragment)"}
+
+
+def opciones_para_criba(grupos: dict, exploradores: dict[str, dict], registro: dict | None = None) -> list[dict]:
+    """Lista ciega para los cribadores: sin explorador ni ids de la fase A. Con
+    ``registro``, cada opción lleva lo que el motor comprobó de sus fuentes."""
+    from tresia.calculo import fuentes as F
     opciones = indexar_exploradores(exploradores)
     salida = []
     for gid, g in normalizar_grupos(grupos).items():
@@ -49,14 +56,24 @@ def opciones_para_criba(grupos: dict, exploradores: dict[str, dict]) -> list[dic
         if not miembros:
             continue
         principal = miembros[0]
-        salida.append({
+        opcion = {
             "id": gid,
             "name": g["name"],
             "description": principal.get("description", ""),
             "variants": [m["name"] for m in miembros[1:]],
             "depends_on_ai": any(m.get("depends_on_ai") for m in miembros),
             "main_risk": principal.get("what_would_make_it_fail", ""),
-        })
+        }
+        if registro:
+            comprobadas = []
+            for f in F.fuentes_de(miembros):
+                e = registro.get(F.clave(f["url"], f["fragmento"]))
+                if e and e["estado"] in ESTADO_PARA_PAPELES:
+                    comprobadas.append({"claim": f["afirmacion"][:200], "url": f["url"],
+                                        "engine_check": ESTADO_PARA_PAPELES[e["estado"]]})
+            if comprobadas:
+                opcion["sources_checked_by_engine"] = comprobadas
+        salida.append(opcion)
     return salida
 
 
@@ -67,7 +84,8 @@ def preparar_criba(run: Ejecucion) -> dict[str, str]:
         "objective": ficha.get("objetivo", ""),
         "priority_groups": ficha.get("destinatarios", ""),
         "criteria": criterios,
-        "options": opciones_para_criba(run.leer("grupos.json"), _exploradores(run)),
+        "options": opciones_para_criba(run.leer("grupos.json"), _exploradores(run),
+                                       run.leer("fuentes.json") if run.existe("fuentes.json") else None),
     }
     from tresia.motor.llamadas import asignacion_ciega
     asignacion = asignacion_ciega(run, "criba", CRIBADORES)

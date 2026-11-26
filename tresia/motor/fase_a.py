@@ -12,7 +12,8 @@ from tresia.motor import manual, pasos
 from tresia.motor.encuadre import materiales_para_papeles
 from tresia.motor.ejecucion import Ejecucion
 from tresia.motor.llamadas import asignacion_ciega
-from tresia.motor.verificador import registrar_fuentes_de_salida
+from tresia.calculo.fuentes import VERIFICADA
+from tresia.motor.verificador import NO_VERIFICADAS, registrar_fuentes_de_salida
 
 EXPLORADORES = ["E1", "E2", "E3"]
 TECNICAS = [f"T{i}" for i in range(1, 8)]
@@ -87,6 +88,14 @@ def verificar_fase_a(run: Ejecucion) -> dict:
             avisos.append(f"{nombre}: usa etapas que no están en la ficha: {', '.join(fuera)}.")
         if largos:
             avisos.append(f"{nombre}: nombres de más de {MAX_PALABRAS_NOMBRE} palabras en {', '.join(largos)}.")
+    # Fuentes de la fase A comprobadas en línea por el motor (no por quien las cita).
+    de_fase_a = [e for e in (run.leer("fuentes.json").values() if run.existe("fuentes.json") else [])
+                 if any(c.startswith("faseA:") for c in e["citada_en"])]
+    verificadas = sum(e["estado"] == VERIFICADA for e in de_fase_a)
+    no_verificadas = sum(e["estado"] in NO_VERIFICADAS for e in de_fase_a)
+    if no_verificadas:
+        avisos.append(f"{no_verificadas} de {len(de_fase_a)} fuentes citadas en la fase A no se pudieron verificar "
+                      "(fragmento ausente o página inaccesible).")
     resultado = {"por_explorador": informe, "avisos": avisos}
     run.escribir("faseA/verificacion.json", resultado)
     run.actualizar_metricas("fase_a", {
@@ -94,6 +103,8 @@ def verificar_fase_a(run: Ejecucion) -> dict:
         "por_explorador": {e: v["opciones"] for e, v in informe.items()},
         "sin_ia": sum(v["sin_ia"] for v in informe.values()),
         "fuentes_citadas": sum(v["fuentes_citadas"] for v in informe.values()),
+        "fuentes_verificadas": verificadas,
+        "fuentes_no_verificadas": no_verificadas,
         "avisos": len(avisos),
     })
     return resultado

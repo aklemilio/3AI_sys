@@ -21,6 +21,11 @@ La especificación del MVP está en [SPEC.md](SPEC.md).
 
 Abre `http://127.0.0.1:8765/`. Solo escucha en esta máquina. Las ejecuciones se guardan en `ejecuciones/` (no se sube al repositorio); otra carpeta con `--carpeta`. Pantallas: ejecuciones, ejecución (fases, paso actual, avisos y métricas), tarjetas de decisión en cada puerta del dueño, resultados, propuesta final con sus afirmaciones, informe, registro de decisiones y modo manual (copiar la ficha y pegar la respuesta). Los modelos aparecen como «Explorador 1, 2, 3», «Cribador 1, 2, 3», etc.; nunca su identidad.
 
+### Fuentes y consumo
+
+- **Fuentes:** el motor descarga cada fuente que citan los papeles (fase A, ataque, registro de cambios del constructor y afirmaciones del verificador) y busca el fragmento en la página. Los cribadores, el atacante y los evaluadores reciben el resultado. Una fuente inaccesible se vuelve a intentar en la pasada siguiente. Sin conexión, se desactiva con `"comprobar_fuentes": false` en la ficha.
+- **Consumo:** cada llamada a un modelo deja una línea en `llamadas.jsonl` (tiempo, caracteres, tokens y coste cuando el proveedor los da). El informe lo suma por fase. Para calcular el coste de Gemini, añade en `perfiles/pc.local.toml` `precio_usd_por_millon = { entrada = …, salida = … }` en su modelo.
+
 ### Uso desde Python
 
 ```python
