@@ -17,7 +17,7 @@ from typing import Callable
 
 from tresia import adaptadores, perfiles
 from tresia.adaptadores import Adaptador, AdaptadorError
-from tresia.motor import manual
+from tresia.motor import manual, troceo
 from tresia.motor.ejecucion import Ejecucion, _ahora
 
 ROTACION = {  # ciclo -> (constructor, atacante, evaluadores del veredicto cruzado)
@@ -135,13 +135,34 @@ def ejecutar_paso(run: Ejecucion, paso: str, recursos: Recursos) -> list[Resulta
     for r in esperando:
         if pend[r]["asignado"] != "verificador":
             continue
-        candidatos = recursos.verificadores(run, fichas[r])
-        if not candidatos:
-            resultados.append(ResultadoRanura(r, ok=False, errores=["Sin verificador disponible."], pasa_a_manual=True))
-            continue
-        (adaptador, etiqueta), *resto = candidatos
-        resultados.append(ejecutar_ranura(run, paso, r, adaptador, fichas[r], etiqueta, alternativas=resto))
+        # Una tarea troceable no descarta al verificador del servidor por tamaño: se trocea.
+        troceable = pend[r].get("tarea") in troceo.TAREAS
+        candidatos = recursos.verificadores(run, None if troceable else fichas[r])
+        resultados.append(ejecutar_verificador(run, paso, r, fichas[r], candidatos))
     return resultados
+
+
+def ejecutar_verificador(run: Ejecucion, paso: str, ranura: str, ficha: str,
+                         candidatos: list[tuple[Adaptador, str]]) -> ResultadoRanura:
+    """Verificador del servidor (troceando si la ficha no cabe) y, si falla, el respaldo
+    con la ficha completa. Sin candidatos, la ficha queda para el modo manual."""
+    if not candidatos:
+        return ResultadoRanura(ranura, ok=False, errores=["Sin verificador disponible."], pasa_a_manual=True)
+    (adaptador, etiqueta), *resto = candidatos
+    if troceo.hace_falta(run, paso, ranura, adaptador, ficha):
+        ok, detalle = troceo.ejecutar(run, paso, ranura, adaptador, etiqueta)
+        if ok:
+            _anotar_aviso(run, f"{paso} {ranura}: la tarea no cabía en el verificador del servidor y se resolvió "
+                               f"por partes ({detalle}).")
+            return ResultadoRanura(ranura, ok=True)
+        if not resto:
+            _anotar_aviso(run, f"{paso} {ranura}: falló la tarea por partes ({detalle}) y no hay respaldo. "
+                               "La ficha queda para el modo manual.")
+            return ResultadoRanura(ranura, ok=False, errores=[detalle], pasa_a_manual=True)
+        _anotar_aviso(run, f"{paso} {ranura}: falló la tarea por partes ({detalle}). "
+                           "Se usa el modelo de respaldo, fuera de la rotación.")
+        (adaptador, etiqueta), *resto = resto
+    return ejecutar_ranura(run, paso, ranura, adaptador, ficha, etiqueta, alternativas=resto)
 
 
 def tarea_verificador(run: Ejecucion, perfil: dict, tarea: str, entradas: dict, destino: str) -> ResultadoRanura:
@@ -149,11 +170,8 @@ def tarea_verificador(run: Ejecucion, perfil: dict, tarea: str, entradas: dict, 
     y la envía al verificador disponible. Sin verificador, la ficha queda para el modo manual."""
     paso = f"verificador_{tarea}"
     ficha = manual.preparar_ficha(run, paso, "V", "verifier", entradas, destino, tarea=tarea)
-    candidatos = candidatos_verificador(run, perfil, ficha)
-    if not candidatos:
-        return ResultadoRanura("V", ok=False, errores=["Sin verificador disponible."], pasa_a_manual=True)
-    (adaptador, etiqueta), *resto = candidatos
-    return ejecutar_ranura(run, paso, "V", adaptador, ficha, etiqueta, alternativas=resto)
+    candidatos = candidatos_verificador(run, perfil, None if tarea in troceo.TAREAS else ficha)
+    return ejecutar_verificador(run, paso, "V", ficha, candidatos)
 
 
 # --- verificador fijo con respaldo ------------------------------------------------------

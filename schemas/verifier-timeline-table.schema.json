@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "verifier-timeline-table",
+  "title": "Subtarea timeline-table del verificador: tabla compacta de puertas y actividades de una parte del texto (skills/verifier/SKILL.md)",
+  "type": "object",
+  "required": ["rows"],
+  "properties": {
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "name", "when"],
+        "properties": {
+          "kind": {"enum": ["gate", "activity"]},
+          "name": {"type": "string", "minLength": 1},
+          "when": {"type": "string"},
+          "objective": {"type": "string"},
+          "authorises": {"type": "array", "items": {"type": "string"}},
+          "requires": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

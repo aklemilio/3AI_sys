@@ -11,6 +11,7 @@ La especificación del MVP está en [SPEC.md](SPEC.md).
 - Hito 3 de 5 (en curso): adaptadores de Claude y Codex (CLI), Gemini (API de pago) y Ollama (verificador), rotación en cuadrado latino y verificador con respaldo. Claude, Codex, Gemini y el verificador del servidor probados con una llamada real.
 
 - Orquestación del flujo completo (`tresia/motor/flujo.py`): ingesta, encuadre, línea base, fase A, verificación A, fusión, criba, agregación, cartera, ciclo de la fase B e informe, en modo automático o manual.
+- Troceo del verificador del servidor (`tresia/motor/troceo.py`): las tareas que no caben en su contexto fijo de 8192 tokens se resuelven por partes (claims y compliance por secciones; timeline con una tabla intermedia; arbitrate por lotes; merge por etapas y luego entre etapas). Si un trozo falla, se usa el respaldo con la ficha completa. El modo manual no cambia.
 
 ### Uso desde Python (hasta que llegue la interfaz)
 

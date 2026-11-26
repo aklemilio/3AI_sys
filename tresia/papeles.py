@@ -26,6 +26,7 @@ ESQUEMA_POR_TAREA_VERIFICADOR = {
     "merge": "verifier-merge",
     "claims": "verifier-claims",
     "timeline": "verifier-timeline",
+    "timeline-table": "verifier-timeline-table",
     "arbitrate": "verifier-arbitrate",
 }
 
