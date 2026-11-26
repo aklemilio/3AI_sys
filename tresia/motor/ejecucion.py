@@ -11,6 +11,7 @@ import json
 import os
 import re
 import threading
+import time
 import unicodedata
 import uuid
 from datetime import datetime, timezone
@@ -53,7 +54,17 @@ def _escribir_atomico(ruta: Path, contenido: str) -> None:
     ruta.parent.mkdir(parents=True, exist_ok=True)
     tmp = ruta.with_name(f"{ruta.name}.{uuid.uuid4().hex[:8]}.tmp")
     tmp.write_text(contenido, encoding="utf-8", newline="\n")
-    os.replace(tmp, ruta)
+    # En Windows no se puede reemplazar un archivo que otro hilo o proceso está leyendo
+    # (la interfaz lee run.json mientras el motor lo escribe): se reintenta un momento.
+    for intento in range(50):
+        try:
+            os.replace(tmp, ruta)
+            return
+        except PermissionError:
+            if intento == 49:
+                tmp.unlink(missing_ok=True)
+                raise
+            time.sleep(0.02 * (1 + intento // 10))
 
 
 class Ejecucion:

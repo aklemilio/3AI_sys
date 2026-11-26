@@ -13,7 +13,15 @@ La especificación del MVP está en [SPEC.md](SPEC.md).
 - Orquestación del flujo completo (`tresia/motor/flujo.py`): ingesta, encuadre, línea base, fase A, verificación A, fusión, criba, agregación, cartera, ciclo de la fase B e informe, en modo automático o manual.
 - Troceo del verificador del servidor (`tresia/motor/troceo.py`): las tareas que no caben en su contexto fijo de 8192 tokens se resuelven por partes (claims y compliance por secciones; timeline con una tabla intermedia; arbitrate por lotes; merge por etapas y luego entre etapas). Si un trozo falla, se usa el respaldo con la ficha completa. El modo manual no cambia.
 
-### Uso desde Python (hasta que llegue la interfaz)
+### Interfaz local
+
+```powershell
+& "$env:LOCALAPPDATA\tresia\venv\Scripts\python.exe" -m tresia.interfaz --abrir
+```
+
+Abre `http://127.0.0.1:8765/`. Solo escucha en esta máquina. Las ejecuciones se guardan en `ejecuciones/` (no se sube al repositorio); otra carpeta con `--carpeta`. Pantallas: ejecuciones, ejecución (fases, paso actual, avisos y métricas), tarjetas de decisión en cada puerta del dueño, resultados, propuesta final con sus afirmaciones, informe, registro de decisiones y modo manual (copiar la ficha y pegar la respuesta). Los modelos aparecen como «Explorador 1, 2, 3», «Cribador 1, 2, 3», etc.; nunca su identidad.
+
+### Uso desde Python
 
 ```python
 from tresia import perfiles

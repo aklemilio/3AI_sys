@@ -6,6 +6,7 @@ requires-python = ">=3.11"
 dependencies = [
     "jsonschema>=4.20",
     "truststore>=0.10",   # verifica TLS con el almacén del sistema (Windows)
+    "jinja2>=3.1",        # plantillas de la interfaz local (escapa el HTML por defecto)
 ]
 
 [project.optional-dependencies]

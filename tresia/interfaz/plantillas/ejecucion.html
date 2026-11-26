@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block titulo %}{{ nombre }} · Tres IA{% endblock %}
+{% block cabeza %}{% if trabajando %}<meta http-equiv="refresh" content="3">{% endif %}{% endblock %}
+{% block contenido %}
+<h1>{{ nombre }}</h1>
+
+<ol class="fases" aria-label="Fases">
+  {% for f in fases %}
+  <li class="{{ f.estado }}{{ ' actual' if f.actual }}" title="{{ f.texto }}">
+    <span class="nombre-fase">{{ f.nombre }}</span><span class="estado-fase">{{ f.texto }}</span>
+  </li>
+  {% endfor %}
+</ol>
+
+<section class="paso">
+  <h2>Ahora: {{ fase }}{% if ui and ui.paso and ui.paso.startswith("ciclo") %} · {{ ui.paso }}{% endif %}</h2>
+  {% if trabajando %}
+    <p class="mensaje trabajo"><span class="girando" aria-hidden="true"></span> El motor está trabajando. La página se actualiza sola.</p>
+  {% elif error %}
+    <p class="mensaje error">El motor se detuvo con un error: {{ error }}</p>
+    <form method="post" action="/e/{{ id }}/avanzar"><input type="hidden" name="_t" value="{{ token }}"><button>Volver a intentarlo</button></form>
+  {% elif ui %}
+    {% if ui.terminada %}
+      <p class="mensaje ok">{{ ui.detalle }}</p>
+      <p><a class="boton" href="/e/{{ id }}/propuesta">Ver la propuesta final y su porqué</a></p>
+    {% elif ui.espera == "dueno" %}
+      <p class="mensaje dueno">Te toca decidir:
+        {% if tarjeta and tarjeta.tipo == "disposiciones" %}{{ tarjeta.tarjetas|length }} hallazgos del atacante.{% else %}{{ ui.detalle }}{% endif %}</p>
+    {% elif ui.espera == "respuestas" %}
+      <p class="mensaje respuestas">Faltan respuestas de los modelos.
+        {% if modo == "manual" %}Copia cada ficha en la web del modelo y pega su respuesta.
+        {% else %}Algún modelo no respondió o su respuesta no era válida: puedes volver a intentarlo o pegarla a mano.{% endif %}</p>
+    {% endif %}
+  {% else %}
+    <form method="post" action="/e/{{ id }}/avanzar"><input type="hidden" name="_t" value="{{ token }}"><button>Empezar</button></form>
+  {% endif %}
+
+  {% if pendientes and not trabajando %}
+  <h3>Fichas sin respuesta</h3>
+  <ul class="pendientes">
+    {% for p in pendientes %}
+    <li><a href="/e/{{ id }}/manual/{{ p.paso|urlencode }}/{{ p.ranura|urlencode }}">{{ p.nombre }}</a> <span class="etiqueta">{{ p.estado }}</span></li>
+    {% endfor %}
+  </ul>
+  {% if modo != "manual" and ui and ui.espera == "respuestas" %}
+  <form method="post" action="/e/{{ id }}/avanzar"><input type="hidden" name="_t" value="{{ token }}"><button>Volver a pedirlas a los modelos</button></form>
+  {% endif %}
+  {% endif %}
+</section>
+
+{% if tarjeta %}
+  {% include "_tarjeta.html" %}
+{% endif %}
+
+{% if avisos %}
+<section class="avisos">
+  <h2>Avisos del proceso</h2>
+  <ul>
+    {% for a in avisos[:8] %}<li><span class="fecha">{{ a.fecha|fecha }}</span> {{ a.texto }}</li>{% endfor %}
+  </ul>
+  {% if avisos|length > 8 %}
+  <details><summary>Ver los {{ avisos|length - 8 }} anteriores</summary>
+    <ul>{% for a in avisos[8:] %}<li><span class="fecha">{{ a.fecha|fecha }}</span> {{ a.texto }}</li>{% endfor %}</ul>
+  </details>
+  {% endif %}
+</section>
+{% endif %}
+
+{% if metricas %}
+<section>
+  <h2>Métricas</h2>
+  {% for m in metricas|reverse %}
+  <details {{ "open" if loop.first }}>
+    <summary>{{ m.fase }}</summary>
+    <table class="tabla metricas">{% for nombre, valor in m.filas %}<tr><th>{{ nombre }}</th><td>{{ valor }}</td></tr>{% endfor %}</table>
+  </details>
+  {% endfor %}
+</section>
+{% endif %}
+
+<section class="ajustes">
+  <h2>Modo</h2>
+  <form method="post" action="/e/{{ id }}/modo">
+    <input type="hidden" name="_t" value="{{ token }}">
+    {% if modo == "manual" %}
+      <p>Modo manual: copias y pegas las fichas.</p>
+      {% if not sin_recursos %}<input type="hidden" name="modo" value="automatico"><button class="secundario">Pasar a automático</button>{% endif %}
+    {% else %}
+      <p>Modo automático: el motor llama a los modelos. Si alguno falla, su ficha queda para pegarla a mano.</p>
+      <input type="hidden" name="modo" value="manual"><button class="secundario">Pasar a manual</button>
+    {% endif %}
+  </form>
+</section>
+{% endblock %}

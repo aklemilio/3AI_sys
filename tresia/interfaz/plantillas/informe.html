@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block titulo %}Informe · {{ nombre }}{% endblock %}
+{% block contenido %}
+{% if html %}<article class="documento">{{ html }}</article>
+{% else %}<h1>Informe</h1><p>El informe se genera al terminar la fase B.</p>{% endif %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block titulo %}Propuesta · {{ nombre }}{% endblock %}
+{% block contenido %}
+<h1>Propuesta final y su porqué</h1>
+{% if not p %}
+  <p>Todavía no hay ninguna versión: aparece cuando el constructor entrega la primera en la fase B.</p>
+{% else %}
+  <p class="contexto">Versión <strong>{{ p.version }}</strong>{{ " (adoptada)" if p.adoptada else " (todavía no adoptada)" }}.
+  {% if p.afirmaciones_de %}Afirmaciones extraídas por el verificador sobre la versión {{ p.afirmaciones_de }}.
+  {% else %}El verificador todavía no ha extraído afirmaciones.{% endif %}</p>
+  <p class="leyenda">🔗 fuente con fragmento · 🧠 razonamiento con premisas · 👤 conocimiento del dueño · ⚖️ postura declarada</p>
+
+  <div class="dos-columnas">
+    <article class="documento">{{ p.html|safe }}</article>
+    <aside>
+      <h2>Afirmaciones ({{ p.afirmaciones|length }})</h2>
+      <p class="contexto"><small>Las que aparecen literalmente en el texto están resaltadas. La fase que la introdujo es la primera
+        versión en la que aparece literalmente; si el verificador la parafraseó, no se puede localizar.</small></p>
+      <ol class="afirmaciones">
+      {% for a in p.afirmaciones %}
+        <li>
+          <p>{{ a.icono }} {% if a.marcada %}<a href="#af{{ a.n }}">{{ a.texto }}</a>{% else %}{{ a.texto }}{% endif %}</p>
+          <p class="meta">{{ a.tipo }} · solidez {{ a.solidez }}{% if a.estado_fuente %} · fuente {{ a.estado_fuente }}{% endif %}</p>
+          {% if a.url %}<p class="meta"><a href="{{ a.url }}" target="_blank" rel="noopener noreferrer">{{ a.url }}</a></p>{% endif %}
+          {% if a.fragmento %}<blockquote>{{ a.fragmento }}</blockquote>{% endif %}
+          {% if a.premisas %}<ul class="premisas">{% for pr in a.premisas %}<li>{{ pr }}</li>{% endfor %}</ul>{% endif %}
+          {% if a.nota %}<p class="meta">{{ a.nota }}</p>{% endif %}
+          <p class="meta">Introducida en: {{ a.origen }}</p>
+        </li>
+      {% endfor %}
+      </ol>
+    </aside>
+  </div>
+{% endif %}
+{% endblock %}
