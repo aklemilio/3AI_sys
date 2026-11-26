@@ -28,7 +28,7 @@ from tresia.adaptadores import Adaptador, AdaptadorError
 from tresia.adaptadores.http import estimar_tokens
 from tresia.calculo import esquemas
 from tresia.calculo.limpieza_json import INSTRUCCION_REINTENTO, JSONIrrecuperable, extraer_json
-from tresia.motor import manual
+from tresia.motor import consumo, manual
 from tresia.motor.ejecucion import Ejecucion
 
 TAREAS = {"claims", "compliance", "timeline", "arbitrate", "merge"}
@@ -327,7 +327,7 @@ def ejecutar(run: Ejecucion, paso: str, ranura: str, adaptador: Adaptador, etiqu
         prompt = ficha
         for intento in (1, 2):
             try:
-                r = adaptador.llamar(prompt)
+                r = consumo.llamar(run, paso, f"{ranura}_trozo{n:02d}", adaptador, prompt, etiqueta)
             except AdaptadorError as e:
                 raise ErrorTroceo(f"Trozo {n}: {e}") from e
             run.escribir(f"respuestas/{paso}/{ranura}_trozo{n:02d}_intento{intento}.txt", r.texto)

@@ -26,7 +26,7 @@ def verificar_version(
     partes: dict[str, tuple[str | None, str | None]] | None = None,
     limites: dict[str, int] | None = None,
     comprobar_fuentes: bool = False,
-    obtener: F.Descargador = F.descargar,
+    obtener: F.Descargador | None = None,
 ) -> dict:
     """``partes``: nombre -> (marcador inicial, marcador final) para el recuento por
     partes, p. ej. {"cuerpo": (None, "# **Annex"), "anexo": ("# **Annex", "## **G.")}.
@@ -65,10 +65,11 @@ def verificar_version(
         alertas.append(f"{len(ausentes)} fuentes del registro no aparecen en esta versión; hay que restituirlas o justificar su retirada.")
 
     if comprobar_fuentes:
-        for entrada in registro.values():
-            if entrada["fragmento"]:
-                F.anotar_comprobacion(registro, F.comprobar(entrada["url"], entrada["fragmento"], obtener))
+        notas["fuentes_comprobadas_ahora"] = F.comprobar_pendientes(registro, obtener)
     notas["fuentes_por_estado"] = _por_estado(registro)
+    if fallidas := fuentes_no_verificadas(registro):
+        alertas.append(f"{len(fallidas)} fuentes citadas no se pudieron verificar (fragmento ausente, página "
+                       "inaccesible o sin fragmento); no cuentan como respaldo hasta corregirlas.")
 
     notas["alertas"] = alertas
     run.escribir("fuentes.json", registro)
@@ -76,13 +77,69 @@ def verificar_version(
     return notas
 
 
-def registrar_fuentes_de_salida(run: Ejecucion, datos, origen: str) -> int:
-    """Lleva al registro las fuentes con fragmento que cita una salida de papel (E1, S2, ataque…)."""
-    registro = _registro(run)
-    nuevas = F.fuentes_de(datos)
-    F.registrar(registro, nuevas, origen)
-    run.escribir("fuentes.json", registro)
+def comprobacion_activa(run: Ejecucion) -> bool:
+    """La comprobación en línea está activa salvo que la ficha la desactive
+    (``"comprobar_fuentes": false``, por ejemplo sin conexión)."""
+    ficha = run.leer("ficha.json") if run.existe("ficha.json") else {}
+    return bool(ficha.get("comprobar_fuentes", True))
+
+
+def registrar_fuentes_de_salida(run: Ejecucion, datos, origen: str, comprobar: bool = True) -> int:
+    """Lleva al registro las fuentes con fragmento que cita una salida de papel (E1,
+    ataque, registro de cambios, afirmaciones del verificador…) y comprueba en línea
+    las nuevas: la solidez de una fuente la asigna el motor, no quien la cita."""
+    with run.cerrojo:
+        registro = _registro(run)
+        nuevas = F.fuentes_de(datos)
+        F.registrar(registro, nuevas, origen)
+        if comprobar and comprobacion_activa(run):
+            F.comprobar_pendientes(registro)
+        run.escribir("fuentes.json", registro)
     return len(nuevas)
+
+
+NO_VERIFICADAS = (F.NO_COINCIDE, F.INACCESIBLE)
+_MOTIVO = {F.NO_COINCIDE: "fragment not found on the page", F.INACCESIBLE: "page inaccessible",
+           F.SIN_FRAGMENTO: "no fragment given", F.SIN_COMPROBAR: "not checked (online checking is off)"}
+
+
+def aplicar_comprobacion_a_afirmaciones(run: Ejecucion, ruta: str) -> int:
+    """La solidez de una afirmación de tipo «source» la decide la comprobación del
+    motor, no el modelo: si el fragmento no se encontró en la página (o no hay URL o
+    fragmento), pasa a «unsupported» con una nota. Devuelve cuántas se rebajaron."""
+    datos = run.leer(ruta)
+    registro = _registro(run)
+    rebajadas = 0
+    for c in datos.get("claims", []):
+        if c.get("type") != "source":
+            continue
+        e = registro.get(F.clave(c.get("url", ""), c.get("fragment", ""))) if c.get("url") else None
+        estado = e["estado"] if e else (F.SIN_FRAGMENTO if c.get("url") else F.INACCESIBLE)
+        c["engine_check"] = estado
+        if estado == F.VERIFICADA:
+            continue
+        motivo = "no URL given" if not c.get("url") else _MOTIVO.get(estado, estado)
+        if c.get("strength") != "unsupported":
+            c["model_strength"] = c.get("strength")
+            c["strength"] = "unsupported"
+            rebajadas += 1
+        c["note"] = (c.get("note", "") + " " if c.get("note") else "") + f"Engine check: {motivo}."
+    run.escribir(ruta, datos)
+    return rebajadas
+
+
+def fuentes_no_verificadas(registro: dict) -> list[dict]:
+    return [e for e in registro.values() if e.get("estado") in NO_VERIFICADAS]
+
+
+def estado_de_fuentes(run: Ejecucion) -> list[dict]:
+    """Resumen para los papeles (atacante, evaluadores, cribadores): qué fuentes
+    comprobó el motor y con qué resultado. En inglés, como los prompts."""
+    nombres = {F.VERIFICADA: "verified: fragment found on the page", F.NO_COINCIDE: "NOT verified: fragment not found on the page",
+               F.INACCESIBLE: "NOT verified: page inaccessible", F.SIN_FRAGMENTO: "NOT verifiable: no fragment given",
+               F.SIN_COMPROBAR: "not checked yet"}
+    return [{"url": e["url"], "fragment": e["fragmento"][:200], "status": nombres.get(e["estado"], e["estado"])}
+            for e in _registro(run).values() if e["url"]]
 
 
 def _urls_sin_registro(registro: dict, texto: str) -> list[str]:

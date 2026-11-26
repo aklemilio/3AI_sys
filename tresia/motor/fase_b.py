@@ -20,7 +20,8 @@ from tresia.motor.encuadre import materiales_para_papeles
 from tresia.motor.ejecucion import Ejecucion
 from tresia.motor.llamadas import rotacion
 from tresia.motor.pasos import opciones_para_criba
-from tresia.motor.verificador import registrar_fuentes_de_salida, verificar_version
+from tresia.motor.verificador import (aplicar_comprobacion_a_afirmaciones, comprobacion_activa, estado_de_fuentes,
+                                      registrar_fuentes_de_salida, verificar_version)
 
 PASOS_B = ["constructor", "verificacion", "ataque", "verificacion_ataque", "arbitraje", "disposiciones",
            "correccion", "verificacion_correccion", "veredicto", "adopcion"]
@@ -123,7 +124,12 @@ def _notas_verificador(run: Ejecucion, ciclo: int, version: str) -> dict:
         r = f"{_carpeta(ciclo)}/verificador_{tarea}_{version}.json"
         if run.existe(r):
             extra[tarea] = run.leer(r)
-    return {"deterministic_alerts": notas.get("alertas", []), "word_counts": notas.get("recuento", {}), **extra}
+    # Lo que el motor comprobó en línea de las fuentes que cita esta versión.
+    v = next((x for x in estado_b(run)["versiones"] if x["nombre"] == version), None)
+    texto = texto_completo(run, v) if v else ""
+    fuentes = [f for f in estado_de_fuentes(run) if f["url"] in texto]
+    return {"deterministic_alerts": notas.get("alertas", []), "word_counts": notas.get("recuento", {}),
+            "source_checks_by_engine": fuentes, **extra}
 
 
 def _hallazgos_con_disposiciones(run: Ejecucion, ciclo: int) -> list[dict]:
@@ -238,9 +244,12 @@ def _verificar_determinista(run: Ejecucion, ciclo: int) -> dict:
     ficha = run.leer("ficha.json")
     actual, anterior = version_actual(run), _anterior(run)
     partes = {k: tuple(v) for k, v in (ficha.get("partes") or {}).items()}
+    if run.existe(actual["cambios"]):     # las fuentes con fragmento viven en el registro de cambios
+        registrar_fuentes_de_salida(run, run.leer(actual["cambios"]), actual["nombre"], comprobar=False)
     return verificar_version(run, ciclo, actual["nombre"], texto_completo(run, actual),
                              anterior=texto_completo(run, anterior) if anterior else None,
-                             partes=partes or None, limites=ficha.get("limites") or None)
+                             partes=partes or None, limites=ficha.get("limites") or None,
+                             comprobar_fuentes=comprobacion_activa(run))
 
 
 def _al_completar(run: Ejecucion, paso: str) -> None:
@@ -254,6 +263,12 @@ def _al_completar(run: Ejecucion, paso: str) -> None:
         _verificar_determinista(run, ciclo)
     elif paso == "ataque":
         registrar_fuentes_de_salida(run, run.leer(f"{carpeta}/ataque.json"), f"ataque_ciclo_{ciclo}")
+    elif paso == "verificacion":
+        nombre = version_actual(run)["nombre"]
+        r = f"{carpeta}/verificador_claims_{nombre}.json"
+        if run.existe(r):   # fuentes que el verificador encontró en el texto, con su fragmento
+            registrar_fuentes_de_salida(run, run.leer(r), f"afirmaciones:{nombre}")
+            aplicar_comprobacion_a_afirmaciones(run, r)
 
 
 SIGUIENTE = {

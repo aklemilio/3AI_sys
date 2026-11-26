@@ -174,6 +174,7 @@ def md_a_html(texto: str) -> str:
 # --- métricas -----------------------------------------------------------------------------------------
 METRICA = {
     "opciones": "Opciones", "sin_ia": "Sin IA", "fuentes_citadas": "Fuentes citadas", "avisos": "Avisos",
+    "fuentes_verificadas": "Fuentes verificadas por el motor", "fuentes_no_verificadas": "Fuentes que no se pudieron verificar",
     "grupos": "Grupos", "nuevos": "Nuevos frente a la línea base", "novedad": "Novedad", "jaccard": "Solapamiento (Jaccard)",
     "aportes_unicos": "Aportes únicos", "en_los_tres": "En los tres exploradores", "grupos_con_ia": "Grupos que dependen de IA",
     "opciones_por_explorador": "Opciones por explorador", "opciones_evaluadas": "Opciones evaluadas",
@@ -311,7 +312,9 @@ def propuesta(run: Ejecucion) -> dict | None:
             cuerpo = cuerpo.replace(literal, f'<mark id="af{i}" title="{tipo}">{icono} {literal}</mark>', 1)
             marca = True
         salida.append({"n": i, "texto": c.get("text", ""), "icono": icono, "tipo": tipo,
-                       "solidez": SOLIDEZ.get(c.get("strength"), c.get("strength", "")), "url": c.get("url", ""),
+                       "solidez": SOLIDEZ.get(c.get("strength"), c.get("strength", "")),
+                       "solidez_modelo": SOLIDEZ.get(c.get("model_strength"), c.get("model_strength", "")),
+                       "url": c.get("url", ""),
                        "fragmento": c.get("fragment", ""), "premisas": c.get("premises", []), "nota": c.get("note", ""),
                        "estado_fuente": ESTADO_FUENTE.get(fuente["estado"], fuente["estado"]) if fuente else
                        ("no está en el registro de fuentes" if c.get("url") else ""),

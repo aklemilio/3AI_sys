@@ -7,6 +7,18 @@ CASO = Path(__file__).resolve().parent.parent / "fixtures" / "caso-libanes-c4"
 ETAPAS_C4 = ["find", "record_or_rescue", "preserve", "describe", "access", "keep_alive", "transmit"]
 
 
+@pytest.fixture(autouse=True)
+def sin_red(monkeypatch):
+    """Las pruebas nunca descargan nada: toda fuente queda «inaccesible» salvo que
+    una prueba sustituya ``descargar`` por su propia página falsa."""
+    from tresia.calculo import fuentes
+
+    def descargar(url):
+        raise OSError("sin red en las pruebas")
+
+    monkeypatch.setattr(fuentes, "descargar", descargar)
+
+
 def cargar(nombre: str):
     return json.loads((CASO / nombre).read_text(encoding="utf-8"))
 
