@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block titulo %}Registro · {{ nombre }}{% endblock %}
+{% block contenido %}
+<h1>Registro de decisiones</h1>
+<p class="contexto">Todo lo que decides queda aquí con fecha, igual que en <code>decisiones.jsonl</code>.</p>
+{% if decisiones %}
+<table class="tabla">
+  <thead><tr><th>Fecha</th><th>Fase</th><th>Decisión</th><th>Quién</th><th>Detalle</th></tr></thead>
+  <tbody>
+  {% for d in decisiones %}
+    <tr><td>{{ d.fecha|fecha }}</td><td>{{ d.fase_nombre }}</td><td>{{ d.tipo|replace("_", " ") }}</td>
+      <td>{{ "Tú" if d.origen == "dueno" else "El motor" }}</td><td>{{ d.detalle }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}<p>Todavía no hay decisiones.</p>{% endif %}
+{% endblock %}

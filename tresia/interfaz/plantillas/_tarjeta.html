@@ -1,0 +1,193 @@
+{% set t = tarjeta %}
+{% macro control() %}<input type="hidden" name="_t" value="{{ token }}">{% endmacro %}
+<section class="tarjeta decision" id="tarjeta">
+
+{% if t.tipo == "ingesta" %}
+  <h2>Materiales del caso</h2>
+  <p class="contexto">Añade cada material con su etiqueta. El <strong>contexto</strong> lo ves tú, pero nunca llega a los modelos.
+    Hace falta al menos un material marcado como <strong>objeto a validar</strong>.</p>
+  {% if t.materiales %}
+  <table class="tabla"><thead><tr><th>Material</th><th>Etiqueta</th><th>Palabras</th></tr></thead><tbody>
+    {% for m in t.materiales %}<tr><td>{{ m.nombre }}{% if m.descripcion %}<br><small>{{ m.descripcion }}</small>{% endif %}</td>
+      <td>{{ t.etiquetas[m.etiqueta] }}</td><td>{{ m.palabras }}</td></tr>{% endfor %}
+  </tbody></table>
+  {% endif %}
+  <form method="post" action="/e/{{ id }}/accion/material" class="apilado">
+    {{ control() }}
+    <label>Nombre <input name="nombre" required maxlength="120"></label>
+    <label>Etiqueta
+      <select name="etiqueta">{% for k, n in t.etiquetas.items() %}<option value="{{ k }}">{{ n }}</option>{% endfor %}</select>
+    </label>
+    <label>Descripción (opcional) <input name="descripcion" maxlength="300"></label>
+    <label>Texto <textarea name="texto" rows="8" required data-archivo="archivo-material"></textarea></label>
+    <label class="secundario">O cárgalo desde un archivo de texto: <input type="file" id="archivo-material" accept=".md,.txt,.json,.csv"></label>
+    <button>Añadir material</button>
+  </form>
+  <form method="post" action="/e/{{ id }}/accion/cerrar_ingesta">
+    {{ control() }}
+    <p class="consecuencia">Al cerrar la ingesta se pasa al encuadre. Si no la cierras, nada avanza.</p>
+    <button>Cerrar la ingesta</button>
+  </form>
+
+{% elif t.tipo in ("encuadre", "ficha") %}
+  {% if t.tipo == "ficha" %}
+    <h2>¿Confirmas la ficha del caso?</h2>
+    <p class="contexto">La ficha guía a todos los papeles. Los campos marcados como <em>por defecto</em> no los respondiste tú.</p>
+    <dl class="ficha">
+      <dt>Objetivo</dt><dd>{{ t.ficha.objetivo }}</dd>
+      {% for p in t.preguntas %}
+      <dt>{{ p.pregunta }}{% if p.clave in t.por_defecto %} <span class="etiqueta">por defecto</span>{% endif %}</dt>
+      <dd>{% if t.ficha[p.clave] is string %}{{ t.ficha[p.clave] or "—" }}{% else %}{{ t.ficha[p.clave]|join("; ") }}{% endif %}</dd>
+      {% endfor %}
+      <dt>Etapas de la cadena</dt><dd>{{ t.ficha.etapas|join(", ") }}</dd>
+      <dt>Opciones en la cartera</dt><dd>{{ t.ficha.cartera_n }}</dd>
+      {% if t.ficha.limites %}<dt>Límites de longitud</dt><dd>{% for k, v in t.ficha.limites.items() %}{{ k }}: {{ v }} palabras{{ "; " if not loop.last }}{% endfor %}</dd>{% endif %}
+    </dl>
+    <form method="post" action="/e/{{ id }}/accion/confirmar_ficha">
+      {{ control() }}
+      <label>Comentario (opcional) <input name="comentario" maxlength="300"></label>
+      <p class="consecuencia">Al confirmar se pasa a la línea base. Si no confirmas, nada avanza.</p>
+      <button>Confirmar la ficha</button>
+    </form>
+    <details><summary>Cambiar las respuestas</summary>
+  {% else %}
+    <h2>Encuadre: once preguntas</h2>
+    <p class="contexto">Responde lo que sepas. Lo que dejes vacío toma el valor por defecto que se indica debajo de cada pregunta.</p>
+  {% endif %}
+  <form method="post" action="/e/{{ id }}/accion/encuadre" class="apilado">
+    {{ control() }}
+    <label>Objetivo (obligatorio) <textarea name="objetivo" rows="2" required>{{ t.valores.objetivo or "" }}</textarea></label>
+    {% for p in t.preguntas %}
+    <label>{{ p.pregunta }}
+      <textarea name="{{ p.clave }}" rows="{{ 3 if p.clave == 'caras' else 2 }}">{% if p.clave == "caras" %}{{ t.valores.caras or "" }}{% elif t.valores[p.clave] is string %}{{ t.valores[p.clave] }}{% endif %}</textarea>
+      <small>Si lo dejas vacío: {% if p.por_defecto is string %}{{ p.por_defecto or "sin respuesta" }}{% else %}{{ p.por_defecto|join("; ") }}{% endif %}{% if p.clave == "caras" %} (una cara por línea){% endif %}</small>
+    </label>
+    {% endfor %}
+    <details><summary>Ajustes avanzados</summary>
+      <label>Etapas de la cadena (una por línea) <textarea name="etapas" rows="4"></textarea>
+        <small>Si lo dejas vacío: find, create_or_rescue, preserve, describe, access, use, transmit.</small></label>
+      <label>Límite de palabras del cuerpo <input name="limite_cuerpo" inputmode="numeric"></label>
+      <label>Límite de palabras del anexo <input name="limite_anexo" inputmode="numeric"></label>
+      <label>Opciones en la cartera <input name="cartera_n" inputmode="numeric" placeholder="10"></label>
+    </details>
+    <button>{{ "Rehacer la ficha" if t.tipo == "ficha" else "Crear la ficha" }}</button>
+  </form>
+  {% if t.tipo == "ficha" %}</details>{% endif %}
+
+{% elif t.tipo == "linea_base" %}
+  <h2>Línea base: las opciones obvias</h2>
+  <p class="contexto">Escribe las opciones que se te ocurrirían sin ayuda, una por línea. No se entregan a los modelos: sirven para medir cuánta novedad aporta la fase A.</p>
+  <form method="post" action="/e/{{ id }}/accion/linea_base" class="apilado">
+    {{ control() }}
+    <textarea name="opciones" rows="8" required></textarea>
+    <p class="consecuencia">Al guardarla empieza la fase A. Si no la escribes, nada avanza.</p>
+    <button>Guardar y empezar la fase A</button>
+  </form>
+
+{% elif t.tipo == "fusion" %}
+  <h2>La agrupación de opciones no es válida</h2>
+  <p class="contexto">Cada opción tiene que estar en exactamente un grupo. Problemas encontrados:</p>
+  <ul>{% for e in t.errores %}<li>{{ e }}</li>{% endfor %}</ul>
+  <form method="post" action="/e/{{ id }}/accion/repetir_fusion">
+    {{ control() }}
+    <p class="consecuencia">Pedirla de nuevo prepara otra ficha de fusión para el verificador.</p>
+    <button>Pedir otra agrupación al verificador</button>
+  </form>
+  <form method="post" action="/e/{{ id }}/accion/corregir_fusion" class="apilado">
+    {{ control() }}
+    <label>O pega una agrupación corregida (JSON con «groups»)<textarea name="grupos" rows="8" required></textarea></label>
+    <button class="secundario">Comprobar y usar esta agrupación</button>
+  </form>
+  <p class="consecuencia">Si no haces nada, el proceso queda detenido en la fusión.</p>
+
+{% elif t.tipo == "cartera" %}
+  <h2>¿Apruebas la cartera?</h2>
+  <p class="contexto">Opciones elegidas por regla: total de medianas, luego impacto e inclusión, más la mejor de cada etapa que falte.
+    Puedes añadir o quitar; tu decisión prevalece y queda marcada.</p>
+  <form method="post" action="/e/{{ id }}/accion/cartera_cambiar" class="apilado">
+    {{ control() }}
+    <table class="tabla"><thead><tr><th>Quitar</th><th>Opción</th><th>Por qué entra</th></tr></thead><tbody>
+      {% for s in t.seleccion %}<tr><td><input type="checkbox" name="quitar" value="{{ s.id }}" aria-label="Quitar {{ s.name }}"></td>
+        <td>{{ s.name }} <small class="codigo">{{ s.id }}</small></td><td>{{ t.origen.get(s.origen, s.origen) }}: {{ s.motivo }}</td></tr>{% endfor %}
+    </tbody></table>
+    {% if t.archivo %}
+    <details><summary>Archivadas ({{ t.archivo|length }}): pueden volver</summary>
+      <table class="tabla"><thead><tr><th>Añadir</th><th>Opción</th><th>Motivo</th></tr></thead><tbody>
+        {% for s in t.archivo %}<tr><td><input type="checkbox" name="anadir" value="{{ s.id }}" aria-label="Añadir {{ s.name }}"></td>
+          <td>{{ s.name }} <small class="codigo">{{ s.id }}</small></td><td>{{ s.motivo }}</td></tr>{% endfor %}
+      </tbody></table>
+    </details>
+    {% endif %}
+    <label>Motivo de tu cambio <input name="motivo" maxlength="300"></label>
+    <button class="secundario">Aplicar los cambios marcados</button>
+  </form>
+  <form method="post" action="/e/{{ id }}/accion/cartera_aprobar">
+    {{ control() }}
+    <p class="consecuencia">Al aprobarla empieza la fase B con estas opciones. Si no respondes, nada avanza.</p>
+    <button>Aprobar la cartera</button>
+  </form>
+
+{% elif t.tipo == "disposiciones" %}
+  <h2>Hallazgos del atacante (ciclo {{ t.ciclo }})</h2>
+  <p class="contexto">El árbitro propone qué hacer con cada hallazgo. Elige una opción en las que quieras decidir;
+    las que dejes sin marcar toman su valor por defecto y quedan registradas como tales.</p>
+  <form method="post" action="/e/{{ id }}/accion/disposiciones">
+    {{ control() }}
+    {% for c in t.tarjetas %}
+    <fieldset class="tarjeta-hallazgo">
+      <legend>{{ c.hallazgo.name or "Hallazgo" }} <small class="codigo">{{ c.finding }}</small>
+        {% if c.hallazgo.severity %}<span class="etiqueta gravedad-{{ c.hallazgo.severity }}">{{ c.hallazgo.severity }}</span>{% endif %}</legend>
+      <p class="pregunta">{{ c.question }}</p>
+      {% if c.context %}<p class="contexto">{{ c.context }}</p>{% endif %}
+      {% for o in c.options %}
+      <label class="opcion"><input type="radio" name="d_{{ c.finding }}" value="{{ o.label }}">
+        <strong>{{ o.label }}</strong>: {{ o.consequence }}</label>
+      {% endfor %}
+      {% if c.recommendation %}<p class="recomendacion">Recomendación del árbitro: {{ c.recommendation }}</p>{% endif %}
+      <p class="consecuencia">Si no respondes: {{ c.default }}.</p>
+      <label>Nota (opcional) <input name="n_{{ c.finding }}" maxlength="300"></label>
+    </fieldset>
+    {% endfor %}
+    <button>Registrar mis decisiones</button>
+  </form>
+
+{% elif t.tipo == "adopcion" %}
+  <h2>Ciclo {{ t.ciclo }}: ¿adoptas la versión {{ t.version }}?</h2>
+  {% if t.alertas %}
+  <p class="contexto">Alertas del verificador determinista:</p>
+  <ul>{% for a in t.alertas %}<li>{{ a }}</li>{% endfor %}</ul>
+  {% else %}<p class="contexto">El verificador determinista no dio alertas.</p>{% endif %}
+  {% for v in t.veredictos %}
+  <details {{ "open" if loop.first }}><summary>{{ v.nombre }}: {{ v.veredicto or "sin veredicto" }}</summary>
+    {% if v.motivo %}<p>{{ v.motivo }}</p>{% endif %}
+    {% if v.problemas %}<p>Problemas nuevos:</p><ul>{% for p in v.problemas %}<li><strong>{{ p.name or p.id }}</strong>
+      {% if p.severity %}({{ p.severity }}){% endif %}: {{ p.problem }} <em>Corrección: {{ p.fix }}</em></li>{% endfor %}</ul>{% endif %}
+    {% if v.pendientes %}<p>Hallazgos sin resolver del todo:</p><ul>{% for f in v.pendientes %}<li>{{ f.id }}: {{ f.status }}. {{ f.why }}</li>{% endfor %}</ul>{% endif %}
+  </details>
+  {% endfor %}
+  <p><a href="/e/{{ id }}/propuesta">Leer la versión {{ t.version }} con sus afirmaciones</a></p>
+  <form method="post" action="/e/{{ id }}/accion/cierre" class="apilado">
+    {{ control() }}
+    {% for clave, nombre, consecuencia in t.acciones %}
+    <label class="opcion"><input type="radio" name="accion" value="{{ clave }}" required> <strong>{{ nombre }}</strong>: {{ consecuencia }}</label>
+    {% endfor %}
+    <label>Motivo (se pasa al constructor si pides otra vuelta) <input name="motivo" maxlength="500"></label>
+    <p class="consecuencia">Si no respondes, el proceso queda detenido aquí.</p>
+    <button>Registrar la decisión</button>
+  </form>
+
+{% elif t.tipo == "informe" %}
+  <h2>¿Apruebas el informe?</h2>
+  <p class="contexto">Nada se envía ni se publica sin tu aprobación. Aprobar el informe cierra la ejecución.</p>
+  <div class="documento">{{ t.html|safe }}</div>
+  <form method="post" action="/e/{{ id }}/accion/aprobar_informe">
+    {{ control() }}
+    <label>Comentario (opcional) <input name="comentario" maxlength="300"></label>
+    <button>Aprobar el informe</button>
+  </form>
+
+{% else %}
+  <h2>Decisión pendiente</h2>
+  <p>{{ t.detalle }}</p>
+{% endif %}
+</section>

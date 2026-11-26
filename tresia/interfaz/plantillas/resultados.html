@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block titulo %}Resultados · {{ nombre }}{% endblock %}
+{% block contenido %}
+<h1>Resultados</h1>
+
+{% if r.sin_grupos and not r.opciones_sueltas %}
+  <p>Todavía no hay resultados: aparecen después de la fase A.</p>
+{% elif r.sin_grupos %}
+  <p class="contexto">Opciones de la fase A, antes de la fusión.</p>
+  <table class="tabla">
+    <thead><tr><th>Opción</th><th>Explorador</th><th>Etapa</th></tr></thead>
+    <tbody>{% for o in r.opciones_sueltas %}<tr><td><details><summary>{{ o.name }}</summary><p>{{ o.description }}</p></details></td>
+      <td>{{ o.explorador }}</td><td>{{ o.chain_stage }}</td></tr>{% endfor %}</tbody>
+  </table>
+{% else %}
+  <p class="contexto">Grupos de opciones por mecanismo. Las puntuaciones son las medianas de los tres cribadores (1 a 5);
+    se marca el desacuerdo cuando las notas se separan dos puntos o más.</p>
+  <div class="desplazable">
+  <table class="tabla resultados">
+    <thead><tr><th>#</th><th>Opción</th><th>Etapa</th>{% for c in r.criterios %}<th>{{ c }}</th>{% endfor %}<th>Total</th><th>Novedad</th><th>Cartera</th></tr></thead>
+    <tbody>
+    {% for f in r.filas %}
+      <tr class="{{ 'en-cartera' if f.cartera }}">
+        <td>{{ f.pos or "—" }}</td>
+        <td>
+          <details>
+            <summary>{{ f.nombre }} <small class="codigo">{{ f.id }}</small>{% if f.ia %} <span class="etiqueta">usa IA</span>{% endif %}</summary>
+            <ul class="miembros">{% for m in f.miembros %}<li><strong>{{ m.nombre }}</strong> <small>({{ m.explorador }})</small>{% if m.descripcion %}<br>{{ m.descripcion }}{% endif %}</li>{% endfor %}</ul>
+            {% if f.notas %}<p>Notas de la criba:</p><ul>{% for n in f.notas %}<li>{{ n }}</li>{% endfor %}</ul>{% endif %}
+          </details>
+        </td>
+        <td>{{ f.etapa }}</td>
+        {% for v in f.medianas %}<td class="num">{{ v if v is not none else "—" }}</td>{% endfor %}
+        {% if not f.medianas %}{% for c in r.criterios %}<td>—</td>{% endfor %}{% endif %}
+        <td class="num"><strong>{{ f.total if f.total is not none else "—" }}</strong></td>
+        <td>{{ "Nueva" if f.nuevo else "En la línea base" }}</td>
+        <td>{{ f.cartera or "" }}</td>
+      </tr>
+      {% if f.desacuerdo %}<tr class="desacuerdo"><td></td><td colspan="{{ r.criterios|length + 5 }}">Desacuerdo en: {{ f.desacuerdo|join(", ") }}</td></tr>{% endif %}
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+
+  {% if r.eliminadas %}
+  <details><summary>Eliminadas en la criba ({{ r.eliminadas|length }})</summary>
+    <ul>{% for e in r.eliminadas %}<li>{{ e.name or e.id }}{% if e.motivo or e.reason %}: {{ e.motivo or e.reason }}{% endif %}</li>{% endfor %}</ul>
+  </details>
+  {% endif %}
+  {% if r.nuevas %}
+  <details><summary>Opciones nuevas propuestas en la criba ({{ r.nuevas|length }})</summary>
+    <ul>{% for o in r.nuevas %}<li><strong>{{ o.name }}</strong> ({{ o.propuesta_por }}){% if o.description %}: {{ o.description }}{% endif %}</li>{% endfor %}</ul>
+  </details>
+  {% endif %}
+{% endif %}
+{% endblock %}

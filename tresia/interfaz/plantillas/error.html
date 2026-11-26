@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block titulo %}Error {{ codigo }} · Tres IA{% endblock %}
+{% block contenido %}
+<h1>No se pudo hacer</h1>
+<p class="mensaje error">{{ texto }}</p>
+<p><a href="/">Volver a las ejecuciones</a></p>
+{% endblock %}

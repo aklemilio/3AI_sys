@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block titulo %}Ejecuciones · Tres IA{% endblock %}
+{% block contenido %}
+<h1>Ejecuciones</h1>
+{% if sin_recursos %}
+<p class="mensaje aviso">Sin modelos automáticos: todo irá en modo manual. {{ motivo_sin_recursos }}</p>
+{% endif %}
+
+{% if ejecuciones %}
+<table class="tabla">
+  <thead><tr><th>Nombre</th><th>Fase actual</th><th>Estado</th><th>Modo</th><th>Última actividad</th></tr></thead>
+  <tbody>
+  {% for e in ejecuciones %}
+    <tr>
+      <td><a href="/e/{{ e.id }}">{{ e.nombre }}</a></td>
+      <td>{{ e.fase }}</td>
+      <td>
+        {% if e.trabajando %}<span class="etiqueta trabajo">Trabajando…</span>
+        {% elif e.terminada %}<span class="etiqueta hecha">Terminada</span>
+        {% elif e.espera_dueno %}<span class="etiqueta dueno">Espera tu decisión</span>
+        {% elif e.respuestas %}<span class="etiqueta respuestas">Faltan respuestas</span>
+        {% else %}<span class="etiqueta">En curso</span>{% endif %}
+      </td>
+      <td>{{ "Manual" if e.modo == "manual" else "Automático" }}</td>
+      <td>{{ e.actualizada|fecha }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>Todavía no hay ejecuciones.</p>
+{% endif %}
+
+<section class="tarjeta">
+  <h2>Nueva ejecución</h2>
+  <form method="post" action="/nueva">
+    <input type="hidden" name="_t" value="{{ token }}">
+    <label>Nombre <input name="nombre" required maxlength="120" placeholder="Por ejemplo: Post sobre el archivo oral"></label>
+    <fieldset>
+      <legend>¿Cómo se llama a los modelos?</legend>
+      <label class="opcion"><input type="radio" name="modo" value="automatico" {{ "disabled" if sin_recursos else "checked" }}>
+        Automático: el motor llama a los tres modelos y al verificador.</label>
+      <label class="opcion"><input type="radio" name="modo" value="manual" {{ "checked" if sin_recursos }}>
+        Manual: el motor prepara cada ficha y tú la copias en la web del modelo y pegas la respuesta.</label>
+    </fieldset>
+    <button>Crear</button>
+  </form>
+</section>
+{% endblock %}

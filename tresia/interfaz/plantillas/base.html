@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block titulo %}Tres IA{% endblock %}</title>
+<link rel="stylesheet" href="/estatico/estilo.css">
+{% block cabeza %}{% endblock %}
+<script src="/estatico/app.js" defer></script>
+</head>
+<body>
+<header class="barra">
+  <a class="marca" href="/">Tres IA</a>
+  {% if id is defined and id %}
+  <nav>
+    <a href="/e/{{ id }}">Ejecución</a>
+    <a href="/e/{{ id }}/resultados">Resultados</a>
+    <a href="/e/{{ id }}/propuesta">Propuesta</a>
+    <a href="/e/{{ id }}/informe">Informe</a>
+    <a href="/e/{{ id }}/decisiones">Registro</a>
+  </nav>
+  {% endif %}
+</header>
+<main>
+{% if mensajes %}
+  {% for tipo, texto in mensajes %}<p class="mensaje {{ tipo }}" role="status">{{ texto }}</p>{% endfor %}
+{% endif %}
+{% block contenido %}{% endblock %}
+</main>
+</body>
+</html>

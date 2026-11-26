@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block titulo %}{{ rol }} · {{ nombre }}{% endblock %}
+{% block contenido %}
+<p><a href="/e/{{ id }}">← Volver a la ejecución</a></p>
+<h1>{{ rol }}</h1>
+<p>Estado: <span class="etiqueta">{{ estado }}</span></p>
+
+{% if pend.estado == "recibida" %}
+  <p class="mensaje ok">Esta ficha ya tiene respuesta.</p>
+{% else %}
+<ol class="instrucciones">
+  <li>Copia la ficha y pégala en una conversación nueva del modelo que quieras usar para este papel.</li>
+  <li>Copia su respuesta completa{% if constructor %} (el texto del entregable y el bloque JSON del final){% endif %} y pégala abajo.</li>
+  <li>El motor limpia y valida el JSON. Si falla, te da una instrucción corta para pedírselo de nuevo al mismo modelo.</li>
+</ol>
+{% endif %}
+
+{% if reintento %}
+<section class="tarjeta">
+  <h2>Pídele al modelo que corrija la respuesta</h2>
+  <p class="contexto">Pega este mensaje en la misma conversación y vuelve a pegar aquí lo que conteste.</p>
+  <textarea id="reintento" rows="8" readonly>{{ reintento }}</textarea>
+  <button type="button" class="secundario" data-copiar="reintento">Copiar el mensaje</button>
+</section>
+{% endif %}
+
+<section>
+  <h2>Ficha</h2>
+  <textarea id="ficha" class="ficha-texto" rows="16" readonly>{{ ficha }}</textarea>
+  <p><button type="button" data-copiar="ficha">Copiar la ficha</button> <small>{{ ficha|length }} caracteres</small></p>
+</section>
+
+{% if pend.estado != "recibida" %}
+<section>
+  <h2>Respuesta</h2>
+  <form method="post" action="/e/{{ id }}/manual/{{ paso|urlencode }}/{{ ranura|urlencode }}" class="apilado">
+    <input type="hidden" name="_t" value="{{ token }}">
+    <textarea name="respuesta" rows="16" required placeholder="Pega aquí la respuesta completa del modelo"></textarea>
+    <button>Enviar la respuesta</button>
+  </form>
+</section>
+{% endif %}
+{% endblock %}
