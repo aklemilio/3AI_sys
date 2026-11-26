@@ -55,6 +55,9 @@ def preparar_ficha(run: Ejecucion, paso: str, ranura: str, papel: str, entradas:
     ficha = papeles.componer_ficha(papel, entradas, tarea)
     with run.cerrojo:
         run.escribir(f"prompts/{paso}/{ranura}.md", ficha)
+        if papel == "verifier":
+            # Las entradas estructuradas permiten trocear la tarea si no cabe en el servidor.
+            run.escribir(f"prompts/{paso}/{ranura}.entradas.json", entradas)
         run.estado["pendientes"].setdefault(paso, {})[ranura] = {
             "papel": papel, "tarea": tarea, "destino": destino, "destino_texto": destino_texto,
             "asignado": asignado, "esquema": papeles.esquema_de(papel, tarea),

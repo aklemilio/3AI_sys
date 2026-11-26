@@ -22,6 +22,10 @@ For reasoning claims, check each premise according to its type and say whether t
 Cross every gate, permit or approval with the schedule and with each activity it must authorise, for every objective or programme. Flag anything authorised at the same time as or after the activity.
 Output: {"timeline_issues": [{"gate": "...", "activity": "...", "problem": "...", "fix": "..."}]}
 
+### timeline-table
+Used only when the text is too long for one call: the engine sends one part of the text at a time, joins the rows and then runs «timeline» on the joined table. List every gate, permit or approval and every scheduled activity that appears in this part, with its date or period exactly as written and the objective or programme it belongs to. Do not judge anything here.
+Output: {"rows": [{"kind": "gate|activity", "name": "...", "when": "...", "objective": "...", "authorises": ["..."], "requires": ["..."]}]}
+
 ### compliance
 Check the version against each binding owner decision. Flag violations and silent weakenings.
 
