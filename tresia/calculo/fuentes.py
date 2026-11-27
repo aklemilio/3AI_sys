@@ -93,8 +93,9 @@ def fuentes_de(datos) -> list[dict]:
 
     def recorrer(x):
         if isinstance(x, dict):
-            if x.get("type") == "source" and "url" in x:
-                encontradas.append({"url": x.get("url", ""), "fragmento": x.get("fragment", ""), "afirmacion": x.get("claim", "")})
+            if x.get("type") == "source" and x.get("url"):    # sin URL (o «null») no hay fuente que registrar
+                encontradas.append({"url": str(x["url"]), "fragmento": x.get("fragment") or "",
+                                    "afirmacion": x.get("claim") or x.get("text") or ""})
             for v in x.values():
                 recorrer(v)
         elif isinstance(x, list):

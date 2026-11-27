@@ -41,6 +41,9 @@ url_base = ""                   # dirección privada del servidor; solo en pc.lo
 contexto = 8192
 num_predict = 2000
 max_tokens_prompt = 6000
+# qwen3.x razona antes de responder y ese razonamiento cuenta en num_predict: con él
+# activado la respuesta llega vacía o cortada (corrida del 26 nov). Se envía think=false.
+pensar = false
 tiempo_maximo = 600
 habilitado = false              # true solo cuando el servidor y el dueño lo aprueben
 

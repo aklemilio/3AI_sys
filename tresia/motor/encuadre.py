@@ -69,8 +69,10 @@ def _nombre_archivo(nombre: str) -> str:
 
 
 def ingestar(run: Ejecucion, nombre: str, etiqueta: str, texto: str | None = None,
-             ruta: str | Path | None = None, descripcion: str = "") -> dict:
-    """Guarda un material en ``materiales/`` con su etiqueta."""
+             ruta: str | Path | None = None, descripcion: str = "", solo_fase_b: bool = False) -> dict:
+    """Guarda un material en ``materiales/`` con su etiqueta. ``solo_fase_b``: los
+    exploradores de la fase A no lo ven (por ejemplo, el documento a validar, para
+    que no sesgue la apertura de opciones)."""
     if etiqueta not in ETIQUETAS:
         raise ValueError(f"Etiqueta no válida: {etiqueta!r}. Usa una de {', '.join(ETIQUETAS)}.")
     if texto is None:
@@ -84,7 +86,7 @@ def ingestar(run: Ejecucion, nombre: str, etiqueta: str, texto: str | None = Non
             archivo = f"{len(indice) + 1:02d}_{archivo}"
         run.escribir(f"materiales/{archivo}", texto)
         entrada = {"nombre": nombre, "archivo": archivo, "etiqueta": etiqueta, "descripcion": descripcion,
-                   "palabras": len(texto.split())}
+                   "palabras": len(texto.split()), "solo_fase_b": bool(solo_fase_b) and etiqueta != "contexto"}
         indice.append(entrada)
         run.escribir("materiales/indice.json", indice)
     return entrada
@@ -96,12 +98,13 @@ def materiales(run: Ejecucion, incluir_contexto: bool = False) -> list[dict]:
     return [m for m in run.leer("materiales/indice.json") if incluir_contexto or m["etiqueta"] != "contexto"]
 
 
-def materiales_para_papeles(run: Ejecucion) -> list[dict]:
-    """Lo que sí reciben los papeles: objeto, restricciones y evidencia. Nunca el contexto."""
+def materiales_para_papeles(run: Ejecucion, para_fase_a: bool = False) -> list[dict]:
+    """Lo que sí reciben los papeles: objeto, restricciones y evidencia. Nunca el
+    contexto; en la fase A, tampoco los materiales marcados «solo para la fase B»."""
     return [{"name": m["nombre"], "kind": {"objeto": "object to validate", "restriccion": "constraint",
                                             "evidencia": "evidence"}[m["etiqueta"]],
              "text": run.leer(f"materiales/{m['archivo']}")}
-            for m in materiales(run)]
+            for m in materiales(run) if not (para_fase_a and m.get("solo_fase_b"))]
 
 
 def cerrar_ingesta(run: Ejecucion) -> None:

@@ -220,6 +220,27 @@ def _opciones_exploradores(run: Ejecucion) -> dict[str, dict]:
     return salida
 
 
+def explicaciones(run: Ejecucion, limite: int = 320) -> dict[str, str]:
+    """Explicación breve de cada grupo (para el globo de la cartera): la descripción
+    de su primera opción, recortada, y cuántas variantes más reúne."""
+    grupos = run.leer("grupos.json") if run.existe("grupos.json") else {}
+    opciones = _opciones_exploradores(run)
+    salida = {}
+    for gid, g in grupos.items():
+        descripciones = [d for d in (opciones.get(m, {}).get("description", "").strip()
+                                     for m in g.get("members", [])) if d]
+        if not descripciones:
+            continue
+        texto = descripciones[0]
+        if len(texto) > limite:
+            texto = texto[:limite].rsplit(" ", 1)[0] + "…"
+        if len(descripciones) > 1:
+            n = len(descripciones) - 1
+            texto += f" (Reúne {n} variante{'s' if n > 1 else ''} más.)"
+        salida[gid] = texto
+    return salida
+
+
 def resultados(run: Ejecucion) -> dict:
     """Tabla de grupos por nombre con puntuaciones, novedad, desacuerdos y detalle."""
     grupos = run.leer("grupos.json") if run.existe("grupos.json") else {}

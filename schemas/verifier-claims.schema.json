@@ -13,11 +13,11 @@
         "properties": {
           "text": {"type": "string"},
           "type": {"enum": ["source", "reasoning", "owner", "position"]},
-          "url": {"type": "string"},
-          "fragment": {"type": "string"},
-          "premises": {"type": "array", "items": {"type": "string"}},
+          "url": {"type": ["string", "null"]},
+          "fragment": {"type": ["string", "null"]},
+          "premises": {"type": ["array", "null"], "items": {"type": "string"}},
           "strength": {"enum": ["strong", "weak", "unsupported"]},
-          "note": {"type": "string"}
+          "note": {"type": ["string", "null"]}
         }
       }
     }

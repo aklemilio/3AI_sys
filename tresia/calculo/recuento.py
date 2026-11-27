@@ -63,11 +63,26 @@ def elementos(texto: str) -> Elementos:
     )
 
 
+def _buscar(texto: str, marcador: str, inicio: int = 0) -> int:
+    """Posición del marcador. Un marcador que es un título Markdown se busca como
+    título al principio de una línea, con cualquier nivel y en negrita o no («# Annex»
+    encuentra «# **Annex**» y «## Annex A–F»). Los demás, literales.
+    Si no aparece, ``ValueError``."""
+    if not marcador.lstrip().startswith("#"):
+        return texto.index(marcador, inicio)
+    nucleo = marcador.strip().lstrip("#").strip().strip("*").strip()
+    fin = r"\b" if nucleo[-1:].isalnum() else ""      # «Annex» no encuentra «Annexed»
+    m = re.compile(rf"(?mi)^#+[ \t]*\**[ \t]*{re.escape(nucleo)}{fin}").search(texto, inicio)
+    if not m:
+        raise ValueError(f"No aparece el título «{marcador}».")
+    return m.start()
+
+
 def tramo(texto: str, desde: str | None = None, hasta: str | None = None) -> str:
     """Parte del texto desde el primer marcador ``desde`` (incluido) hasta antes de
-    ``hasta``. Los marcadores son literales; si no aparecen se lanza ``ValueError``."""
-    i = 0 if desde is None else texto.index(desde)
-    j = len(texto) if hasta is None else texto.index(hasta, i)
+    ``hasta``. Si un marcador no aparece se lanza ``ValueError``."""
+    i = 0 if desde is None else _buscar(texto, desde)
+    j = len(texto) if hasta is None else _buscar(texto, hasta, i)
     return texto[i:j]
 
 

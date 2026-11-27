@@ -140,6 +140,15 @@ def _hallazgos_con_disposiciones(run: Ejecucion, ciclo: int) -> list[dict]:
              "owner_note": disp.get(h["id"], {}).get("nota", "")} for h in ataque.get("findings", [])]
 
 
+def _marcas_de_partes(ficha: dict) -> dict:
+    """Si los límites se cuentan por partes, el constructor tiene que saber dónde empieza cada una."""
+    marcas = sorted({m for desde, hasta in (ficha.get("partes") or {}).values() for m in (desde, hasta) if m})
+    if not marcas:
+        return {}
+    return {"part_markers": "The engine counts words per part. Start each part with exactly this heading line: "
+                            + "; ".join(f"«{m}»" for m in marcas) + ". The body is everything before it."}
+
+
 # --- preparación de cada paso con modelo -------------------------------------------------------
 def _preparar(run: Ejecucion, paso: str) -> None:
     b = estado_b(run)
@@ -159,8 +168,8 @@ def _preparar(run: Ejecucion, paso: str) -> None:
         else:
             entradas = {"mode": "correct", **comunes, "previous_version": run.leer(actual["ruta"]),
                         "findings_with_dispositions": _pendientes_del_ciclo_anterior(run, ciclo - 1)}
-        entradas |= {"length_limits": ficha.get("limites", {}), "forbidden_content": ficha.get("prohibiciones"),
-                     "source_register": _registro_fuentes_verificadas(run)}
+        entradas |= {"length_limits": ficha.get("limites", {}), **_marcas_de_partes(ficha),
+                     "forbidden_content": ficha.get("prohibiciones"), "source_register": _registro_fuentes_verificadas(run)}
         manual.preparar_ficha(run, np, "constructor", "builder", entradas, f"{carpeta}/cambios_{nombre}.json",
                               asignado=rot["constructor"], destino_texto=f"{carpeta}/version_{nombre}.md")
 
@@ -195,6 +204,7 @@ def _preparar(run: Ejecucion, paso: str) -> None:
                      else _condiciones_del_veredicto(run, ciclo))
         entradas = {"mode": "correct", **comunes, "previous_version": run.leer(actual["ruta"]),
                     "findings_with_dispositions": hallazgos, "length_limits": ficha.get("limites", {}),
+                    **_marcas_de_partes(ficha),
                     "forbidden_content": ficha.get("prohibiciones"),
                     "source_register": _registro_fuentes_verificadas(run)}
         manual.preparar_ficha(run, np, "constructor", "builder", entradas, f"{carpeta}/cambios_{nombre}.json",

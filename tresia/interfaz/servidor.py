@@ -142,7 +142,9 @@ class Manejador(BaseHTTPRequestHandler):
         self.send_header("Cache-Control", "no-store")
         self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("X-Frame-Options", "DENY")
-        self.send_header("Referrer-Policy", "no-referrer")
+        # «same-origin», no «no-referrer»: con «no-referrer» los navegadores envían los
+        # formularios con «Origin: null» y la comprobación de origen los rechazaría.
+        self.send_header("Referrer-Policy", "same-origin")
         self.send_header("Content-Security-Policy",
                          "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; "
                          "form-action 'self'; frame-ancestors 'none'; base-uri 'none'")

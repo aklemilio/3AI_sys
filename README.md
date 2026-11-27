@@ -19,7 +19,7 @@ La especificación del MVP está en [SPEC.md](SPEC.md).
 & "$env:LOCALAPPDATA\tresia\venv\Scripts\python.exe" -m tresia.interfaz --abrir
 ```
 
-Abre `http://127.0.0.1:8765/`. Solo escucha en esta máquina. Las ejecuciones se guardan en `ejecuciones/` (no se sube al repositorio); otra carpeta con `--carpeta`. Pantallas: ejecuciones, ejecución (fases, paso actual, avisos y métricas), tarjetas de decisión en cada puerta del dueño, resultados, propuesta final con sus afirmaciones, informe, registro de decisiones y modo manual (copiar la ficha y pegar la respuesta). Los modelos aparecen como «Explorador 1, 2, 3», «Cribador 1, 2, 3», etc.; nunca su identidad.
+Hay que lanzarlo desde la carpeta del proyecto: el paquete no se instala en el entorno virtual. Abre `http://127.0.0.1:8765/`. Solo escucha en esta máquina. Las ejecuciones se guardan en `ejecuciones/` (no se sube al repositorio); otra carpeta con `--carpeta`. Pantallas: ejecuciones, ejecución (fases, paso actual, avisos y métricas), tarjetas de decisión en cada puerta del dueño, resultados, propuesta final con sus afirmaciones, informe, registro de decisiones y modo manual (copiar la ficha y pegar la respuesta). Los modelos aparecen como «Explorador 1, 2, 3», «Cribador 1, 2, 3», etc.; nunca su identidad.
 
 ### Fuentes y consumo
 

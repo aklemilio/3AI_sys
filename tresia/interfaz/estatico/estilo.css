@@ -87,6 +87,13 @@ code, .codigo { font-family: ui-monospace, Consolas, monospace; font-size: 0.85e
 .resultados .en-cartera td:first-child { box-shadow: inset 3px 0 0 var(--ok); }
 .resultados .desacuerdo td { font-size: 0.82rem; color: var(--aviso); border-bottom-style: dashed; padding-top: 0; }
 .desplazable { overflow-x: auto; }
+/* Globo explicativo al pasar el ratón (o al enfocar con el teclado). */
+.explicable { position: relative; cursor: help; border-bottom: 1px dotted var(--suave); }
+.explicable .globo { display: none; position: absolute; z-index: 10; left: 0; top: calc(100% + 6px);
+  width: max-content; max-width: min(28rem, 80vw); padding: 8px 10px; border: 1px solid var(--borde);
+  border-radius: var(--radio); background: var(--papel); color: var(--texto); font-size: 0.85rem;
+  font-weight: 400; line-height: 1.4; white-space: normal; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18); }
+.explicable:hover .globo, .explicable:focus .globo { display: block; }
 .miembros { margin: 6px 0; padding-left: 18px; font-size: 0.9rem; }
 
 form { margin: 12px 0; }

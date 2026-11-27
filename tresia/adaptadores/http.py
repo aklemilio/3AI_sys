@@ -108,6 +108,9 @@ class AdaptadorOllama(Adaptador):
         self.contexto = int(definicion.get("contexto", 8192))
         self.num_predict = int(definicion.get("num_predict", 2000))
         self.max_prompt = int(definicion.get("max_tokens_prompt", self.contexto - self.num_predict - 200))
+        # Los modelos que razonan (qwen3.x) gastan num_predict pensando y la respuesta
+        # llega vacía o cortada. Por defecto no se les deja razonar.
+        self.pensar = bool(definicion.get("pensar", False))
 
     def cabe(self, prompt: str) -> tuple[bool, str]:
         estimados = estimar_tokens(prompt)
@@ -134,12 +137,16 @@ class AdaptadorOllama(Adaptador):
         ok, motivo = self.cabe(prompt)
         if not ok:
             raise AdaptadorError(motivo)
-        cuerpo = {"model": self.modelo, "stream": False, "format": "json",
+        cuerpo = {"model": self.modelo, "stream": False, "format": "json", "think": self.pensar,
                   "messages": [{"role": "user", "content": prompt}],
                   "options": {"num_predict": self.num_predict}}
         datos = _post_json(f"{self.url_base}/api/chat", cuerpo, {}, self.tiempo_maximo)
-        texto = (datos.get("message") or {}).get("content", "")
+        mensaje = datos.get("message") or {}
+        texto = mensaje.get("content", "")
         if not texto:
+            if mensaje.get("thinking"):
+                raise AdaptadorError("Ollama devolvió solo razonamiento, sin respuesta: el razonamiento agotó "
+                                     f"num_predict ({self.num_predict}). Revisa «pensar» en el perfil.")
             raise AdaptadorError(f"Ollama no devolvió texto: {str(datos)[:300]}")
         # Detección de recorte: entrada truncada por el contexto o salida cortada por num_predict.
         evaluados = datos.get("prompt_eval_count")
