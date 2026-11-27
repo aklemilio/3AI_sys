@@ -46,7 +46,7 @@ def preparar_fase_a(run: Ejecucion) -> dict[str, str]:
             "minimum_share_not_depending_on_ai": f"{cuotas.get('min_sin_ia', 1 / 3):.0%}",
             "at_least_one_option_per_chain_stage": bool(cuotas.get("una_por_etapa", True)),
         },
-        "materials": materiales_para_papeles(run),
+        "materials": materiales_para_papeles(run, para_fase_a=True),
     }
     asignacion = asignacion_ciega(run, "fase_a", EXPLORADORES)
     return {e: manual.preparar_ficha(run, PASO_FASE_A, e, "explorer", entradas, f"faseA/{e}.json",

@@ -97,7 +97,11 @@ def test_la_solidez_de_una_fuente_la_decide_la_comprobacion(tmp_path, monkeypatc
         {"text": "a", "type": "source", "url": "https://a.org", "fragment": "uno", "strength": "strong"},
         {"text": "b", "type": "source", "url": "https://b.org", "fragment": "dos", "strength": "strong"},
         {"text": "c", "type": "reasoning", "premises": ["p"], "strength": "strong"},
+        # Así responde Qwen cuando no hay URL (prueba real del 26 nov): nulls que el esquema debe aceptar.
+        {"text": "d", "type": "source", "url": None, "fragment": None, "premises": [], "strength": "weak", "note": None},
     ]}
+    from tresia.calculo import esquemas
+    assert esquemas.errores("verifier-claims", claims) == []
     run.escribir("claims.json", claims)
     def descargar(url):
         if url == "https://a.org":
@@ -106,8 +110,9 @@ def test_la_solidez_de_una_fuente_la_decide_la_comprobacion(tmp_path, monkeypatc
 
     monkeypatch.setattr(F, "descargar", descargar)
     registrar_fuentes_de_salida(run, claims, "afirmaciones:v1")
-    assert aplicar_comprobacion_a_afirmaciones(run, "claims.json") == 1
-    a, b, c = run.leer("claims.json")["claims"]
+    assert aplicar_comprobacion_a_afirmaciones(run, "claims.json") == 2
+    a, b, c, d = run.leer("claims.json")["claims"]
+    assert d["strength"] == "unsupported" and d["model_strength"] == "weak" and "no URL given" in d["note"]
     assert a["strength"] == "strong" and a["engine_check"] == "verificada"
     assert b["strength"] == "unsupported" and b["model_strength"] == "strong" and "page inaccessible" in b["note"]
     assert c["strength"] == "strong" and "engine_check" not in c          # el razonamiento no se toca

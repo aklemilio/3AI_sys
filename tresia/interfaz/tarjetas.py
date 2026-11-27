@@ -9,9 +9,11 @@ from __future__ import annotations
 
 import json
 
-from tresia.interfaz.vistas import ETIQUETAS, ORIGEN_CARTERA, md_a_html
+from tresia.interfaz.vistas import ETIQUETAS, ORIGEN_CARTERA, explicaciones, md_a_html
 from tresia.motor import Ejecucion, encuadre, fase_b, pasos
 from tresia.motor.flujo import corregir_fusion
+
+MARCA_ANEXO = "# Annex"
 
 ACCION_CIERRE = [
     ("adoptar", "Adoptar esta versión", "Se cierra la fase B y se genera el informe."),
@@ -49,7 +51,7 @@ def tarjeta(run: Ejecucion, estado: dict | None) -> dict | None:
     if fase == "cartera":
         cartera = run.leer("cartera.json")
         return {"tipo": "cartera", "seleccion": cartera["seleccion"], "archivo": cartera["archivo"],
-                "origen": ORIGEN_CARTERA}
+                "origen": ORIGEN_CARTERA, "explicaciones": explicaciones(run)}
     if fase == "fase_b":
         b = fase_b.estado_b(run)
         carpeta = f"faseB/ciclo_{b['ciclo']}"
@@ -84,7 +86,8 @@ def _material(run, f):
     nombre, texto = f.get("nombre", "").strip(), f.get("texto", "")
     if not nombre or not texto.strip():
         raise ValueError("Pon un nombre y el texto del material.")
-    encuadre.ingestar(run, nombre, f.get("etiqueta", ""), texto=texto, descripcion=f.get("descripcion", ""))
+    encuadre.ingestar(run, nombre, f.get("etiqueta", ""), texto=texto, descripcion=f.get("descripcion", ""),
+                      solo_fase_b=f.get("solo_fase_b") == "si")
     return f"Material «{nombre}» añadido."
 
 
@@ -103,6 +106,9 @@ def _encuadre(run, f):
     limites = {k: int(f[k]) for k in ("limite_cuerpo", "limite_anexo") if f.get(k, "").strip().isdigit()}
     if limites:
         config["limites"] = {k.removeprefix("limite_"): v for k, v in limites.items()}
+        # Sin marcas el verificador no sabe qué contar. El anexo empieza en el título «Annex».
+        config["partes"] = ({"cuerpo": [None, MARCA_ANEXO], "anexo": [MARCA_ANEXO, None]}
+                            if "limite_anexo" in limites else {"cuerpo": [None, None]})
     if f.get("cartera_n", "").strip().isdigit():
         config["cartera_n"] = int(f["cartera_n"])
     encuadre.responder_encuadre(run, respuestas, config)

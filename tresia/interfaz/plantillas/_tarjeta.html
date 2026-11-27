@@ -7,9 +7,11 @@
   <p class="contexto">Añade cada material con su etiqueta. El <strong>contexto</strong> lo ves tú, pero nunca llega a los modelos.
     Hace falta al menos un material marcado como <strong>objeto a validar</strong>.</p>
   {% if t.materiales %}
-  <table class="tabla"><thead><tr><th>Material</th><th>Etiqueta</th><th>Palabras</th></tr></thead><tbody>
+  <table class="tabla"><thead><tr><th>Material</th><th>Etiqueta</th><th>Quién lo ve</th><th>Palabras</th></tr></thead><tbody>
     {% for m in t.materiales %}<tr><td>{{ m.nombre }}{% if m.descripcion %}<br><small>{{ m.descripcion }}</small>{% endif %}</td>
-      <td>{{ t.etiquetas[m.etiqueta] }}</td><td>{{ m.palabras }}</td></tr>{% endfor %}
+      <td>{{ t.etiquetas[m.etiqueta] }}</td>
+      <td>{% if m.etiqueta == "contexto" %}Solo tú{% elif m.solo_fase_b %}Desde la fase B{% else %}Todos los papeles{% endif %}</td>
+      <td>{{ m.palabras }}</td></tr>{% endfor %}
   </tbody></table>
   {% endif %}
   <form method="post" action="/e/{{ id }}/accion/material" class="apilado">
@@ -18,6 +20,8 @@
     <label>Etiqueta
       <select name="etiqueta">{% for k, n in t.etiquetas.items() %}<option value="{{ k }}">{{ n }}</option>{% endfor %}</select>
     </label>
+    <label class="opcion"><input type="checkbox" name="solo_fase_b" value="si">
+      Solo desde la fase B: los exploradores de la fase A no lo ven, para que no sesgue la apertura de opciones.</label>
     <label>Descripción (opcional) <input name="descripcion" maxlength="300"></label>
     <label>Texto <textarea name="texto" rows="8" required data-archivo="archivo-material"></textarea></label>
     <label class="secundario">O cárgalo desde un archivo de texto: <input type="file" id="archivo-material" accept=".md,.txt,.json,.csv"></label>
@@ -41,7 +45,7 @@
       {% endfor %}
       <dt>Etapas de la cadena</dt><dd>{{ t.ficha.etapas|join(", ") }}</dd>
       <dt>Opciones en la cartera</dt><dd>{{ t.ficha.cartera_n }}</dd>
-      {% if t.ficha.limites %}<dt>Límites de longitud</dt><dd>{% for k, v in t.ficha.limites.items() %}{{ k }}: {{ v }} palabras{{ "; " if not loop.last }}{% endfor %}</dd>{% endif %}
+      {% if t.ficha.limites %}<dt>Límites de longitud</dt><dd>{% for k, v in t.ficha.limites.items() %}{{ k }}: {{ v }} palabras{{ "; " if not loop.last }}{% endfor %}{% if t.ficha.partes and t.ficha.partes.anexo %}. El anexo empieza en el título «{{ t.ficha.partes.anexo[0] }}»; el constructor lo sabe{% endif %}.</dd>{% endif %}
     </dl>
     <form method="post" action="/e/{{ id }}/accion/confirmar_ficha">
       {{ control() }}
@@ -101,6 +105,7 @@
   <p class="consecuencia">Si no haces nada, el proceso queda detenido en la fusión.</p>
 
 {% elif t.tipo == "cartera" %}
+  {% macro explicable(s, t) %}{% set texto = t.explicaciones.get(s.id) %}{% if texto %}<span class="explicable" tabindex="0" aria-describedby="exp-{{ s.id }}">{{ s.name }}<span class="globo" role="tooltip" id="exp-{{ s.id }}">{{ texto }}</span></span>{% else %}{{ s.name }}{% endif %}{% endmacro %}
   <h2>¿Apruebas la cartera?</h2>
   <p class="contexto">Opciones elegidas por regla: total de medianas, luego impacto e inclusión, más la mejor de cada etapa que falte.
     Puedes añadir o quitar; tu decisión prevalece y queda marcada.</p>
@@ -108,13 +113,13 @@
     {{ control() }}
     <table class="tabla"><thead><tr><th>Quitar</th><th>Opción</th><th>Por qué entra</th></tr></thead><tbody>
       {% for s in t.seleccion %}<tr><td><input type="checkbox" name="quitar" value="{{ s.id }}" aria-label="Quitar {{ s.name }}"></td>
-        <td>{{ s.name }} <small class="codigo">{{ s.id }}</small></td><td>{{ t.origen.get(s.origen, s.origen) }}: {{ s.motivo }}</td></tr>{% endfor %}
+        <td>{{ explicable(s, t) }} <small class="codigo">{{ s.id }}</small></td><td>{{ t.origen.get(s.origen, s.origen) }}: {{ s.motivo }}</td></tr>{% endfor %}
     </tbody></table>
     {% if t.archivo %}
     <details><summary>Archivadas ({{ t.archivo|length }}): pueden volver</summary>
       <table class="tabla"><thead><tr><th>Añadir</th><th>Opción</th><th>Motivo</th></tr></thead><tbody>
         {% for s in t.archivo %}<tr><td><input type="checkbox" name="anadir" value="{{ s.id }}" aria-label="Añadir {{ s.name }}"></td>
-          <td>{{ s.name }} <small class="codigo">{{ s.id }}</small></td><td>{{ s.motivo }}</td></tr>{% endfor %}
+          <td>{{ explicable(s, t) }} <small class="codigo">{{ s.id }}</small></td><td>{{ s.motivo }}</td></tr>{% endfor %}
       </tbody></table>
     </details>
     {% endif %}

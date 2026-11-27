@@ -135,6 +135,18 @@ def test_cabeceras_de_seguridad(entorno):
     r = c.getresponse()
     assert "script-src 'self'" in r.getheader("Content-Security-Policy")
     assert r.getheader("X-Frame-Options") == "DENY"
+    # Con «no-referrer» el navegador manda «Origin: null» en los formularios y se rechazarían.
+    assert r.getheader("Referrer-Policy") == "same-origin"
+
+
+def test_formulario_con_el_origen_que_manda_el_navegador(entorno):
+    app, cliente, _ = entorno
+    origen = f"http://127.0.0.1:{app.puerto}"
+    estado, _, destino = cliente.post("/nueva", {"nombre": "Desde el navegador", "modo": "manual"},
+                                      cabeceras={"Origin": origen})
+    assert estado == 303 and destino.startswith("/e/")
+    app.trabajos.esperar(app.base / destino.removeprefix("/e/"), 30)
+    assert cliente.post("/nueva", {"nombre": "x"}, cabeceras={"Origin": "null"})[0] == 403
 
 
 # --- recorrido completo -------------------------------------------------------------------------------
@@ -146,6 +158,11 @@ def test_recorrido_completo_por_la_interfaz(entorno):
 
     # Fase A → … → cartera, solo con los modelos.
     assert "¿Apruebas la cartera?" in pagina
+    # Cada opción de la cartera lleva su explicación en un globo (descripción del explorador).
+    assert 'class="explicable"' in pagina and 'role="tooltip"' in pagina
+    run = Ejecucion.abrir(app.base / ident)
+    gid = run.leer("cartera.json")["seleccion"][0]["id"]
+    assert f'id="exp-{gid}"' in pagina
     _, res, _ = cliente.get(f"/e/{ident}/resultados")
     assert "Grabar oficios, trabajo y vida cotidiana en contexto" in res and "Desacuerdo en: Seguridad" in res
     assert "Explorador 1" in res or "Explorador 2" in res

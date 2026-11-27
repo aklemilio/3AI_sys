@@ -70,6 +70,7 @@ def test_cli_no_instalada():
 # --- HTTP falso (Gemini y Ollama) --------------------------------------------------------------
 class _Manejador(BaseHTTPRequestHandler):
     recibido: list = []
+    solo_razonamiento = False
 
     def log_message(self, *a):
         pass
@@ -97,6 +98,9 @@ class _Manejador(BaseHTTPRequestHandler):
             texto = cuerpo["messages"][0]["content"]
             # «RECORTAR» simula que Ollama truncó la entrada al contexto fijo de 8192.
             evaluados = 8192 if "RECORTAR" in texto else len(texto) // 4 + 1
+            if _Manejador.solo_razonamiento:
+                return self._responder({"message": {"role": "assistant", "content": "", "thinking": "Let me think..."},
+                                        "prompt_eval_count": evaluados, "done_reason": "length"})
             return self._responder({"message": {"role": "assistant", "content": json.dumps(VALIDO)},
                                     "prompt_eval_count": evaluados, "done_reason": "stop"})
 
@@ -141,6 +145,20 @@ def test_ollama(servidor):
     assert cuerpo["format"] == "json" and cuerpo["stream"] is False
     # El servidor fija el contexto: no se manda num_ctx ni keep_alive.
     assert cuerpo["options"] == {"num_predict": 1500} and "keep_alive" not in cuerpo
+    # qwen3.x gasta num_predict razonando: por defecto no se le deja (corrida del 26 nov).
+    assert cuerpo["think"] is False
+    _ollama(servidor, pensar=True).llamar("hola")
+    assert _Manejador.recibido[-1]["body"]["think"] is True
+
+
+def test_ollama_solo_razonamiento_se_explica(servidor):
+    o = _ollama(servidor)
+    _Manejador.solo_razonamiento = True
+    try:
+        with pytest.raises(AdaptadorError, match="razonamiento agotó num_predict"):
+            o.llamar("hola")
+    finally:
+        _Manejador.solo_razonamiento = False
 
 
 def test_ollama_no_envia_lo_que_no_cabe_y_detecta_recorte(servidor):

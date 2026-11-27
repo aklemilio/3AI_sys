@@ -37,17 +37,23 @@ def verificar_version(
     e = elementos(documento)
     notas["recuento"] = {"total": vars(e)}
     limites = limites or {}
+    alertas = []
     for nombre, (desde, hasta) in (partes or {}).items():
         try:
-            n = palabras(tramo(texto, desde, hasta))
+            # Se cuenta sobre el entregable, sin el registro de cambios que lo acompaña.
+            n = palabras(tramo(documento, desde, hasta))
         except ValueError:
-            notas["recuento"][nombre] = {"error": f"No se encontró el marcador de «{nombre}»."}
+            marcas = " y ".join(f"«{m}»" for m in (desde, hasta) if m)
+            notas["recuento"][nombre] = {"error": f"No se encontró la marca {marcas} de «{nombre}»."}
+            if nombre in limites:
+                alertas.append(f"No se encontró la marca {marcas} de «{nombre}», así que no se pudo comprobar su "
+                               f"límite de {limites[nombre]} palabras.")
             continue
         lim = limites.get(nombre)
         notas["recuento"][nombre] = {"palabras": n, "limite": lim, "excede": lim is not None and n > lim}
 
-    alertas = [f"«{k}» tiene {v['palabras']} palabras; el límite es {v['limite']}."
-               for k, v in notas["recuento"].items() if isinstance(v, dict) and v.get("excede")]
+    alertas += [f"«{k}» tiene {v['palabras']} palabras; el límite es {v['limite']}."
+                for k, v in notas["recuento"].items() if isinstance(v, dict) and v.get("excede")]
 
     if anterior is not None:
         comp = comparar(anterior, texto)
@@ -113,7 +119,7 @@ def aplicar_comprobacion_a_afirmaciones(run: Ejecucion, ruta: str) -> int:
     for c in datos.get("claims", []):
         if c.get("type") != "source":
             continue
-        e = registro.get(F.clave(c.get("url", ""), c.get("fragment", ""))) if c.get("url") else None
+        e = registro.get(F.clave(str(c["url"]), c.get("fragment") or "")) if c.get("url") else None
         estado = e["estado"] if e else (F.SIN_FRAGMENTO if c.get("url") else F.INACCESIBLE)
         c["engine_check"] = estado
         if estado == F.VERIFICADA:
